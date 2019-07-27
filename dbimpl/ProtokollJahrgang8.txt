@@ -1,0 +1,9 @@
+ B+-Tree mit 100 Elementen pro Node und 100 Leafs unter root. BufferManager mit LRU und 10 Pages Cache -> wie viele Page Faults pro Random Tuple Access?
+- Extendible Hashing: 7 Hashwerte gegeben, Jedes Bucket einen Wert, kein Chaining, wie groß muss das Directory sein
+- MGL: Beispiel mit IX, IS, S, X und 3 Transaktionen gegeben. Beispiel für Deadlock angegeben
+- SlottedPage: Record A eingefügt, Record B eingefügt, Record A gelöscht, Zustand Page malen und erklären.
+- Vorteil B-Link-Tree erklären
+- Record Layout zu gegebenem create table-Statement malen
+- Union-Operator im Iterator-Modell schreiben
+- gegebenen Operator erkennen
+- 4 Buffer Replacement Strategies mit Vor- und Nachteil

@@ -1,0 +1,174 @@
+---------- Caro ----------
+So ein asymmetrisches Protokoll modellieren. Er hatte Folien und hat es einem ausführlich erklärt, dann nimmt man halt pi-kalkul und schreibt es auf ^^
+Okay wie verbindet man die dann? Wie machst du das die noncen auch echt neu sind?
+
+In welcher Logik würdest du jetzt hinschreiben dass Alice auch wirklich mit Bob kommuniziert und andersrum? ltl raten hat funktioniert 
+Aha und da würde man doch auch Fairness mit machen. Was gibt's denn da für Fairness Arten? 3 aufgeschrieben und erklärt.
+Warum ist unbedingt Fairness so ätzend im Vergleich zu den anderen? Rumgeschwommen und dann mit Hilfe: Maschineabgeschlossenheit! Gilt nämlich nur für starke und schwache Fairness 
+Ja und wie macht man jetzt MC mit ltl?
+Das mit den Automaten aufgeschrieben + erklärt.
+Themensprung! Ccs wie geht da die Parallelkomposition? Hinschreiben.
+Und was gilt für das a? Darf das Tau sein? Musste ich für alle Fälle sagen. Und dass es noch eine Regel mit P2 gibt und nicht nur mit P1.
+Da hab ich dann gefragt warum das denn nicht kommutativ ist: ja ist es dann später und wieso sagen wir es ist gleich wenn man Tauscht?
+Konfluenz? Nein!
+Ahh bisimilaritãt :erröten:
+Dann schreib saß doch mal hin. 
+Ich habe da eine Biimplikation gemacht in der Definition... Großer Fehler! Es folgte eine lange Diskussion warum das keine sein darf und ich hab lange raten müssen bis ihh wusste in welche Richtung dir Implikation eigentlich gehen soll :schluchzen: macht einfach einen Pfeil nur von "Tupelo in Menge" nach "Fette Bedingung" und das bleibt euch hoffentlich erspart :verschwitztes_lachen:
+Du hast ja schon Konfluenz angesprochen, mal das mal hin un dann noch erzählt mit Terminierung und gleichheit vom Computer und so.
+Dann (evtl out of scope) wie viele Normalformen gibt's denn wenn wir keine Terminierung haben? Spoiler: maximal eine.
+Bin ihh nicht drauf gekommen er hat mir dann über nur Terminierung und keine Konfluenz macht mindestens eine weitergeholfen
+
+---------- Lea ----------
+MSV Prüfungsprotokoll Lea 16.07.18
+
+gleich am Anfang Modellierungsaufgabe: Needham-Schroeder-Protokoll
+Alex hatte eine Zeichnung vorbereitet
+	   		<A, Na>A			
+		-------------->
+	   		<Na, Nb>B
+Alice 	<--------------	   Bob	
+	   		<Nb>B
+		-------------->
+
+Alice schickt zuerst mit ihrem öffentlichen Schlüssel A ihre eigene Identität (A innerhalb der Klammern) und ihr Geheimnis Na; Bob empfängt, schickt Alice Geheimnis und eigenes Geheimnis zurück, Alice empfängt, schickt Geheimnis an Bob zurück
+
+Aufgabe: das ganze modellieren. Womit?
+-> Pi-Kalkül, krieg ich nicht mehr ganz zusammen, Jonas müsste die Lösung haben :) 
+
+wie könnte man es modellieren dass Alice nicht nur mit Bob sondern auch mit anderen Menschen kommuniziert?
+-> glaube Auswahl (+) war die richtige Antwort
+
+komische Frage, hab ich nicht ganz verstanden: womit man überprüfen kann, ob Alice mit Charlie kommuniziert?
+-> model checking
+
+womit?
+-> LTL, weil Abläufe
+
+wie macht man denn LTL model checking?
+-> Äquivalenzen erklärt
+
+wie teuer ist das Leerheitsproblem?
+-> linear in der Größe des Schnittautomaten
+
+CCS: par Regel aufmalen (Milners parallel operator)
+
+Was ist Church-Rosser?
+-> Bild gemalt
+
+Wie viele Normalformen gibt es, wenn nur Church-Rosser und keine Termination gegeben ist?
+-> maximal eine, sobald man Normalformen hat, kann man sie ja zusammenführen; kann aber auch sein dass es keine gibt
+
+wie modelliert man in Maude?
+-> er wollte darauf hinaus dass eq die Zustände beschreiben und rl die Übergänge
+
+wie ist schwache bisimilarität definiert?
+-> definition hingeschrieben + erklärt
+
+wie überprüft man ob zwei zustände bisimilar sind?
+-> spiel + erklärt?
+
+wie kann man es noch prüfen?
+-> HM-Formeln
+
+LTL Formeln für starke Fairness
+bei fairen LTS: warum Mengen für starke und schwache Fairness keine Probleme?
+-> Maschinenabgeschlossenheit, bisschen erklären
+
+Viel Erfolg!! <3
+
+---------- Malte ----------
+- auch das protokoll am anfang
+- + für Alice mit Charlie
+- nu und Parallelschaltung für geheime Kommunikation
+- Wie kann Charlie denn Quatsch machen (zB kann er verschlüsselte Nachrichten mithören)
+- Was ist Model Checking 
+- 4 Zeilen zu Produktautomaten
+- Komplexität Model Checking und Leerheitsproblem
+- Wie löse ich Leerheit (CVWY, alternativ Tarjan und Rückwärts)
+- CCS Paralleloperator, was ist tau, kann alpha auch tau sein 
+- Was ist Konfluenz (Bild), wie viele Normalformen ohne Terminationsbedingunf, wie viele ohne Konfluenz (s Lea)
+- Schwache Bisimrelation hinschreiben, wann sind jetzt zwei Zustände bisim? ES GIBT EINE relation...
+- Wie kann ich das überprüfen (Spiel, HMF)
+- LTL für starke Fairness
+- Warum ist unbedingt Essig? Da habe ich bei der Frage angefangen zu grinsen, auf den Tisch geschlagen und Maschinenabgeschlossenheit gerufen :japanischer_oger:
+
+Habe nach der Prüfung noch darum getrauert dass ich keinen Beweis machen durfte, und Alex hat angedeutet dass das wohl auch für andere nicht so wichtig sein wird. Also ohne Gewähr, aber zeitlich den HMF erklären wird denke ich sowieso eng.
+
+---------- Manu ----------
+Mach mal ne Transformation in CSS:
+- Sequenzdiagram gegeben, daraus CCS.
+Was macht man wenn man Gesamtsystem haben will
+- Zusammen schalten
+Was will man noch machen?
+- Aktionen nach außen verstecken
+Ewig rumgefragt: Hier ist die Spezifikation, hier die Implementierung, was muss man dann machen
+- Wollte drauf raus: Traces der Implementierung sind Teilmenge der Traces der Spezifikation
+Bin schon auf Bisim raus, er fragt dann: Was haast des?
+- Definition aufgeschrieben
+Wie kann man des wiederlegen?
+- Spiel
+Wie kann mans zeigen?
+- Wenn sie die gleichen HM Formeln erfüllen
+Was braucht man dafür?
+- Bild-endlichkeit
+- Das dann noch definieren
+Jetzt kommt der Beweis:
+- Eine Richtung: Induktion
+- Andere Richtung: Eine HM Formel schreiben, die ausdrückt dass beide in der Relation sind
+Temporallogik: Was gibts, wie unterscheidet sich das?
+- CTL über Berechnungsbaum, LTL über Traces
+Modelchecking-Probleme:
+- M |= phi 
+Was haast des?
+- CTL: Für alle Startzustände gilt M, s |= phi
+- LTL: Alle traces von M erfüllen phi
+Was haben wir bei CTL für Arten von MC?
+- Fixpunkt, Zusammengangskomponente + Rückwärtssuche, BDDs
+Wie funktioniert das mit dem Fixpunkt?
+- Fixpunktoperator hingeschrieben, für EG
+Wieso machen wir jetzt EG?
+- Weil wir mit EG, EU, EX und negation und (oder oder und) die Basisoperatoren haben und alles andere daraus herleiten können
+Wie funktioniert das?
+- Fangen mit allem an und schneiden solange bis wir den größten Fixpunkt haben (er sagt: "Schneiden, schneiden, schneiden" und kichert währenddessen)
+Warum ist das nicht so gut?
+- Weil wir quadratische Komplexität in der Anzahl der Zustände haben
+Also:
+- Das andere, mit Zusammenhangskomponente + Rückwärtssuche, hat Komplexität linear in größe der Zustände und Größe der Formel
+Warum braucht man den Fixpunkt aber trotzdem?
+- Weil wir den für die BDDs brauchen, bestenfalls logaritmische Komplexität in der Größe des Transitionssystems, (er wollte immer wissen, in was die Komplexität gilt)
+MC für LTL
+- Büchi Äquivanenz, die 4 Zeilen
+Wie groß ist das?
+- Leerheitsproblem für Büchi ist linear in der größe des Büchi Automaten
+Wie groß ist dann das LTL MC Problem?
+- Exponenziell, weil das Generieren des Büchis aus ner Formel ist exponenziell in der größe der Formel.
+Eigenschaften, was gibts denn da?
+- Sicherheits, und Lebendigkeitseigenschaften
+Ham wir damit alle eigenschaften?
+- Ja, weil wir alle als schnitt von Lebendigkeit und Sicherheit darstellen können
+Dafür kann ich den Beweis - Den wollte er aber nicht hören
+Welche von denen wollen wir eher zeigen?
+- Sicherheitseigenschaften
+Was ist das das schöne was uns hilft?
+- Maschinenabgeschlossenheit
+Kommen wir noch zum wichtigsten: Maude!!!!!
+Wie schaut der Church-Rosser aus?
+- Bild gezeichnet, ist ein dreieck
+
+EZPZ LMN SQZY
+
+---------- Alex ----------
+Das Beispiel war eine Übergabe eine Übergabe von zwei Kommunikationskanälen an einen Parametrisierten Automaten
+Dann war die Frage welche Logik sich da anbietet: 
+- CTL weil schaut schon aus wie ein Baum
+Welche Transitionssemantiken haben wir für CTL kennengelernt? 
+- Späte und Reduktionssemantik
+Welche Arten von Gleichheit haben wir kennengelernt? 
+- Spur, Verhalten und Struktur
+Schwache Bisimilarität definieren
+- ganz wichtig dass der zweite Übergangspfeil ein anderer ist als der erste
+Dann noch der Killer: Könnte man SCC und Rückwärtssuche anstatt des Fixpunktes für BDDs verwenden? 
+- Ja, aber der Vorteil von BDDs geht dann verloren, weil man jetzt für jeden Zustand einen neuen BDD erstellen musste.
+
+Ich hatte das Gefühl dass es heute deutlich schwerer war, aber er auch kulanter war.
+

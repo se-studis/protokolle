@@ -1,0 +1,48 @@
+Vorwarnung: keine Ahnung wie Korrekt und Vollständig das ganze is - hab einiges irgendwie schon verdrängt ... =D
+
+Prüfer: Beide
+
+AL:
+Syntax (Bestandteile)
+Semantik
+
+Syntax + Semantik + ...?
+
+Eigenschaften?
+Korrekt, Vollständig, Invertierbar, Entscheidbar + Begründung
+
+Tautologie von Hand mit Baum beweisen: => (A -> B) and (not A imp B) imp B
+Haben dann gefragt ob KIV das auch automatisch hinbekommen hätte
+Hab gesagt bis zur ersten case distinction ja
+Dann haben se gefragt warum der Rest auch automatisch geht ...
+-> irgendwelche simplifier magic mit einsetzen oder so ... (habs irgendwie hinbekommen aber kp mehr ...)
+
+PL:
+
+Welche Eigenschaften von AL gelten auch hier? Welche nicht und why?
+Invertierbar nicht wg weak
+Entscheidbar nicht wg Va wo man sich falsch entscheiden kann (und unbegrenz viele Möglichkeiten hat)
+bei Entscheidbarkeit ist noch das Detail wichtig dass man alle wahren Aussagen hinbekommt weil der Beweis ja endlich is - was die Probleme macht is was falsches ablehnen weil der Beweis ja immernoch kommen könnte
+
+Regel hinschreiben: Va (da hab ich anfangs Mist gebaut - wollten dann beide)
+
+Aus was besteht PL?
+Signatur - Inhalt davon (wichtig: funktionsSYMBOLE und prädikatSYMBOLE)
+
+Induktionsregel für Listen hinschreiben
+
+Warum is free gut?
+
+Hierarchiepersistenz und Eindeutigkeit erklären
+wichtig: Eindeutigkeit heißt nicht dass es exakt ein Modell gibt sondern für jedes ursprüngliche Modell gibts eins (mod isomorphie natürlich)
+
+KIV Simplifier erklären - also was es für Regeln gibt und wie die gehen
+(rewrite, äq, assoziativität, kommutativität)
+ganz wichtig: Der Simplifier sucht ja als erstes nach dem des er ersetzen soll - aber eben nicht nach genau dem t oder was auch immer sondern nach einer Instanz davon (die wollten da unbedingt "Instanz" hören)
+auch wichtig: Der Simplifier versucht ja dann wenn er alles andere gefunden hat die Vorbedingung im Antezedent zu beweisen - haben dann gefragt wie: "Öhm ja ... er beweists halt ..." is nicht die richtige Antwort ... dann lang versuchen zu erklären wie man Dinge beweisen könnte auch net ... und spätestens wenn man dann irgendwann gar nicht mehr weiß auf was se rauswollen und anfängt "... ich hab mal in die KIV doku geschaut und gesehen dass KIV unter anderem einen SAT Solver verwendet ..." lachen die sich dann komplett den A**** ab ... richtige Antwort die se sehr deutlich genau so hören wollten (und nicht nur als rumgelaber in "wie man Dinge beweisen könnte") is "durch rekursiven Simplifieraufruf"
+
+Funktion spezifizieren: diff(x,y) listen voneinander abziehen, also "x-y"
+Trick: über x rekursiv spezifizieren und dann für jedes element schauen obs e y is (falls nein nach vorne rausziehen, sonst einfach weg)
+
+In KIV dann zu der diff die Idempotenz beweisen - also diff(diff(x,y),y) = diff(x,y)
+Das Ganze war schon in KIV eingegeben/vorbereitet - man musste sich also nur noch für ne Heuristik entscheiden und loslegen - die Axiome waren aber gezielt nicht im Simplifier eingetragen also erst mal wundern warums nach der Induktion nicht weitergeht und dann zur Übersicht gehen und mit Rechtsklick lokal eintragen - dann ggf prune tree und nochmal die Induktion damit der Simplifier danach direkt anspringt und aufräumt

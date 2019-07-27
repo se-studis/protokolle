@@ -1,0 +1,78 @@
+Vorweg, Gerhard ist ein (wie Malte ihn passenderweise genannt hat) „Verwirrungskünstler“, aber 
+Alex springt ein, wenn man nicht weiterkommt. Und bei mir war ca. 25 Minuten dem Teil über die 
+Nicht-freien Datentypen gewidmet. Die Notengebung ist aber sehr nett. 
+• Strukturierte Spezifikationen: 
+o Wie geht man da vor? Sorten – Konstruktoren – frei/nicht frei? -> 
+Extensionalitätsaxiom 
+o Am Beispiel von ungerichtete Graphen: 
+▪ Benötigte Sorten: Graph, Knoten, Kanten
+▪ Konstruktoren: Leerer Graph, Kante einfügen, Knoten einfügen, Kante 
+erstellen (eine ungerichtete Kante) 
+• ∅, . ++ . ∶ 𝑔𝑟𝑎𝑝ℎ × 𝑛𝑜𝑑𝑒, . ++. ∶ 𝑔𝑟𝑎𝑝ℎ × 𝑒𝑑𝑔𝑒, 
+𝑚𝑎𝑘𝑒𝐸𝑑𝑔𝑒: 𝑛𝑜𝑑𝑒 × 𝑛𝑜𝑑𝑒
+▪ Tricky: ist das jetzt genug? Ich dachte eigentlich schon, da wir ja damals in 
+KIV einfach die Spezifikation Edge angereichert haben und damit alles was 
+Kanten betrifft implizit schon vorhanden war – jetzt wollten sie erst Recht, 
+dass ich ungerichtete Kanten auch noch definiere.
+▪ Extensionalität für ungerichtete Kanten: 𝑒1 = 𝑒2 ↔ ∀𝑛. 𝑛 ∈ 𝑒1 ↔ 𝑛 ∈ 𝑒2
+▪ 𝑛 ∈ 𝑚𝑎𝑘𝑒𝐸𝑑𝑔𝑒(𝑛1, 𝑛2
+) ↔ 𝑛 = 𝑛1 ∨ 𝑛 = 𝑛2
+▪ Bei der Extensionalität für den Graphen darf man keinesfalls die Klammern 
+vergessen! Sonst bekommt man Ärger von Gerhard!
+▪ Frage: Welchem Schema folgt diese Definition jetzt? Es ist nicht nicht-
+rekursiv! Zumindest haben die das gesagt, ich glaub es ihnen bis heute nicht.
+▪ Wie schauts aus mit dem Node, muss man da Konstruktoren angeben? -> 
+Nein, das ist der Parameter.
+▪ Dann die typische Frage danach, was man jetzt noch machen muss: 
+Kongruenz erklären
+▪ Ist das jetzt hierarchiepersistent und eindeutig? 
+o Wie kann man jetzt noch definieren? Strukturell-rekursiv, Wohlfundiert (nicht 
+noethersch sagen) Rekursiv, Existenz und Eindeutigkeit. 
+o Warum ist allgemeine Rekursion schlecht -> können nicht sicherstellen, dass es 
+terminiert und dann haben wir gar nix spezifiziert
+o Deduktion über Programme: Relationale Semantik, warum nicht als Funktion
+definieren? -> Indeterminismus, Nicht-Determinismus
+o Regeln des Sequenzenkalküls für < 𝑤ℎ𝑖𝑙𝑒 𝑏 𝑑𝑜 𝑝 >
+▪ Was ist das 𝒙 ? Ich habe gesagt, dass es nicht in den freien Variablen auf der 
+ganzen Sequenz vorkommen darf (so stehts ja im Skript), aber das ist eine zu 
+harte Einschränkung, es darf nur nicht in 𝜓,𝑡, und 𝑝 vorkommen. Bzw. darf
+das in 𝑝 sogar vorkommen, solange 𝑥 in 𝑝 nicht assigned wird.
+o Box und Diamond definieren mithilfe der relationalen Semantik 
+o Was gibt es neben der Big-Step Semantik? -> Trace Semantik bzw. Small-Step 
+Semantik 
+▪ Und warum brauchen wir die? 
+▪ Ich habe gesagt für Compilerbau und weil es maschinennäher ist, aber 
+irgendwann kam ich drauf, was sie eigentlich hören wollten, dass es ja 
+Programme gibt, die nie terminieren (einfache Server-Anwendung, die nie 
+aufhört zu laufen -> da sagt uns die Big-Step Semantik nämlich gar nicht mal 
+so viel … auch bei verschiedenen Threads ist Big-Step nicht so sinnvoll) 
+Dann sagen, was an RS gut und was schlecht ist
+• Schlecht ist das while (erklären was da die Idee ist) und die 
+rekursiven Prozeduren (man muss da nämlich die Rekursionstiefe
+(wichtiges Buzzword) raten)
+• Wer macht das schöner? Natürliche Semantik 
+• Was ist so viel schöner bei der Schleifenregel in NS und wieso kann 
+man das in RS nicht so machen? -> Buzzword: Abrollen der Schleife
+• Und dann das übliche Gelaber über die Fixpunktsätze (alles 
+hinschreiben können, und wissen dass das 𝑓 dem Hut entspricht), 
+also ganz easy und so wie bei Caro, das führe ich hier nicht mehr aus.
+• Wichtig war Gerhard vor allem, dass man ca. 50-mal sagt, dass der 
+REC-Operator eine Menge von Tripeln nimmt, darauf Regeln 
+anwendet und eine Menge von Tripeln zurückgibt. 
+▪ Ist der NS-Operator immer noch stetig bei Choose? -> Ja
+• Nur der Operator des garantierten Terminierungsbereichs macht da 
+Probleme, weil die Choose-Regel ja unendlich viele positive 
+Prämissen haben kann -> Regeloperator nur noch monoton!
+▪ Nichts zu strong diamond 
+o Dann noch das Übliche zu Refinements: Wieso braucht man das, wie definiert man 
+Kontrakte, was genau ist so ein Ablauf und wie zeigt man, dass eine Verfeinerung 
+korrekt ist, Abstraktionsrelation und Vorwärtssimulation …
+▪ Und was kann man von außen sehen? -> Input, Operation, Output
+▪ Der Zustand ist unsichtbar
+• Letztlich dann noch eine Runde KIV - Replace: Ein Programm, das alle Vorkommen von 𝑎
+durch 𝑏 ersetzt. Gerhard hat ein „dolles“ Lemma für das Split und hat mir 4 Minuten lang 
+erklärt was das Programm macht … Apply Induction – Call Right – Apply Lemma: Split Correct
+– dann schaltet der Gerhard überraschenderweise die Heuristik ab – Show Goal Again with 
+IndHyp – da sieht man dann, dass man in Antezedenz und Sukzedenz fast das gleiche da steht
+-> Execute Call – ein paar Assigns und zu is 
+Viel Erfolg Euch allen und viel Spaß 😉

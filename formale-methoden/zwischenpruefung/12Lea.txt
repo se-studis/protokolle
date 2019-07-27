@@ -1,0 +1,39 @@
+Prüfungsprotokoll Lea
+
+Alex hat Fragen gestellt
+- aus was besteht Logik -> sie wollten auf Logik = Syntax + Semantik + Kalkül hinaus
+- Papierbeweis (Kontraposition), davor haben sie gefragt, was ich erwarte, danach wie das Simplifier das gelöst hätte -> Regeln mit einer Prämisse alleine, Rest mit kontextabhängiger Simplifikation
+- ansonsten AL übersprungen
+- Syntax PL
+- Was ist eine Signatur?
+- Was sind Terme?
+- Was sind Formeln?
+-  Semantik Formeln
+- Was für Simplifierregeln gibt es?
+- Termersetzungsregel: wie wendet KIV die an? -> Instanzen von t, dann phi syntaktisch suchen, dann Gamma durch rekursive Simplifieraufrufe beweisen. Da haben sie ziemlich lange nachgefragt wie genau das phi aussehen soll 
+- Korrektheit von Regeln, wie zeigt man das
+- Invertierbarkeit von Regeln, wie zeigt man das
+- Induktion
+- Induktionsregeln für Listen phi(x) aufschreiben
+- Konsistenz
+- Wie zeigt man, dass eine Spezifikation konsistent ist? -> man findet ein Modell
+- Monomorphie
+- Wie viele Modelle gibt es, wenn die Spezifikation monomorph ist?
+- wo geht in Listenspezifikationen die Monomorphie kaputt? -> bei .head und .tail, weil die in verschiedenen Algebren für die leere Liste unterschiedlich definiert sein können
+- Beispiel, wo das mit der Monomorphie nicht klappt
+- Wie löst man das? -> Generiertheitsklauseln
+- Was sind Generiertheitsklauseln?
+- data specification in KIV
+- freie Datentypen
+- welche Axiome generiert der KIV dann bei data specifications?
+- Was passt zur Induktion? -> Rekursion
+- remove(a,x) rekursiv definieren
+- Beweis in KIV zu einem Lemma über remove und append
+- sie haben gefragt, warum Induktion
+- hab dann Heuristiken angeschaltet, Simplifierregeln zu remove und append hinzugefügt (base und rec)
+- dann structural induction über die rekursive Position
+- ein Axiom per Hand angewendet, sie haben gefragt, warum der KIV Simplifier das nicht selbst gemacht hat
+- dann war der Baum schon zu
+
+Allgemein kam nicht wirklich überraschendes, sie haben nur an manchen Stellen dann doch sehr in die Tiefe gefragt, hatte ich das Gefühl. Hat manchmal lange gedauert, bis sie die Antwort von mir hatten, die sie auch haben wollten und manchmal hab ich auch Dinge einfach nicht gewusst. Benotung war sehr nett
+War wie bei den anderen auch sehr entspannt, ist alles gut zu schaffen!! Ganz viel Erfolg noch!!!

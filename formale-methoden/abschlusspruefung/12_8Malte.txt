@@ -1,0 +1,5 @@
+Last but not least:
+- geraldo hat fragen gestellt, passend verwirrend wars
+- arrays spezifizieren (und lange diskussion darüber, was da drin jetzt eindeutig ist — oder halt nicht — und wann wir welche fallunterscheidung machen — zB was passiert bei get / put auf stellen außerhalb des arrays)
+- kiv beweis: totale korrektheit von 3erpotenz (also nach dem diamond ein true), ging super schnell zu (alex wollte seine bahn kriegen)
+- sonst das Übliche, häufig sind die einfachsten antworten die, die sie hören wollen

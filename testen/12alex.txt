@@ -1,0 +1,80 @@
+Protokoll Axel R.
+
+Vorab: Da Mörsch Sepp is entweder allergisch auf meinen "Humor" oder einfach auf Humor generell.
+Er lässt sich auch absolut nicht anmerken, ob deine Antwort jetzt richtig war oder nicht.
+Auch wenn sie richtig war sagt er "Hm, ok, ja" als ob du ihm da grade einen Schmarrn auftischt.
+Davon nicht ablenken lassen.
+
+Was ist testen pi pa po so wie bei allen anderen inklusive Kaffeemaschine, FSM, EFSM und den Testen-Dekriterien.
+
+Einziger Unterschied: Sehr lange auf Euler-Kreisen und Chinese Postman rumgeritten:
+	Der Unterschied ist, dass der Chinese Postman Kanten doppelt gehen kann, während der Euler-Kreis
+	jede Kante nur genau einmal gehen darf, und deswegen Kanten verdoppeln muss.
+	(Analogie: Euler-Kreise stammen vom Königsberger Brückenproblem, 
+	und weil er so ne fette Eule war mussten die Brücken verdoppelt werden, weils zu gefährlich war wenn er mehr als 1mal drüber geht)
+
+Dann wieder alles wie gehabt beim Knappo.
+
+Aber dann: A new challenger appears: Fresh Moersch wants to fight!
+
+Den ganzen Strunk vom Salat ausgelassen (die Definitionen), sondern straight zu 1 kompliziertes Beispiel:
+	"Ein Student hat mir diesen Lattice hier gezeigt"
+	{{0, 1} , 0, *, <=}, was bedeuten soll:
+	{(Menge über die die partielle Ordnung gelten soll), (kleinste obere Schranke), (Join-Funktion), (Ordnungsfunktion)}
+	
+	"Beweise dass das 1 Lattice ist"
+		- "Ich seh schwarz, mit dem Join is ois Essig"
+	
+	"Ja aber why pls?"
+		- Der Join aus 0 und 1 ergibt mit dem Operator 0, und des is ja kleiner als 1
+		- Des darf aber nicht passieren, weil laut unserer Ordnungsfunktion der Join größer gleich als des sein muss, was wir reinstecken
+	
+	"Und wenn man statt dem * ein + nimmt?"
+		- Na is immerno Essig, weil die 0 dann angeblich die kleinste obere Schranke is und des auch a Schmarrn is
+	
+	"Was müsst ma stattdessen machen?"
+		- kleinste obere Schranke is 1 und Join Funktion 0 dann passts
+
+Dann hat er mich noch mit der selben Symbolic Execution Aufgabe die schon 6 mal dran war gelangweilt.
+EZ runtergereihert a la:
+
+if(a < 5){				{a = s1, <[s1 < 5]>}
+  b := a;				{a = s1, b = s1, <[s1 < 5]>}
+  if(b >= 5){			{a = s1, b = s1, <[s1 < 5], [s1 >= 5]>}
+    assert(false);		{a = s1, b = s1, <[s1 < 5], [s1 >= 5]>}
+  }
+}
+
+(ich hoffe Slack hat die Formatierung nicht kaputt gemacht)
+
+"Und jetzt?"
+	- Testfall generieren
+
+"Wie tät denn der Computer den generieren?"
+	- Constraint solver ftw
+
+"Mach mal für das assert!"
+	- I seg schwarz
+
+"Warum?"
+	- Weils halt net geht, die Constraints sind nicht erfüllbar
+
+Dann die Frage: "Und was haast des jeetz für uuuns? Wie testen mir des jetzt?"
+	- Müssma gar net weil wir jetzt gezeigt ham dass die Zeile gar net erreichbar ist
+
+"Hm, ok, ja. Ich fand die Zeit mit dir so schön und würde deine Anwesenheit noch gerne länger geniessen <3"
+	- Für dich alles liebster Sepp
+	- Soll ich dir noch nen Lattice zeichnen?
+
+Detective Knappo springt ein: "Mach mal den kleinsten Lattice"
+	- o
+	- (Das da oben ist der Lattice)
+
+Knappo wills wissen: "Mach mal den kleinsten NICHT-Lattice"
+	- Rumprobiert: Lösung ist anscheinend:    o   o
+	- Also 2 Elemente, die nicht verbunden sind.
+
+Josef säufzt hingebungsvoll die mir wohlbekannten Worte: "Hm, ok, ja."
+Ich merke, ich habe sein Herz gewonnen. Doch leider trennt uns nun das Schicksal.
+Nach einer herzzerreissenden Minute voll Sehnsucht und Verlangen auf sein Schatzi teilt er mir das Ergebnis mit.
+Es ist fair.

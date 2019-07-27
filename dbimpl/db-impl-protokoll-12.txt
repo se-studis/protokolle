@@ -1,0 +1,59 @@
+Aufgabe 1
+Lücken Text. Allgemeins wissen (Morsel, FSI, Pages, Segements….)
+
+Aufgabe 2
+Record-Layout von 2 Tables gegeben, 3 SQL Queries gegeben
+Man sollte sagen, welcher Join-Algorithmus jeweils verwendet werden sollte, und dessen Laufzeit begründen.
+Index Join, weil ein Index existiert. 
+Laufzeit O(m * log(n))
+Hash Join (oder Sort Merge), weil kein Index, aber Equi-Join
+Laufzeit worst case nach Diskussion mit Christoph und Adnan O(n*m), ich glaube immernoch O(n * log(n)), wenn die größere Relation ist
+nested loop weil dependent join arguments
+
+Aufgabe 3
+Linear Hashing
+Tabelle gegeben, mit einem Split. Die Werte sollte man dann selbst einordnen.
+Dann wurden nacheinander neue Werte eingefügt, man sollte die Tabelle jedes mal danach zeichnen
+
+Aufgabe 4
+Btree und Radix. seeehr groß T_T. Page size, key/value größe gegeben, #tuples gegeben, zeiten für zugriffe auf pages/cache als variablen gegeben.
+berechne:
+wie ist die worst time zugriffszeit auf einen beliebigen wert in einem btree mit diesen angaben (zwischenergebnisse: wie hoch ist der tree - wie viel passt in innere / blattknoten)
+argumentiere: warum nimmt man viel lieber einen radix-baum bei in-memory db
+berechne: wie sind die knotengrößen bei einem radix-baum (ganz normal ohne compression
+berechne: worst time zugriff auf beliebigen wert mit radix-baum, was ändert sich wenn tupelmenge sich verdoppelt?
+
+Aufgabe 5
+Code generierung
+Zwei Relationen A und B gegeben, A hat attribute c,d,e, B hat f und g.
+gegeben: generierter code im “push-model”, 
+male relationale Algebra Baum dazu, annotiere jeden Operator mit einer zahl & 
+sage jeweils welche Zeile im generierten Code zu welchem Operator gehört. 
+schreibe eine SQL-92 query auf aus der der Code generiert sein könnte
+ein Buddy von dir will dasselbe mit dem iterator model programmieren. Argumentiere (an einem Beispiel aus der 1. Methode des gen Codes) kurz warum generierter Code wirklich viel besser ist.
+
+x= hashtable()
+y = hashtable()
+
+foreach (tA in A) 
+    if (tA.c = 42)
+        x.insert(tA.d, t )
+        
+
+foreach (tB in B)
+    (i,g) = x.lookup(tB.f)
+    k = y.get_or_insert()
+    
+
+Aufgabe 6
+Buffermanager mit 2Q: Queue Beispiel gezeigt und kurz grob erklärt
+sage welche queue wie heißt
+beschreibe je kurz was die queues machen
+beschreibe in welcher Reihenfolge pages evicted werden
+Dann das Beispiel 4 Schritte weiter
+schreibe auf welche Seiten in welcher Reihenfolge angefragt wurden
+Dann: Ist 2Q immer besser als random eviction? Begründe warum oder gib ein kleines Beispiel eines Falles in dem random besser ist.
+
+Aufgabe 7
+parallelisiere eine Query mit XchgHashSplit(n:m) und Xchg(n:m). Die query: (Γr1:a(A) joina=t1 (σt1=...(B)))
+Γr1:a aggregiert nach r1 und erstellt ein neues Attribut a

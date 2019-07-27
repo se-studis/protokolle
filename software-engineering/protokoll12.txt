@@ -1,0 +1,42 @@
+Prüfungsprotokoll Software Engineering
+Gesamtpunktzahl: 60
+Zeit: 60 Minuten
+LERNT ZEUG AUSWENDIG! (va. Faktoren von Kano 😉)
+
+
+Aufgabe 1 (9 Punkte):
+Warum sollte man Fehler in der Softwareentwicklung möglichst früh erkennen? (Später beheben kostet immer mehr) Nennen Sie zwei möglichkeiten fehler früh zu erkennen. (Requirements Reviews, Unit Tests in der Implementierung) (Punkte 3)
+
+Zusammenhang UC, Kontrakt, SSD, Designklassendiagramm, Konzeptmodell, Reihenfolge aufzeichnen welche beziehen sich aufeinander + Beziehungen/Beeinflussung erklären.
+Aufgabe 2 (6 Punkte): 
+LCOM berechnen (simple klasse mit 3 Attributen + 3 Methoden) und Problem des Verfahrens nennen (3 Punkte)
+
+Code City interpretieren (höhe: Komplexität, Fläche: Testabdeckung, Farbe: # Entwickler)
+→ nennen sie probleme die man aus der Code City ableiten kann (3 Punkte)
+Aufgabe 3 (12 Punkte):
+Konzeptmodell(Domänenmodell) Mietwagenverleih:
+Fahrzeug, PKW (Limo / Cabrio) (Sitzplätze) und LKW (Zuladung), Kunde, Bezahlverfahren (Bar, Kreditkarte, Rechnung)
+Kreditkarteninformationen bei Kreditkartenzahlung, Rechnungsadresse bei Rechnungszahlung
+Aufgabe 4 (11 Punkte): 
+Sequenzdiagramm zeichnen:  (mit opt und loop und sowas!)
+1.	Ein Mitarbeiter einer Bib sucht zuerst einen Kunden anhand der Nummer das System merkt sich diesen User
+2.	Er gibt die Signatur einer Publikation ein
+3.	Das System zeigt die Publikation an
+4.	Nach der Wahl des Kunden fügt der Mitarbeiter die Publikation zur Bestellung hinzu
+5.	Das System zeigt die bisherigen Publikationen in der Bestellung an
+6.	Die Schritte 2 bis 5 werden wiederholt bis alle gewünschten Publikationen in der Bestellung sind
+7.	Der Mitarbeiter gibt die Adresse des Kunden ein
+8.	Das System zeigt die Lieferadresse und das voraussichtliche Lieferdatum an
+9.	Der Mitarbeiter beendet die Bestellung
+10.	Das System speichert die Bestellung in der Datenbank ab
+Alternativer Ablauf:
+10a: Es gibt keine aktive Verbindung
+1.	Das System speichert die Bestellung lokal
+2.	Das System zeigt einen Hinweis an, dass es im Moment keine Verbindung gibt
+Aufgabe 5 (11 Punkte):
+Patterns: liskovsches prinzip für methode von A und subklasse B erklären (anhand der Vor- und Nachbedingung)
+Template Method Pattern: Klassendiagramm zeichnen
+Welches SWE Problem / Herausforderung löst das Architekturpattern Pipes&Filters.
+Aufgabe 6 (11 Punkte):
+Persona für die Aufgabe 3 erstellen (6 Punkte)
+Geben Sie die Faktoren von Kano an und ein Beispiel für jedes an hand eines neuen Fahrrades + Wahl des Beispiels erklären (5 Punkte)

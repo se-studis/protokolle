@@ -1,0 +1,18 @@
+Aufgabe 1
+a) Unterschied Safety und Security erklären
+b) Erklärung mit Beispiel: Accident, Incident, Hazard
+c) Unterschied Verifikation und Validierung erklären
+d)
+Aufgabe 2
+a) Warum sind Minimal Cut Sets der FTA wichtig?
+b) Safety Case vs normenbasierte Sicherheitsanalyse, Unterschiede, Vor-/Nachteile
+   ENTFÄLLT 2014: In 2012 gab es hierzu Folien (siehe Intranet), bei uns nicht mehr.
+c) Vorteile/Nachteile KIV vs DCCA
+d) Warum macht man trotzdem traditionelle Methoden, wenn man DCCA hat?
+Aufgabe 3
+a) Interleaved-asynchrone Komposition formal definieren
+b) Zwei Programmgraphen gegeben, die bei Parallelschaltung nur eine nicht-wohlgeformte Transition haben.
+   Was passiert bei ^q || ^p, ^(q || p), ^q ||i ^p, ^(q ||i p)
+   ^ steht für Vervollständigung, ||i für interleaved-asynchrone Komposition
+c) LTL/CTL-Formeln auf Kripke-Struktur auswerten
+d) LTL/CTL-Formeln für informelle Formulierungen angeben

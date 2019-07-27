@@ -1,0 +1,94 @@
+Was ist Testen?
+-> Def. Myers 1979 usw.
+
+Was ist ein Fehler?
+-> Fehlerwirkung: failure, Unterschied zwischen Ist- Und Soll-Wert
+   Fehlerzustand: fault, Der Zustand in dem der Fehler auftreten kann
+   Fehlerhandlung: error, Die menschliche Handlung die zur dem Fehler führt
+(Anmerkung von Alex, dass die Definition von Myers mit "finding erros" dann wohl nicht ganz richtig ist, sondern man ja die Fehlerwirkung findet)
+
+Wer ist der Mensch der die Handlung durchführt?
+-> Programmierer (hab anfangs fälschlicherweise gesagt, dass es der ist, der das Programm ausführt)
+
+Was kann man nur mit Testen erreichen?
+-> Man kann nur die Anwesenheit und nicht die Abwesenheit von Fehler nachweisen
+
+Was ist ein Testfall?
+-> Vorbedingungen, Menge von Eingaben, Menge von erwarteten Sollwerten, Prüfanweisung, Nachbedingungen
+
+Wieso braucht man Prüfanweisung?
+-> Damit man überhaupt schauen kann, ob das Programm das richtige macht. Sonst bringt ja das Testen nichts
+
+Wir haben uns in der VL ja gar nichts mit dem ausführen von Test beschäftigt, sondern?
+-> Mit dem Finden von Testfällen
+
+Wie geht man den beim Testen so allgemein vor?
+-> Man fängt an mit der Planung. Macht eine Risikoanalyse, eine Priorisierung und legt Test-Ende-Kriterien fest
+
+Welche Testmethoden gibt es denn so?
+->Funktional (black-box), Strukturell (white-box), Modellbasiert
+
+Welche Back-box Testverfahren kennst du?
+->Kategorien-Partitions-Testen, Vor- und Nachb.
+
+Nach ja, ich würde Vor und Nachb. eher wo anderes rein zählen und zwar?
+->Modelbasiert
+
+Was für andere Modelbasierte kennst du noch?
+->Konformanz-Testen
+
+Ja, aber das ist schon sehr fancy. Welches noch?
+-> Testen mit FSM
+
+(Irgendwie sind wir dann auf Katalogbasiertes Testen gekommen):
+Wo würdest du das dazu zählen?
+-> Whitebox
+
+Echt?
+-> ja dann wohl Blackbox
+
+Wie geht das denn genau?
+-> Ich habe einen Katalog mit typischen Fehlern. Z.B. das es oft passiert, das man über die Array Größe hinaus läuft. Und deshalb dachte ich, dass man genau diese Stellen im Code speziell testet und es deshalb zu Whitebox testen dazu zählt
+
+Joa, aber denk mal Kategorie-Partitions-Testen, da hat bekommt man ja viele Test Möglichkeiten. Woher kommen die denn?
+-> Man hat ja Parameter und Kategorien und dann Werteklassen. Wenn man jetzt alle Permutationen testet, hat man sehr viele.
+
+Und wie reduziert man die dann?
+-> mit m-Überdeckung. Z.B. nur zweier Paare
+
+Und statt reduzieren kann man ja auch noch?
+-> Erweitern
+
+Genau und das macht ja dann Katalogbasiertes Testen. Und mit was kann es das jetzt z.B(immer noch ohne Implementierung)?
+-> boundary values
+
+Alex: Ja, genau.
+Dirk: Einigt euch doch auf "BliteBox Testen"
+Alex: Das war jetzt die höfliche Art meines Kollegen mir mitzuteilen, dass ich weiter machen soll. Ich ignoriere das aber ganz gekonnte...na gut. weiter im Stoff
+
+Jetzt bekommst du hier eine Kaffeemaschinenanleitung und sollt die jetzt Testen.
+-> (Erst gelesen) Und jetzt könnte ich hier Konformanz-Teste machen. Also ein Modell erstellen und es dann mit der Maschine vergleichen.
+
+Ja, richtig, aber was wäre einfacher?
+-> Eine FSM und dann Transitionstour
+
+Und wie finde ich so eine?
+-> Eulerkreis berechnen
+
+Geht das immer?
+-> Nein, nur wenn der Graph balanciert und stark zusammenhängend ist.
+
+Wenn ich eine Chinese-Postman Tour habe ist das dann immer eine Euler Tour?
+-> Ja
+
+
+Dirk:
+Symbolic Exection von ausführen (Ziel zum assert(false) zu kommen)
+
+if (a < 5)				({a -> x},  {x < 5})
+	b = a;				({a -> x, b -> x},  {x < 5})
+	if (b >= 5)			({a -> x, b -> x},  {x < 5, x >= 5})
+		assert(false);	
+
+		-> Entweder macht das ein Solver für mich oder ich stell selber fest, dass es nicht geht ;)
+

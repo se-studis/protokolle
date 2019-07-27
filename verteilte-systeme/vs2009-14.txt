@@ -1,0 +1,466 @@
+2014
+Was	sind	verteilte	Systeme?
+Was	sind	die	Probleme?
+Stellt	die	Fragen	nach	Problemen	und	Herausforderungen	explizit	getrennt.	Will	
+Deadlocks,	fehlende	globale	Uhren	hören.
+Was	sind	die	Herausforderungen?
+Zähle	die	einzelnen	Punkte	auf.	Unterbricht	bereits	bei	Punkt	6	"Transparency"	und	will	
+eine	Möglichkeit	hören,	dem
+entgegenzuwirken:	=>	Middleware
+Welche	Arten/Implementierung	von	Middleware	gibt	es?
+BÖSER	Fehler:	Ich	nenne	IBM	MQ	Series	....
+Alle	weiteren	Fragen	bauen	darauf	auf.	Die	Erklärung	erfolgt	durch	eine	abstrakte	
+Skizze,	in	der	ich	die	Hauptkomponenten	(MQ,	MCA)	nenne
+Was	sind	die	Aufgaben	des	MCA?
+Kommen	wir	nun	auf	die	Tables	zu	sprechen	(Gemeint	sind	die	Alias- und	Routing-
+Table,	die	er	mir	nennen	muss)
+Was	sind	deren	Aufgaben/was	steht	in	ihnen?
+Welche	Arten	von	Mutexen	gibt	es?
+Zu	Token	Ring:	Gibt	es	eine	Möglichkeit	der	Priorisierung?	Wie	könnte	ich	sicherstellen,	
+dass	die	Reihenfolge	eingehalten	wird,	in	der	das	Token	von	Prozessen	angefordert	
+wird?
+(Vorschlag:	Ich	setze	meine	ID	+	Timestamp	im	Token	und	reiche	ihn	einmal	herum.	
+Wenn	ein	Prozess	zu	einem	früheren	Zeitpunkt	ihn	angefordert	hat,	bekommt	er	ihn)
+Was	weißt	du	zu	Multicasts?	Welche	Arten	von	Multicasts	gibt	es?
+Thema	Uhren:	Was	fällt	dir	dazu	ein?
+Wie	kann	eine	Synchronisation	erfolgen?
+Wie	funktionieren	Vektor- Uhren	(Skizze)?
+-------
+Solls	im	Großen	und	Ganzen	gewesen	sein.	Richtig	tief	rein	gings	eigentlich	nur	(wie	bei	
+allen	anderen	auch)	zur	Middleware.	Je	nach	Belieben	kann	hier	RMI	oder	CORBRA	eine	
+bessere	Wahl sein.
+Ansonsten	gings	mehr	um	die	Konzepte,	die	nur	kurz	geschildert	bzw.	skizziert	werden	
+mussten.
+
+-------------------------------------------
+
+2013
+Vorab:
+Ich	hab	versucht	das	Ganze	etwas	zu	strukturieren.	Er	geht	eher	chaotisch	vor	- bei	mir	
+war	die	dritte Frage	direkt	nach	Mutex/	Locking.
+Er	hatte	an	dem	Tag	keinen	Beisitzer,	weshalb	er	fast	noch	mehr	auf	den	Laptop	
+geschaut	hat	als	in	den	anderen	Protokollen	beschrieben.
+---
+Was	ist	ein	verteiltes	System?
+Einfach	eine	Definition	aufsagen.
+Was	gibt	es	da	für	Herausforderungen?
+Alle	7	aufzählen.
+Erklär	mal	Transparency.
+Beudeutet,	dass	man	die	Vermittlung	abstrahiert,	also	z.B.	Location	(mir	ist	egal	wo	es	
+liegt)	oder	Language	(man	kombiniert	verschiedene	Sprachen,	so	wie	z.B.	bei	CORBA).
+Was	kennst	du	für	Möglichkeiten	für	Interprozesskommunikation?
+RPC,	RMI,	MOM,	Message	Passing	Interface
+Erklär	mal	eins	davon	(hab	RMI	genommen):
+Im	wesentlich	ne	Skizze	mit	Proxy,	Dispatcher,	Skeletion	aufmalen	und	erklären	wie	
+Requests	verarbeitet	werden.
+Wir	haben	uns	ja	auch	damit	beschäftigt,	wie	die	Kommunikation	ablaufen	kann.	Was	
+gibt's	da	für	Arten?
+Transient/	Persistent	&	Synchron/	Asynchron	(er	wollte	n	paar	Skizzen	dazu	wie	Sender	
+und	Empfänger	dann	jeweils	reagieren	- v.a.	die	3	Varianten	bei	synchron)
+Wie	schaut	das	bei	RPC/	RMI	aus?
+Synchron,	Transient
+Was	gibt's	für	persistente	Kommunikation?
+MOM/	JMS
+Das	geht	aber	ja	nur	mit	gleicher	Syntax.	Wir	haben	uns	ja	daher	MQSeries	angeschaut.	
+Erklär	mal:
+Wieder	ne	Skizze	mit	Client	+	Proxy,	Queue	Manager	+	Server	Stub	+	MCAs	+	Queues.	
+Dabei	den	Ablauf	von	nem	Request	erklären.	Er	musste	mir	noch	aus	der	Nase	ziehen,	
+dass	sich	die	MCAs	um	den	Verbindungsaufbau	kümmern.
+Was	kennst	du	für	Verfahren	für	Mutex/	Locking?
+Semaphoren	(da	wollte	er	aber	gleich	wissen warum	die	in	verteilen	Systemen	nicht	gut	
+sind:	Bottleneck	bzw.	Synchronisation	von	Kopien),	Ring- Token,	Koordinator,	Verteilt
+Bei	allen	musste	man	die	Konzepte	grob	erklären,	auch	wieder	mit	Skizze.	Er	hat	dabei	
+auch	immer	wieder	gefragt,	was	man	macht	wenn	z.B.	das	Token	verschwindet,	oder	ein	
+Rechner	verreckt	(z.B.	der	der	Lock	managed	oder	der	der	es	hat).
+Was	kennst	du	für	Verfahren	für	Voting	(das	kam	relativ	verknüpft	mit	dem	davor	da	
+man	evtl	das	Token	neuzuweisen	musste	oder	Ähnliches)
+Ring,	Bully,	Makawa.	Auch	hier	wieder	Konzepte	erklären/	skizzieren	(alles	nicht	extrem	
+vertieft).
+Was	fällt	dir	zu	Uhren	ein?
+Es	gibt	physische	und	logische.
+Dann	erklär	mal:
+Physisch:
+Es	gibt	interne	und	externe	Synchronisation.	Hab	dann	mit	dem	internen	Algorithmus	
+für	synchrone	System	angefangen	(auch	wieder	grob:	Wie	man	die	Zeit	dann	setzt,	nicht	
+mehr).	Hab	dann	noch	Christian	erklärt,	wobei	er	da	dann	relativ	schnell	abgebrochen	
+hat	("Jaja	geht	halt	net	so	genau,	also	nehmen	wir	logische	Uhren")
+Logisch:
+Einfach	ein	Beispiel	mit	drei	Prozessen	hinmalen	und	dann	kurz	die	primitiven,	
+logischen	und	die	Vektor- Uhren	erklären.	Dazu	wollte	er	noch	die	Eigenschaft	wissen,	
+dass	man	weiß	dass	die	zeitliche	Reihenfolge	mit	der	logischen	äquivalent	ist	und	dass	
+die	nur	bei	Vektoruhren	gilt.
+Mach	in	der	Zeichnung	mal	einen	inkonsistenten	Schnitt:
+Man	malt	einfach	einen	Strich	der	das	Empfangen	aber	nicht	das	Senden	einer	Nachricht	
+enthält.
+Was	ist	ein	konsistenter	Schnitt	eigentlich?
+Der	führt	zu	einem	konsistenten	global	state	wenn	man	z.B.	einen	Snapshot	machen	will.
+Was	kennst	du	für	Algorithmen,	um	Snapshots	zu	bauen?
+Naiv:	Man	nimmt	einen	logischen	Zeitpunkt,	packt	diesbezüglich	pro	Prozess	alles	rein	
+was	bis	dahin	passiert	ist	und	fügt	noch	die	Nachrichten	hinzu	die	gesendet	aber	nicht	
+empfangen	wurden.	Dafür	braucht	man	aber	logische	Uhren.
+Warum	die	Nachrichten?
+Wenn	man	das	System	aus	dem	Snapshot	startet,	will	man	ja	dass	es	so	läuft	wie	das	
+Ausgangssystem.
+Was	kennst	du	noch	für	einen	Algorithmus?
+Den	Chandy ...	Irgendwas.	Man	schickt	bei	einer	Anfangsnode	einen	Go- Marker	per	
+Broadcast	und	nimmt	alles	in	den	Snapshot	auf	bis	sie	alle	Antworten	auf	die	Marker	
+bekommen	hat.	Jede	andere	Node	die	den	kriegt	macht	das	Gleiche.	Sobald	alle	Node	alle	
+Marker- Antworten	haben,	ist	der	Snapshot	fertig.
+Hm..	was	hab	ich	noch	net	gefragt	...	Was	ist	denn	der	Unterschied	zwischen	Prozess	und	
+Thread
+Prozess	=	Applikation	in	OS	Umgebung.	Thread	=	kosteneffizienter	+	schedulable	+	läuft	
+auf	Prozessen
+Erklär	mal	Thread	Pooling
+Man	stellt	eine	bestimmte	Anzahl	von	Threads	zur	Abarbeitung	einer	Aufgabe	bereit.
+Da	gab's	noch	so	andere	"per	..."	Geschichten.	Erklär	die	mal:
+per	Connection,	per	Request,	per	Object	(evtl.	will	er	kleine	Beispiele	haben).
+---
+Hoffe	ich	hab	nix	vergessen	...
+Zu	Multicast	kam	jedenfalls	keine	einzige	Frage.
+CORBA	hat	nur	kurz	wissen	wollen	was	man	mit	der	IDL	macht.
+DSM	kam	ebenfalls	keine	Frage	bei	mir.
+
+---------------------------
+
+2013
+Meine	Prüfung	war	sehr	ähnlich.
+Er	hat	die	phyischen	Uhren	und	ein	paar	Kleinigkeiten	ausgelassen,	ansonsten	praktisch	
+die	gleichen	Fragen.
+Insgesamt	recht	oberflächlich,	Details	waren	nicht	wirklich	wichtig.
+Noch	zwei	Tipps:
+- Labert	bei	den	Sachen,	die	ihr	gut	kennt,	einfach	möglichst	lang	rum	um	ihn	zu	
+beschäftigen
+- Viele	Skizzen	machen,	kostet	Zeit,	und	er	schaut	sowieso	nicht	so	genau	hin
+
+---------------------------
+
+2013
+Kann	mich	meinen	Vorrednern	nur	anschließen.
+Wenn	man	viel	erzählen	kann,	dann	fragt	er	nichts.	Ich	habe	dabei	selbst	von	Thema	zu	
+Thema	übergeleitet,	sodass	er	fast	nie	etwas	gesagt	hat,	außer	"hmm,	ja",	"ja	genau"	und	
+"genau,	passt"
+Insgesamt	eine	coole	Prüfung	(klingt	komisch,	aber	die	Prüfung	hat	echt	Spaß	
+gemacht )
+CORBA	hatte	ich	nicht	erwähnt,	wurde	dann	auch	nichts	gefragt	^^
+MULTICAST	hat	er	auch	ausgelassen.
+
+---------------------------
+
+2013
+1)	Was	ist	ein	verteiltes	System?
+- >	Blubb
+2)	Herausforderungen?
+- >	Blubb
+3)	Synchronisation	- gutes	Stichwort	- wie	macht	man	wechselseitigen	Ausschluss	im	
+Verteilten?
+Zentral	/	Dezentral	/	Token	Ring
+4)	Election	Algorithmus
+Bully	Algorithmus	erklären
+5)	Was	ist	eine	Middleware?
+- >	Blubb
+6)	Corba
+Wie	sieht	das	aus?	Was	passiert	da?	Nen	bisschen	"tiefer"	was	die	ganzen	Komponenten	
+machen.	DII/DSI	...
+7)	RPC/RMI	generell	(das	war	während	Corba	eingeschoben)
+Wie	sieht	das	aus?	Warum	macht	man	das?	Was	passiert	dazwischen?	
+Marshalling/Unmarshalling?
+8)	An	der	Stelle	noch	kurz	Sockets
+9)	MOM	(persistente	Kommunikation)
+MQSeries	erklären	(MCA,	Queue	Manager,	...)
+10)	Uhrensynchronisation
+Physisch,	Logisch	(Lamport	und	Vektor)
+Dabei	dann	konsistenter	Schnitt/inkonsistenter	Schnitt
+Globaler	Zustand
+11)	Frage	ob	ich	mich	mit	P2P,	WebServices,	Prozessorientierung	und	Pi- Kalkül	
+auskenne	(das	letztere	denk	ich	war	Spaß	weil	wir	irgendwo	ins	Theoretische	verfallen	
+sind)
+Mit	ja	beantwortet	- >	Fertig
+Das	wars.	Alles	in	allem	wird	irgendwie	alles	geprüft,	aber	er	geht	nur	selten	(gar	nicht?)	
+in	die	Tiefe.	Man	darf	fast	die	ganze	Zeit	frei	reden	und	er	scheint	auch	froh	drüber	zu	
+sein	(hat	bei	mir	oft	einfach	im	Notebook	emails	gecheckt).	Am	Schluss	gibts	noch	
+Smalltalk.	Sehr	entspannt.	Gerne	wieder.	++
+2:
+1.	Was	ist	ein	VS?
+...
+2.	Was	gibt	es	da	so	für	Probleme?
+...
+3.	Welche	Lösung	fällt	dir	da	spontan	zu	(irgendeinem)	dieser	Probleme	ein?
+- >	Gegenseitiger	Ausschluss:	zentral,	dezentral,	Ring
+4.	Wie	geht	MOM?
+- >	Bild: Client	Broker,	CLient
+4a.	Wie	macht	IBM	das?
+- >	Noch	MCAs	dazu	gemalt,	das	hat	gereicht
+5.	Was	weißt	du	sonst	noch	so?
+- >	Chord	Algorithmus	für	Peer- to- Peer
+6.	Willst	du	aufhören?
+- >	Ja
+7.	(Achtung	Ironie)	Was	hast	du	so	die	letzten	20	minuten	gemacht?
+- >	(Ironie	Ende)dir	Bilder	aufgemalt,	die	du	nicht	angeschaut	hast,
+während	du	die	ganze	Zeit	"mhmm"	gesagt	und	auf	deinem	Laptop	rumgetippt
+hast	ohne	mir	ansatzweise	das	Gefühl	zugeben,	dass	du	mich	herausfordern
+willst.
+3:
+1.	Was	ist	ein	VS?
+2.	Welche	Herausforderungen?
+3.	Beschreibe	zwei	Herausforderungen	genauer!
+4.	Was	ist	Middleware?	Welche	Middleware- Ansätze	haben	wir	kennengelernt?
+5.	Was	ist	MOM?	Wie	funktioniert	MQSeries?	Wie	funktioniert	die	
+Nachrichtenübertragung	in	MQSeries	(zwischen	MCAs)?
+6.	Wie	funktioniert	CORBA?	Static/Dynamic	Binding,	IDL,	DII,	DSI,	etc.
+7.	Was	machen	Proxy/Skeleton?	Was	kann	ich	mir	unter	Marshalling	vorstellen?
+8.	Welche	Möglichkeiten	für	gegenseitigen	Ausschluss	gibt	es?	Wie	funktionieren	sie?	
+Probleme?
+9.	Welche	Möglichkeiten	für	Election	gibt	es?	Wie	funktionieren	sie?
+10.	Brauche	ich	synchrone	Uhren?	Wie	kann	ich	Uhren	synchroniseren?	NTP?	Lamport-
+Uhren?	Vektoruhren?
+Skizzen	waren	erwünscht,	wurden	aber	nicht	wirklich	angeschaut.	Angenehm	und	keine	
+Herausforderung.	Overlearnt.
+4:
+1.	Was	ist	ein	verteiltes	System?
+2.	Was	sind	die	Herausforderungen	von	verteilten	Systemen?
+3.	Transparenz?	Wie	erreicht	man	das?	– Middleware
+4.	Was	für	Arten	von	Middleware	haben	wir	kennengelernt?	– z.B.	MOM
+5.	MOM	hinzeichnen
+6.	Wie	macht	IBM	das?	– MQSeries	hinzeichnen
+7.	Bei	6.	gab's	nen	kurzen	Einschub	zu	RPC
+8.	Was	kennst	du	noch	für	Möglichkeiten	für	Interprozesskommunikation?	– Sockets
+9.	Sockets	erklären	inkl.	Unterschied	zwischen	TCP	und	UDP
+10.	Distributed	Shared	Memory	erklären	inkl.	write- update	und	write- invalidate	(hab	
+ich	aber	nur	ganz	oberflächlich	erklärt)
+11.	Tuple	Spaces
+12.	Mutex	im	verteilten	System	(zentral,	dezentral,	ring).	Welche	3	Eigenschaften	haben	
+wir	für	Mutex	definiert?	– Nie	2	gleichzeitig	in	CS,	fairness,	liveness.	Dann	sollte	ich	
+sagen,	welche	Eigenschaften	in	den	jeweiligen	Fällen	gelten.
+13.	Uhrensynchronisierung	(in	synchronen	und	asynchronen	Systemen),	logische	Uhren	
+(Lamport	und	Vektoruhren)	inkl.	Einzeichnen	von	konsistenten	und	inkonsistenten	
+Schnitt.
+14.	Kennst	du	dich	mit	Peer- to- Peer	aus?	– Ja
+15.	Kennst	du	dich	mit	Stream- Oriented- Communication	aus?	– Ja
+16.	Wollen	wir	aufhören?	– Ja
+Ziemlich	lockere	Prüfungen.	Habe	fast	die	ganze	Zeit	nur	erzählt	und	er	geht	eigentlich	
+fast	nie	ins	Detail.	Außerdem	hatte	ich	den	Eindruck,	dass	er	nicht	wirklich	immer	
+aufgepasst	hat	was	ich	ihm	erzählt	habe.
+
+-------------------------
+
+2013
+Meine	Prüfung	ging	damit	los,	dass	Herr	Baur	zum	Kaffe	holen	ist	und	der	Beisitzer	die	
+Fragen	stellen	sollte.
+Was	ist	ein	Verteiltes	System?
+- >	Rechner,	parallel,	kein	gemeinsamer	Speicher,	gemeinsam	genutzte	Ressourcen,	
+Nachrichtenbasierte	Kommunikation	(gab	ein	Kopfschütteln...),	erscheint	dem	User	als	
+ein	Ganzes	(gab	ein	Nicken).
+Was	sind	da	die	Hauptherausforderungen?
+- >	Heterogene	Grundlagen,	Offenheit,	Skalierbarkeit,	Sicherheit	und	Datenschutz,	
+Fehlerbehandlung,	Parallelität	und	Transparenz.	Hab	alles	bissl	erklärt,	da	kamen	dann	
+auch	keine	Fragen	mehr	dazu.
+Was	ist	eine	Middleware?
+- >	Programm,	das	die	Vermittlung	zwischen	Anwendungen	übernimmt	(Kommunkation,	
+Ressourcen),	wobei	von	dem	"wie"	abstrahiert	wird.
+An	dieser	Stelle	kommt	Prof.	Baur	mit	einer	Tasse	Kaffee	herein:	Ah	ok,	ihr	seid	schon...?
+- >	fertig!	Ja
+Lachen...
+Er	setzt	sich	hin	und	tippt	am	Laptop.	Nach	einer	Weile	peinlicher	Stille	schaut	er	auf	
+und	meint	zum	Beisitzer:	Sie	können	ruhig	weiterfragen.
+Was	ist	MOM?
+- >	...
+Wie	funktioniert	MOM?
+- >	aufmalen,	erklären
+Was	ist	MQSeries?
+- >	da	gibts	halt	QueueManager,	die	das	Routing	übernehmen...	aufgemalt,	erklärt.
+Was	ist	RPC?
+- >	Remote	Procedure	Call
+Was	macht	man	damit?
+- >	Externe	Funktionen	aufrufen,	aber	sich	dabei	so	fühlen,	als	wär's	lokal.
+Wie	macht	man	das	in	Java?
+- >	RMI,	weil	Java	objektorientiert	ist	und	RMI	Funktionen	auf	Objekten	aufruft.
+Was	passiert	da?	(Zeigt	in	meiner	Skizze	auf	Stub)
+- >	Marshalling,	die	Serialisierung	dessen,	was	verschickt	werden	soll
+Beispiele	aufzeichnen	zu	transient,	persistent,	synchron,	asynchron:
+- >	Hab	ne	schöne	vier- Felder- Tafel	hingemalt.
+Was	ist	da	RPC?
+- >	Ich	versteh	die	Frage	nicht?
+Muss	ich	da	an	deim	Buildl	was	verändern,	dass	des	RPC	is?
+- >	Ich	versteh	die	Frage	nicht?
+Ist	RPC	synchron	oder	asynchron?
+- >	Man	kann's	implementieren	wie	man	will...	(Keine	Ahnung	wie's	is,	glaub	synchron)
+Er	wollte	dann	darauf	hinaus,	ob	das	Acknowledge	nach	dem	Empfang	der	Nachricht	
+gesendet	wird	oder	nach	Beendigung	des	remoten	Prozeduraufrufs.
+CORBA	erklären:
+- >	hab	DSL	als	Spezifikation	für	Kommunikationsdaten,	RequestBroker	als	Vermittler,	
+Stub	und	Skeleton	als	"(un- )	Marshaller"	erklärt.	Alles	schön	aufgemalt.	In	Richtung	DII	
+und	DSI	gings	dann	gar	nicht	mehr.
+Wie	funktioniert	Mutex?
+- >	Zentral	über	Coordinator	(aufgemalt,	erklärt),	dezentral	(aufgemalt,	erklärt),	
+Ringbasiert	(...)
+Hatten	wir	schon	die	drei	Kriterien?	Nein?	Ach	dann	bitte..
+- >	Nur	einer	im	kritischen	Bereich	(Safety),	Jeder	wird	irgendwann	rein	und	
+rauskommen	(Lebendigkeit),	Eingangsreihenfolge	gleich	der	Anfragereihenfolge.
+Hab	zum	Ringbasierten	dummerweise	gesagt,	dass	man	im	Arsch	ist,	wenn	der	Knoten	
+mit	dem	Token	weiterarbeitet,	seine	Kommunikationsleitungen	zu	den	anderen	aber	
+versagen.
+Wie	lösen	wir	das	Problem	denn?
+- >	Meine	Idee	war	dann,	dass	man	das	Token	nur	für	eine	gewisse	Zeit	haben	darf.
+Welche	Kriterien	gelten	bei	den	vorhin	erwähnten?
+- >	Immer	1 und	2,	nicht	aber	3	wegen	Latenzen
+Wo	hatten	wir	noch	nen	Algorithmus	mit	Ring?
+- >	Chord	bei	P2P
+Einen	Algorithmus	2.	Generation	erklären:
+- >	Hab	Plaxton	genommen	(Neighbourhood	Table).
+Wie	funktioniert	der	Bully- Algorithmus?
+- >	Der	Knoten	mit	höchster ID	wird	neuer	Koordinator	(aufgemalt,	erklärt)
+Mann	kann	alles	fragen,	aber	nicht	in	30	Minuten.	Dankeschön.
+An	Uhrensynchronisation	kann	ich	mich	nicht	mehr	erinnern...	war	wahrscheinlich	
+keine	Zeit	mehr Im	Prinzip	hab	ich	alles	was	nur	ging	aufgemalt	und	an	nem	
+Beispiel	erklärt.	Daran	konnt	ich	Algorithmen	leichter	erklären,	zumdem	hat's	Zeit	
+gefressen
+
+--------------------------
+
+Meine	Prüfung	verlief	so:
+Sind	sie	zur	Prüfung	hier?	Haben	wir	noch	einen	vor	der	Mittagspause?
+- ja
+Was	ist	ein	Verteiltes	System?	[Fängt	an	seine	Emails	zu	checken]
+- Definitionen	runtergebetet
+Welche	Herausforderungen	gibt	es	da?
+- Die	7	Herausforderungen	genannt.	Und	je	noch	erklärt	was	sie	bedeuten.	Dann	gleich	
+weitergemacht	mit:	Es	gibt	verschiedene	Methoden	um	Damit	umzugehen.	Z.B.	Corba.
+Dazu	habe	ich	das	Bildchen	mit	Client	App	=>	Client	Stub	=>	Orb	=>	Orb	=>	dispatcher	
+=>	Server	Stub	=	Server	hingezeichnet.
+Gehen	Sie	mal	genauer	auf	die	Architektur	von	Corba	ein.
+- Bildchen	mit	IDL	hingemalt	und	dass	daraus	Header	und	Client	+	Server	Stubs	
+generiert	werden	können.
+Was	steht	in	der	IDL?
+- Die	Methodennamen,	Parameter	und	Rückgabewerte
+Was	noch?
+- Ist	mir	nicht	eingefallen.	Gesucht	war:	Die	Datenstrukturen	für	die	Parameter.
+Weiter	mit	der	Corba	Architektur.
+- Implementation	Repositore,	Interface	Repository	und	Referenzen	zum	Bildchen	
+hinzugefügt.
+[Nicken]	Hm,	was	fehlt	noch…
+- DSM.	Design	Aspekte	genannt	und	je	erklärt	(Struktur,	Update,	Synchronisation,	
+Konsistenz,	Granularität)
+Javaspaces?
+- Tupel	in	Tupelspace	einfügen	oder	rausnehmen,	aber	nicht	verändern.	Auch	nach	
+Mustern	suchen.	Damit	kann	man	DSM	realisieren	und	Continuation	passing.
+Dann	wurde	ja	schon	viel	gesagt.	[Beisitzer:	Uhren	fehlen	noch]	ja	genau:	Uhren.
+- Erklärt,	dass	Uhrensynchronisation	wichtig	ist,	z.B.	in	Auktionssystemen.	Dafür	gibt	es	
+den	Cristian	Algorithmus	(kurz	erklärt).	Und	es	gibt	weitere	statistische	Methoden	um	
+das	Ergebnis	zu	verbessern.	Man	muss	sich	überlegen,	ob	man	über	Internet	oder	
+innerhalb	des	LAN	synchronisiert.	Ist	aber	alles	zu	langsam,	also	brauchen	wir	logische	
+Uhren.	Logische	Uhren	ausführlich	erklärt	und	die	Happened	before	Beziehung	
+eingeführt.	Erklärt,	dass	nur	eine	Implikaitonsrichtung	gilt	und	die	Vektoruhren	besser	
+sind.	Vektoruhren	ausführlich	erklärt.	=>	Zeit	um,	Prüfung	zu	Ende.
+Insgesamt	war	meine	Strategie:	So	viel	und	lange	wie	möglich	reden,	denn	Fehler	kann	
+man	nur	machen,	wenn	man	den	Prof.	Bauer	zu	Wort	kommen	lässt.	Ich	hätte	noch	
+einige	Lücken	im	Wissen	gehabt,	aber	er	ist	nicht	dazu	gekommen	sie	abzufragen.
+
+------------------------------
+
+2013
+1)	Was	ist	ein	verteiltes	System?
+- >	Blabla
+2)	Was	gibt	es	für	Herausforderungen?
+- >	Die	7	Herausforderungen	aufgezählt	und	zu	jeder	n	bisschen	was	erzählt	worums	da	
+geht
+3)	Transparenz,	was	versteht	man	darunter	und	wie	kann	man	das	erreichen?
+- >	abstrahiert	davon wie	vermittelt	wird.	Das	macht	man	mit	Middleware.
+4)	Was	für	Middleware	gibts	denn?
+- >	MOM	zB	MQSeries
+5)	abstrahiert	das	von	der	Progsprache?
+- >	nein,	dafür	gibts	sowas	wie	CORBA...durfte	dann	die	CORBA- Architektur	aufmalen	
+und	erklären
+6)	was	gibts	denn	noch	an	Middleware
+- >	MOM	und	MQSeries	(da	hatte	ich	dann	schon	das	Gefühl	dass	er	mir	net	zuhört	weil	
+ich	das	vorher	schon	alles	erwähnt	hatte	^^)	durfte	ich	dann	auch	aufmalen	und	
+erklären
+7)	Wie	kann	man	denn	Mutexe/Semaphoren	umsetzten?
+- >	zentral/dezentral/Token- Ring	aufmalen	und	erklären
+8)	Was	wenn	der	Koordinator	ausfällt?
+- >	hab	den	Bully- Algorithmus	erklärt	und	den	Wahlalgorithmus	für	den	Token- Ring
+9)	Wie	geht	das	beim	Token- Ring?
+- >	(hier	war	ich	mir	sicher,	dass	er	mir	garnet	zuhört	^^)	also	den	Wahlalgorithmus	für	
+den	Token- Ring	NOCHMAL	erklärt	^^
+10)	Was	kannst	du	denn	zu	Thread- Pools	erzählen?
+- >	Was	ein	Threadpool	ist,	wozu	man	das	braucht.
+11)	Was	für	Modi	gibts	da?
+- >	Thread	per	Connection	- Thread	per	Request	- Thread	per	Object	(RMI)
+1 2)	Was	wenn	man	mehr	Anfragen	als	Threads	hat?
+- >	Naja	entweder	man	Puffert	die	Anfragen	und	hofft	dass	man	se	später	mal	abarbeiten	
+kann	oder	man	erstellt	einfach	neue	Threads.
+13)	Was	kannst	du	zu	DSM	erzählen?
+- >	Naja	grob	das	Konzept	erklärt...
+14)	Wie läuft	denn	das	bei	Tuple- Spaces?
+- >	Man	kann	da	so	Tuppel	reinstecken	und	per	Query- By- Exampel	suchen.
+15)	Und	bei	Java- Spaces?
+- >	Da	hat	man	halt	Objekte	statt	Tupeln
+16)	Puh	was	kann	man	denn	noch	fragen?	Beisitzer:	"Uhren"	Aja	Uhren...erklärt	doch	
+mal	NTP
+- >	N	bissl	NTP	erklärt,	dazu	dann	noch	Cristian.
+17)	Hm...man	könnte	noch	was	zu	logischen	Uhren	fragen	aber	das	weiß	er	bestimmt	
+au...mach	ma	lieber	Schluss
+Damit	wars	das	dann	^^
+Insgesamt	sehr	entspannt,	er	ist	nie	wirklich	in	die	Tiefe	gegangen,	hatte	ehrlichgesagt	
+auch	nicht	das	Gefühl	dass	er	mir	wirklich	zuhört.	Aber	mir	solls	recht	sein	^^
+Viel	Glück	noch	dem	Rest	=)
+
+----------------------------------
+
+2009
+#	Allgemein
+*	Keine	Folien	auswendig	lernen,	verstanden	haben
+*	Erklären	und	herleiten	in	der	Prüfung	ist	genauso	gut
+*	Konzepte	verstehen,	einordnen,	nicht	sklavisches	Halten	an	die	Folien
+*	Wichtig:	Vor- und	Nachteile,	Was	kann	passieren,	was	ist	der	Worst	Case,	wie	komplex	
+ist	es?
+#	Einleitung
+Was	ist	ein	verteiltes	System?	Beispiele,	Gründe,	Definition,	Herausforderungen,	
+Probleme,	Lösungen.
+Distributed	shared	Memory,	Probleme	etc.,	Middleware
+#	Communication
+Interaktionsmodelle,	Zeit,	Latenz	...	Probleme	bei	der	Übertragung	(Folie	69).	Wann	
+kann	man	was	nehmen	und	wie	gut	wird	es	sein?	Synchones,	asynchrones	Modell,	
+Ausfälle,	keine	Datentabellen	lernen,	ISO/OSI	Idee	verstehen,	Wieso	hoch	und	runter.	
+Overhead	durch	die	einzelnen	Layer,	Was	ist	eine	Middleware,
+IPC	IST	WICHTIG,	Verfahren	kennen,	Datenrepresentation	grob,	IPC	Mechanismen	
+kennen,	"da	prüf	ich	quer	durchs	Gemüsebeet",	Bildchen	merken,	herleiten	wie	es	
+funktioniert,	Message	Oriented	kennen,	Token	Bucket,	RPC	kennen	mit	API	Zeug	und	so,	
+Marshalling,	Unterschied	RMI/RPC	und	Webservice,	Distributed	Shared	Memory,	
+Syncmengen,	nicht	Definitionen	beten	sondern wissen,	was	es	bringt.	Tuple	Spaces,	rein	
+raus	schreiben,	Blackboard	Analogie,	Wie	unterscheiden	sich	Javaspaces	und	
+Tuplespaces,	Persistenz,	wie	finden,	deterministisch,	nicht	deterministisch,	mehrere	
+Zugreifer	etc.,	was	ist	UDP,	TCP,	wie	beeinflussen	sie	die	anderen	Verfahren,	mehrfach	
+Empfang,	keine	Übertragungssicherheit,	was	passiert	bei	einem	Verfahren,	wenn	die	
+Verbindugn	wegfällt	etc.,	MQSeries,	Probleme	bei	Streamorientierten,	was	ist	QoS,	
+welche	Aspekte,	RSVP	MUSS	NICHT	UNBEDINGT	SEIN,	Token	Bucket	erklären,	RPC	und	
+RMI	werden	gemeinsam	geprüft,	Corba,	genau	einmal,	mindestens	einmal	etc.,	auf	
+CORBA	eingehen	können,	Vergleich	IDL	<- >	WSDL,	was	steht	in	so	einer	Interface	
+Description	drin?	Was	sind	Stubs	und	Skeletons	und	woher	kommen	sie,	Remote	
+O bjects,	Referenzen	dabei	etc.,	call	by	ref/value,	SUN	RPC	nach	gleichem	Schema,	nur	
+Grundkonzept.,	Methodenaufruf- Grafiken,	Synchroner	Call,	Asynchroner	Call,	Transient,	
+Persistent,	Synchron/Asynchron,	CORBA	Orb	Aufbau,	DII,	DSI	sollte	man	wissen,	IOR	
+wissen,	keine	Objektorientierung,	Datentypen	Definition,	Subscriber	Pattern,	DSM	
+Probleme	etc.	etc.,	probOwner,	Trashing,	Invalidation,	alles	zu	Tuple	Spaces,	kein	Code.
+#	Prozesse	/	Threads
+Unterschiede,	wann	was,	Worker	Pool	ist	"witzig",	Scheduler	Aktivierung,	Thread	per	
+Connection	etc.	etc.
+Synchronisation:	kein	globaler	Zustand,	Debugging	schwierig,	Uhren- Arten,	
+Uhrensynchronisation,	Logische	Uhren,	Happens	Before,	Lamport	Uhren,	Eigenschaft	
+der	Lamport	Uhren	auf	377,	Vektor	Uhren,	Globaler	Zustand,	Schnitt	einmalen,	was	für	
+einen	globalen	Zustand	S	habe	ich	dann?	Wie	komme	ich	auf	S?	Gibt	es	eine	praktische	
+Umsetzung?	Chandy- Lamport	Algorithmus,	Marzullo	Neiger
+Koordination:	Fehlererkennung	schwierig,	Semaphor,	Algorithmen	für	Mutual	
+Exclusion,	Token	Algorithmus,	Verteilter	Algorithmus,	Voting	Algorithmen,	Ringbasiert,	
+Bully	Algorithmus,	Multicast	nur	das	vorgestellte,	nicht	die	Ordnungen,
+#	P2P
+Erste	Gen,	Napster,	Jxta,	Algorithmen	sollte	man	können.	Einen	Algo	kennen,	andere	
+grob	verbinden	können,	Super	Peers,	Pipes,	Napster	wissen,	Gnutella	grob,	Jxta	Basics,	
+Peers,	Peer	Gruppen,	Pipes	etc.,	Arten	von	Peers,	Einen	second	Generation	Algorithmus	
+kennen,
+#	Webservices
+Kombination	mit	anderen	Technologien,	Directory,	wie	Directory	mit	P2P,	XML	basiert,	
+was	ist	WSDL,	was	ist	SOAP	oder	XMP- RPC,	REST,	UDDI	ist	tot	aber	Konzepte	werden	
+nachgebaut,	BPEL	Programmiersprache	für	Webservices,	was	steckt	da	drin,	
+Bedingungen	,Sequenzen,	Schleifen,	Unterschied	zwischen	Coreo	und	Orchestrierung,	
+OSGi
+#	Grid Computing

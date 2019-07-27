@@ -1,0 +1,88 @@
+Gedächtnisprotokoll- Franzi Geiger:
+Gehrhard hat gefragt. Ich hab seehr oft gar nicht verstanden was er von mir will, also nicht verzweifeln.
+War dann zwischendurch ziemlich witzig weil ich wild geraten hab und der Alex das wohl sehr amüsant fand.
+Und sie mögen falsche Ausdrücke gar nicht!! Immer schön auf saubere Aussprache achten!
+Fazit: Ich habe das Gefühl sie blicken sehr schnell auf welchen Gebiet man nicht soo gut ist(korrekt erklären, Semantik oder Irgendwas auswendig hinschreiben)
+Je nachdem fragen sie glaub ich vertieft.
+
+Anfang: Wie spezifizieren wir?
+Konstruktoren, Generiertheitsklauseln, bei freien Datentypen data specification. Sonst Extensionalitätsaxiom nötig.
+Wie spezifizieren wir Graphen?
+>Brauchen Knoten und Kanten
+>Graph als enrichment von Nodes, >Anreicherung
+>Edges werden spezifiziert.
+Was muss gelten für die Anreicherung von Nodes zu Graph? Hierarchiepersistens und Eindeutigkeit.
+HP und E erklären. >Da haben sie ziemlich drauf rumgeritten, weil ich das nicht so gut erklären konnte.
+
+Ich musst Extensinalitätsaxiom für Edges definieren + Axiom: n /in mkEdge(n1, n2) \equivalenz n= n1 \or  n = n2 
+Nach welchem Definitionsprinzip wurde dieses Axiom definiert? Strukturell Rekursiv,(Nicht nicht rekursiv)
+Graph Extensionalitätsaxiom nur noch beschreiben.
+Welche Definitionsprinzipien gibt es?
+Nicht Rekursiv, Strukturell Rekursiv, Wohlfundiert Rekursiv und Def über Existenz und Eindeutigkeit.
+
+Was ist wohlfundiert Rekursion?
+Man brauch ein noethersch abnehmendes ARGUMENT im Rekursionsschritt/Schleifendurchlauf.
+Was bedeutet noethersch? Beschreiben und sie wollten eine Unendliche Kette sehen. Es ging darum dass bei der Unendlichen Kette die Punkte LINKS sind(... a2 < a1 < a0)
+Wie kann man damit beweisen? Induktion
+>Schreibe Induktionsregel von liste hin(die von den Folien)
+
+DL:
+Schreibe Zuweisungsregel von DL hin.
+Was macht KIV? KIV ersetzt in Gamma und Delta nicht in p und phi. Warum? Ist besser zu lesen, wenn sich Programmvariablen nicht ändern.
+Warum Relationales Semantik für Programme? 
+>Wegen keinem Endzustand für Nicht-Terminierung und Indeterminismus.
+Box Semantik hinschreiben
+Was ist das Problem mit Relationaler Semantik? While und Rekursion
+Wie drücken wir das aus in rel. Sem? Mit Rekursionstiefe und n für Schleifendurchläufe.
+
+Nat Semantik:
+Warum haben wir hier das Problem mit der Rekursionstiefe nicht mehr?
+Wir reden nur noch über herleitbar aus, also den letzten Schritt der Schleife/Rekursion.
+While: Wir brauchen entsprechende Prämissen mit p ausführung und while mit neuen Zuständen.(Regel erklärt)
+Prozedur: Wir brauchen Rumpf als Prämisse.
+
+Was wollen wir mit den Regeln: Die Menge der ableitbaren Konklusionen. 
+Wie kriegen wir die? Regeloperator
+Was tut der? Einmalige Anwendung der Regel.
+WIe kriegen wir ableitbare Konklusionen: KLEINSTEN Fixpunkt.
+Was für Theorien haben wir da? Knaster Tarski und Kleene
+Knaster Tarski heißt Monotonie >nur positive Prämissen dadurch kriegen wir den kleinsten Fixpunkt durch Schnittmenge
+Kleene sagt keine unendlichen Prämissen und stetigkeit, da wollten sie das eig gar nicht soo genau wissen dann noch.
+Ist nat Sem stetig? Ja- Warum? Keine negativen undendlichen Prämissen.
+
+Indeterminismus:
+Ist Nat Sem auch im Indeterminismus noch stetig? Ja- Caro erklärts!
+Aber was ist das Problem: skip or abort ist ableitbar, aber wir wollen jetzt wissen, dass das garantiert terminiert.
+>Wir wollen Garantierten Terminierungsbereich als neue Semantik. Die ist dann nicht mehr stetig da choose hier unendliche Prämissen hat.
+Da haben wir den Strong Diamond. Was macht der jetzt anderst?
+
+Kontrakte:
+Was ist das, was definieren wir damit?
+Benutzer sieht nur Ein und Ausgaben und seine "Knöpfe". 
+Kontrakt= Durch Vor und Nachbedingung: TOTALE KORREKTHEIT der Operation(i-wie so...sie wollten auf jeden Fall total Korrekt hören.)
+Was haben wir dann da? Abläufe
+Was sind Refinements?
+Für jeden Konkreten Ablauf Abstrakter Ablauf. Abläufe sind GLEICH!!
+Was brauchen wir da noch? ABS() Was ist das....
+Was müssen wir für das Refinement zeigen?
+Initialisierung, Anwendbarkeit und Korrektheit.
+Warum ergibt sich aus der ABs und Pre(AOP) die Vorbedingung von COP, bzw. warum darf die Pre(COP) nicht stärker sein als ABS und Pre(AOP)? 
+Weil sonst die konkrete Operation nicht terminieren könnte, obwohl die abtrakte Operation terminiert.
+
+KIV Beweis:
+Ich musste was beweisen, was alle aufeinanderfolgenden gleichen Elemente aus einer Liste zu einem reduziert. Also zb  (a, a, b, b) zu (a, b)
+Induction über #x,
+Apply Hilfslemma(Irgendwas mit Elem)
+Apply Induction
+>Done.
+Execute call wollten sie gar nix wissen.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+Was ist testen?
+
+Womit führt man das Programm aus? Testfall
+
+Wie kommt man an die Testfälle? Spezifikation und sowas
+
+Arten von Tests gibt es? Black, White, Modellbasiert
+
+Wenn Blackboxtest, und dann Implementierung erhält? Ausführen, Testendekriterium, wenn nötig dann Whitebox-Tests ergänzen
+
+Kaffeemaschinenanleitung, Teil davon lesen, auf der Kaffeemaschine rumdrücken (Taste nicht gefunden :D)?
+Wie würdest du das jetzt testen? FSM
+Für diesen Aspekt FSM aufzeichnen
+
+Wie würdest du von dieser FM Testfälle ableiten? Transitionstouren
+
+Wie kommt mman an Transitionstouren? Balancieren, Arboreszenz, Euler (nur nennen alles)
+
+Wenn du das so machst, hast du automatisch einen Chinese-Postman? Nein
+Kannst du damit einen Chinese-Postman bekommen? Ja wäre möglich
+
+Wenn Chinese-Postman, wie komme ich auf eine Balancierung?
+Am Ende des Chinese-Postman eine Kante hinzufügen (zum Anfang) --> Euler-Kreis, damit ist er balanciert (Info: Chinese-Postman ist quasi-balanciert)
+
+
+Was gibts noch außer FSMs noch für State-Maschines? EFSMs (Guards und Actions) 
+
+Wenn EFSM hat, wie kann man noch coolere Testfälle machen? Bedingungsüberdeckung
+
+
+
+Dann Mörschsepp:
+Zeichne mir einen Lattice hin und erkläre mir warum das einen Lattice ist...
+
+Symbolic Execution, was ist da unser Lattice? 
+
+	Top
+(v, y) ....
+	Bottom
+
+
+Wie sieht der Abstract State in Top aus? 
+v alle Werte top zugeordnet oder nichts zugeordnet (wenn man die Zuordnung als partielle Funktion ansieht)
+Gamma ist leer oder true (egal)
+
+Beispiel mit Symbolic Execution - Pfad ausführen... 
+Testfall sagen mit dem man das Beispiel ableiten kann.
+
+Knappo: Wie hättest du das mit meinem Stoff aus der Voreslung gemacht? (weakest precondition)
+
+if ( a < 5 ) {
+  b := a;
+  if ( b >= 5 ) {
+    assert(false);
+  }
+}

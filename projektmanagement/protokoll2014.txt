@@ -1,0 +1,20 @@
+Gefragt wurde:
+- Definition Projekt und Projektmanagement
+- Teufelsquadrat zeichnen, kurz erklären (Fläche muss gleich bleiben)
+- 9 Aufgabenfelder im Projektmanagement
+- Schätzen: 5 Schätzmuster aufzählen. FP-Methode und CoCoMo erklären und Formeln aufschreiben. Namen Barry Boehm kennen. Nicht alle Korrekturfaktoren, aber wie viele, Beispiele, bei CoCoMo Einteilung in Kategorien (4 P's)
+- Planung: drei Typen Netzplan, Namen Metra Potential Method kennen, Knoten zeichnen und erklären, Netzplan ausfüllen (in zwei Richtungen), erklären (Stichwort: kritischer Pfad). Formale Definition nicht kennen
+- Risiken: Wahrscheinlichkeit x Schwere. Priorität: beide Faktoren hoch
+- Qualität: Definition, 6 Qualitätsaspekte (Funktionalität usw), Lenkung/konstruktive Maßnahmen (Beispiele), Sicherung/analytische Maßnahmen (Beispiele). Namen Capability Maturity Model Integration kennen, 5 Stufen aufzählen und kurz erklären
+- Ethik: 4 Punkte GI, 8 Punkte ACM aufzählen
+
+Nichts zu:
+- Prozessmodellen (Wasserfall, Scrum)
+- Unternehmensstrukturen
+- Projektvorbereitung und -Abschluss
+- Delphi-Methode
+- Projektplan, Projektstrukturplan, Projektablaufplan, GANTT-Diagramm
+- Steuerung (z.B. Meilensteintrendanalyse)
+- Änderungsmanagement, Konfigurationsmanagement
+
+Im Allgemeinen fast nur aufzählen und reproduzieren, kaum Fragen bei denen man in dem Moment überlegen oder argumentieren musste.

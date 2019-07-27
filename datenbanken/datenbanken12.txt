@@ -1,0 +1,68 @@
+Gedankenprotokoll der DBS-Klausur am 28.02.2018
+1.	ER-Diagramm in Relationales Schema überführen, verfeinern und create table statements
+2.	Funktionalitäten
+  a.	Funktionalitäten eintragen in ER Diagramm
+  b.	Gegebene Ausprägung für Schema -> Min, Max angeben
+3.	SQL Aufgabe auf dem Unischema mit Erweiterung von Fakultäten und Geschlecht
+  a.	SQL-Statement gegeben: alle Semester der Studenten geordnet, die die Grundlagenvorlesung 5001 hören und die Tabelle hinschreiben.
+  b.	Finde alle Studenten, die Professor xyz kennen
+  c.	Alle Studenten, die sich nur aus Mäeutik kennen, aber nicht aus anderen Vorlesungen
+  d.	Gib Personalnummer und Name von Assistenten und Professoren aus, die den Studenten Feuerbach kennen.
+  e.	Wer hat nicht mindestens eine überfachliche Grundlage gehört? (Das heißt, keine Vorlesung einer anderen Fakultät gehört hat)
+  f.	Gegeben eine Relation R {[A,B,C,D,E]}. Es gilt eigetnlich die MVD A->>B,C. Schreibe ein SQL Statement, das die Tabelle “repariert”, dabei darf nichts gelöscht werden und Schlüsseleigenschaften nicht verletzt werden. Lösungsvorschlag siehe ganz unten.
+4.	Wieder Aufgaben zum erweiterten Schema
+  a.	Tupelkalkül: Finde alle Studenten, die mindestens 2 Vorlesungen bei einem Professor gehört haben
+  b.	Relationale Algebra: Alle Studenten, die geprüft wurden, aber dazu nicht die Vorlesung gehört haben
+5.	Matrix mit Werten vervollständigen, sodass FDs erhalten bleiben
+6.	Normalformen
+  a.	Relation und FDs gegeben, höchste Normalform angeben und begründen
+  b.	Relation und zwei FDs gegeben, trage fehlende Werte ein, sodass die FDs erfüllt sind (war das hier oder in einer anderen Aufgabe?)
+  c.	Dekompositionsalgorithmus anwenden auf gegebene FDs
+7.	Erweiterbares Hashing
+  a.	Hashing-Tabelle mit Studenten gegeben, zwei Studenten bereits eingefügt; zwei weitere Studenten einfügen
+  b.	lokale und globale Tiefe hinzufügen
+8.	Aufgabe zu Historien
+  a.	Schedule, ist der serialisierbar?
+  b.	ein commit verschieben, sodass Schedule auch strikt
+9.	Page Rank
+  a.	Berechne 2 Iterationen zu gegebenem Graph mit Seiten als Knoten, Kanten als Hyperlinks
+  b.	Gegeben zwei Tabellen edge(From, To) und pagerank(Vertex, Weight), implementiere eine Iteration des Page Rank in SQL
+10.	Recovery: System stürtzt ab mit drei gegebenen Transaktionen und X, Y; Wert bei Absturz und Wert nach Recovery gegeben
+  a.	Berechne einen Wert nach Recovery
+  b.	Schreibe ein log was mit der Geschichte konsistent ist
+11.	Robin Hood Hashing
+  a.	Vorteil Robin Hood Hashing gegenüber Linear Probing
+  b.	Einfügen eines Wertes in eine Robin Hood Hash Tabelle (8 Buckets, 7 bereits gefüllt, Hashwerte gegeben)
+12.	SIMD
+  a.	maximaler Speedup bei SIMD
+  b.	Addition von 32-Bit Integer Vektoren konzeptionell in SIMD
+
+Lösungsvorschlag zur MVD-Aufgabe von Christoph (keine Ahnung ob das komplett richtig ist und ob man da noch auf Schlüssel oder so achten muss, aber für dieses Beispiel macht es was es soll): 
+
+create table sprachen (
+ mensch varchar,
+ progsprache varchar,
+ sprache varchar,
+ farbe varchar --lieblingsfarbe 
+);
+
+insert into sprachen values ('Chris', 'Eiffel', 'De', 'blau');
+insert into sprachen values ('Chris', 'C#', 'De', 'blau');
+insert into sprachen values ('Chris', 'C#', 'En','blau');
+
+insert into sprachen
+select s1.mensch, s1.progsprache, s2.sprache, s1.farbe
+ from sprachen s1, sprachen s2
+ where s1.mensch = s2.mensch and not exists ( --ist MVD verletzt?
+   select *
+   from sprachen s3, sprachen s4
+   where s3.mensch = s4.mensch and s3.mensch = s1.mensch and
+   s1.sprache = s4.sprache and s2.sprache = s3.sprache and
+   s1.progsprache = s3.progsprache and        
+   s2.progsprache = s4.progsprache
+ ) and not exists ( -- gibt es das einzufügende Tupel schon?
+   select *
+   from sprachen s5
+   where s5.mensch = s1.mensch and s5.sprache = s2.sprache and	s5.progsprache = s1.progsprache and s5.tee = s1.farbe
+ );
+

@@ -1,0 +1,54 @@
+---------- Caro ----------
+Praxisbeispiel: Roboter mit Lichtsensor will Linie entlangfahren. Hat Ultraschallsensor nach vorn. Wenn Wannd kommt soll er stehen bleiben.
+    Statemachine bla bla (fand er ok, wollte auf Kapseldiagramm hinaus)
+    Dann Kapseldiagramm mit den 3 Komponenten gemalt. Sensoren sind Master, je nachdem ob polling oder Interrupts
+Wie würdest du Architektur machen?
+    Architekturen aufgezählt
+    Würde mit RR mit Interrupts machen. RTOS wäre Overkill
+Wie würdest du Scheduling machen?
+    wollte auf RMS raus
+Welche Periodendauer würdest du wählen und warum?
+    Vielfache voneinander, damit man keine Probleme mit Prozessorauslastung haben.
+Was gibts für andere Schedulingverfahren?
+    Least Laxity, EDF
+Was für ne Art von Regelung ist das bei dem Roboter?
+    Proportional
+Was ist der Typische Regler?
+    PID Regler
+Zeichne Standard Regelkreis
+    mit Messglied
+Wo kommt das im Roboter vor?
+    Strecke: Motoren
+    Regelglied: Anweisungen die die Motoren bekommen
+    Messglied: Sensoren
+Gib die Gesamtübertragungsfunktion aus
+    R * H
+    ---------
+    1 + R * H
+Lustre: beschreib wies funktioniert
+    Kausalität, begrenzter Speicherplatz, Vorhersagbarkeit, perfekte Synchronie (0 Zeit)
+Esterel: Wie macht Esterel Korrektheit
+    Azyklität, logische Korrektheit (für jeden Input nur 1 logisch Kohärenten Zustand)
+    Programmtransition und Anweisungstransition in Relation setzen
+Semantikregel: Sequentielle Komposition, such dir eine aus
+    einen hingeschrieben
+Auf welcher Hardware soll man den Roboter ausführen?
+    die 4 Hardwarealternativen aufgezählt, er wollte vermutlich auf MC raus
+    
+---------- Quirin ----------
+zusätzlich zu Caro:
+loop Regel Semantik von Esterel
+Da muss Zeit vergehen, warum?
+    sonst haben wir Zeno Ablauf
+Schedule Carriing Code, wo macht man des?
+    Giotto
+    
+Grenze bis zu welcher es nen Schedule gibt bei RMS:
+    0.7
+    
+---------- Michelle ----------
+Warum ist EDF besser als RMS?
+    RMS Grenze bei 0.7, bei EDF kann man bis 1 hoch
+    
+---------- Tobi ----------
+Timed Automaton

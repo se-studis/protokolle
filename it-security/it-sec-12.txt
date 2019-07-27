@@ -1,0 +1,25 @@
+---------- Manu, Michelle & Tobi ----------
+- Jeder soll 2 Angriffe sagen (irgendwelche)
+- Was ist Kryptographie?
+- Was ist bei einer Signatur anders?
+- Symmetrisch
+- AES Schritte
+- Angriffe auf AES
+--> Seitenkanal
+--> Schlüssellänge, Blocklänge
+--> Grober Ablauf
+- Asymmetrisch
+- RSA erklären
+- RSA Beweis
+- Angriffe auf RSA
+--> Seitenkanal (flush & reload), Multiplizitätsangriff
+- Authorisierung
+--> DAC (ACL, CL)
+--> MAC (Prinzipien + Sicherheitsklassen),
+--> RBAC (Sessions und Invarianten)
+- Needham-Schröder mit Angriff (auch Lowe 1997)
+- Kerberos (wofür?, detailliert erklärt)
+- STRIDE (Wofür steht es und was für Sicherheitsziele stehen dahinter?)
+Kommentar von Michelle: Er springt durch die gegend (nicht wörtlich)
+Kommentar von Manu: Thomas hat sich immer weggeschmissen (nicht wörtlich)
+Bei vielen Fragen frägt er nicht direkt jemanden, sondern stellt die Frage in die Runde

@@ -1,0 +1,107 @@
+Protokoll Manu
+
+Es ging mit MS los
+
+Is folgendes 1 Laddce ({0, 1}, 0, *, <=)
+	Nein, weil 0 * 1 = 0, d.h. 0>1 aber ist nicht so, weil das was aus dem merge raus kommt ist nicht größer als das was rein kommt.
+
+Dann wie bei allen anderen Symbolic execution
+Wie wäre das gewesen bei Constant Propagation
+	Wir wären zum assert gekommen, weil alle Werte T sind
+
+Was haben wir für Testfälle?
+	Weil alles T ist können wir alles nehmen, weil wir den Fehlerfall nicht erreichen können
+
+Dann kam Alex
+
+Was ist ein Testfall?
+
+Was ist Testen?
+
+Worum gings bei der VL?
+	Um Testverfahren
+
+Was ist das Ziel von den Testverfahren?
+	Testfälle zu finden
+
+Was ist ein Fehler
+
+Wer macht den Error?
+	Der Programmierer
+
+Reden über Partitions-Kategorien
+
+Was macht man da?
+	Werteklassen finden, kombinieren
+
+Was macht man um die zu verringern?
+	Labels (single, error, if)
+	Ungültige Aussschließen
+	Tabelle mit gültigen
+	M-Überdeckung
+
+Was ist pairwise?
+
+Aber wieso werden dadurch weniger Generiert?
+	Weil man mit einem Testfall mehrere Kombinationen abdeckt
+
+Welche weiteren Blackbox-Verfahren gibts?
+	Vor-Nachbedingung (Was ist das noch? --> Modellbasiert)
+	Fuzzing (Dazu kommen wir gleich, lässt sich drüber streiten)
+
+Was gibts noch Modellbasiert?
+	FSM
+
+Fuzzing: Wie funzt das?
+	Automatisch werden leicht veränderte Eingaben erzeugt, System auf Robustheit getestet
+
+Wie unterscheidet sich das zu klassischen BB-Verfahren (Partition-Kategoie?)
+	Man braucht schon ein Programm
+	Spezifikation nicht nötig
+
+FSM: Kaffemaschine
+
+Was gibts besseres?
+	EFSM
+
+Was ändert sich da
+	Variablenbelegung + Guard/Aktion, hier halt leer
+
+Was macht man damit?
+	Überlegen welche Überdeckung man will
+	Überdeckungen aufgezählt	
+
+Warum Transitionsüberdeckung
+	Weil sie die anderen Subsumiert
+
+Mach mal
+	Geht nicht weil EFSM
+
+Was dann?
+	FSM draus machen, is halt größer
+
+Wie geht des dann?
+	Euler pi pa po
+
+Wenn man ne Graphen hat und da nen Euler findet, ist des dann Chinese Postman?
+	Ja, weil man nichts balancieren musste
+
+Is des allgemein auch so?
+	Nein wegen Balancieren
+
+Integrationstesten, was testet man da?
+	Man testet Schnittstellen
+
+Was ist modifizierte Bedingungsüberdeckung?
+	Für alle Atomaren dinger Zeigen dass es Einfluss hat
+
+Für a || b:
+	tt ff
+	ff ff
+	ff tt
+
+Wie viele gibts minimum: 
+	#Atomarer Bedingungen + 1
+
+Maximal?
+	2*#Atomarer Bedingungen, aber anscheinend ists schwer zu bestimmen

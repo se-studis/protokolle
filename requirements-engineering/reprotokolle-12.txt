@@ -1,0 +1,54 @@
+2009
+Ich	würde	vorschlagen,	wir	sammeln	einfach	mal	welche	Fragen	nach	unseren	Dozenten	
+denn	in	der	Klausur	drankommen	könnten.
+Ich	hab	hier	mal	die	Fragen	aus	der	letzten	Vorlesung	(Thema:	Formalisierung):
+- Was	bedeuted	eine	LTL	Formel	(Was	drückt	sie aus?	Formulierungsprobleme	die	evtl.	
+vorhanden	sein	könntent..)
+- Evtl.	auch	andersrum	(Satz	in	LTL/CTL/Prädikatenlogik	umformen)
+- Übergang	zw.	Szenarios	Übergang	und	Automaten
+
+--------------------------------------------------
+
+2012
+Neunzig	Punkte,	Neunzig	Minuten,	OpenBook- Klausur.	Jede	Aufgabe	ca. 10	Punkte	
+(Aufgabe	7	nur	ca.	5	Punkte	und	dafür	Aufgabe	8	ca.	15	Punkte).
+Aufgaben	2--9	beziehen	sich	auf	ein	gemeinsames	Szenario	(PKW- Maut	in	Deutschland,	
+Transponder	für	deutsche	Autofahrer,	Vignetten	für	Urlauber,	soll	Geld	bringen	und	
+CO2- Emissionen verringern,	System	von	TollCollect	dafür	nutzen.	Tankstellen	verkaufen	
+Vignetten,	Werkstätten	bauen	Transponder	ein,	Transponder	sind	auch	selbst	über	das	
+Internet	zu	beziehen.	Preise	für	Fahr- KM	und	Vignetten	werden	dynamisch	an	aktuelle	
+CO2- Emissionen	angepasst,	es	gibt	Online- Rechnungen	und	Papier- Rechnungen.).
+Die	Aufgaben	und	den	Szenariotext	sind	wir	gemeinsam	durchgegangen,	bevor	"die	Zeit	
+lief".
+
+Aufgaben:
+1.	Zehn	MultipleChoice- Aufgaben,	jeweils	eins	bis	vier	richtige	Antworten.	Nur	wenn	
+man	ausschließlich	korrekt	gekreuzt	hat,	bekommt	man	den	Punkt	für	die	Frage.
+2.	Stakeholdermodell	mit	Querbeziehungen,	Hierarchie	wo	sinnvoll	und	markieren	ob	
+aktiver/passiver	Stakeholder.
+3.	Drei	zentrale	Ziele	aufschreiben,	dazu	jeweils	zwei	Unterziele	ausdenken.
+4.	Drei	der	Unterziele	von	Aufgabe	3	übernehmen:	Metrik	und	Zielwert	ausdenken.
+5.	Rich	Picture	fürs	Domänenmodell,	einige	Icons	waren	vorgegeben	und	mussten	
+vorkommen	(Systemidee,	Personen,	Geschäftsobjekt,	Geschäftsablauf,	Beziehung,	...)
+6.	Use	Case	"Onlinerechnung	einsehen	und	bezahlen"	in	angegebene	Schablone	
+(Cockburn)	schreiben,	inklusive	einem	Szenario	und	einer	Alternative/Extension.
+7.	Systemsequenzdiagramm	für	das	Szenario	aus	Aufgabe	6	zeichnen.
+8.	Fünf	Use	Cases	aus	dem	Teilsystem	"Daten	erfassen,	Preis	berechnen,	Online-
+Rechnung	erstellen	und	bezahlen	können"	ausdenken.	Daraus	eine	Funktionshierarchie	
+erstellen,	qualitätsbezogene	Ziele	darin	markieren.	Eine	Funktion	auswählen	und	für	
+diese	Schnittstellenbeschreibung	und	Automat/Zustandsmaschine	erstellen.
+9.	Zwei	Zielkonflikte	im	Mautsystem	herauslesen/ausdenken,	in	einem	Satz	beschreiben.	
+Jeweils	einen	Lösungsvorschlag	machen,	den	knapp	in	zwei	Sätzen	beschreiben.
+Noch	eine	Anmerkung	zum	Beispiel	mit	der	Funktionshierarchie:
+Die	5	Use-Cases die	man	in	dem	Beispiel	nennt	haben	nicht	zwangsläufig	mit	der	Funktionshierarchie	zu	tun.	Eher	wollte	Sie	hier	eine	"sinnvolle"	Zerlegung	von	
+Funktionen	haben,	die	dieses	System	anbietet,	also	so	etwas	wie:
+
+                                          [Überwachen und Bezahlen]
+                                    /               |                 \
+           [Benutzerdaten verwalten]               [Abrechnung]     [Statistiken]
+               /             \                       |          \                \ ...
+[Registrierung] [Daten eingeben/ändern] [CO2-Emissionen abfragen] [KM berechnen]....
+
+Hier	habe	ich	extrem	viele	Punkte	verloren, weil	ich	es	nicht	eindeutig	als	Hierarchie	
+und	nicht	solche	Funktionen	aufgemalt	habe.
+

@@ -1,0 +1,26 @@
+Also ist echt machbar, und es kamen jetzt auch keine bösen Überraschungen (Sehr ähnlich zu den letzten Jahren).
+
+Also ich kann mich nicht mehr an viel errinnern, aber hier mal, was ich noch weiß:
+Was gibt es in der Aussagenlogik?
+Was für Eigenschaften hat die Aussagenlogik?
+
+Was kommt jetzt in der Prädikatenlogik hinzu?
+Wie hängen Terme mit Formeln zusammen?
+
+Unterschied zu Aussagenlogik: Entscheidbarkeit, und in der Aussagenlogik hatten wir immer Tautologien, jetzt zeigen wir, dass Formeln unter bestimmten Axiomen gelten.
+
+
+Simplifier:
+    wir haben simplifier regeln, welche? Ersetzungsregeln modulo Assoz & Komm 
+    Gamme => phi -> (t = u)
+    Wichtig: KIV sucht hier immer nach einer INSTANZ von t (t = Term), einer Instanz von phi (Formel) usw.
+
+KIV war so wie in den letzen Jahren (hier sogar genau die selbe aufgabe)
+    (hier ist halt auch interessant, dass man sich erst einmal die Formel anschaut, 
+    dann welche Simplifier regeln sinnvol sind. Element von (\in) ist war z.B. auch rekursiv spezifiziert)
+
+    pos(a, []) = 0
+    pos(a, a + x) = 0
+    a != b -> pos(a, b + x) = 1 + pos(a, x)
+
+Viel Erfolg

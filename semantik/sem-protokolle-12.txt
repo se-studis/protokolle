@@ -1,0 +1,20 @@
+Quirin
+
+Exception handling in natürlicher Semantik.
+While-Regel in denotationeller Semantik
+Bereichsgleichung D ≅ ⊥(1) ⊕ (⊥(X) ⊗ D). Dabei steht ⊥(R) für  R mit ⊥ im Index.
+Was haben die Automaten von Dirk mit der Semantik hier zu tun und welche Semantik eigenet sich, um sie zu modellieren? K.a. und strukturell-operationelle Semantik
+
+Caro
+
+Exception Handling in operationeller Semantik: er hat mir die Wahl gelassen, ich hab dann lineare gemacht (weiß nicht ob er mich ne andere hätte machen lassen)
+welche operationale nimmt man für CFAs in der Praxis?
+while in direct style denotationelle Bereichstheorie. Was ist das D unter dem Y-Combinator? was bedeuten die eckigen Klammern da drum?
+Definition stetigkeit
+Bereichsgleichung wie bei Quirin
+Wie heißen direktes Produkt und Summe auf Englisch? Wusste ich nicht aber ich hab erklärt welche Versionen von direktem Produkt/Summe wir gemacht haben und er war glücklich 🙂
+
+Tobi
+
+keine Bereichsgleichung, sonst gleich.
+Hab die Exceptions in NS gemacht, da war einiges nicht so offensichtlich (macht es nicht wenn ihr die Wahl habt)

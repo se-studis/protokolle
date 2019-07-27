@@ -1,0 +1,67 @@
+Prüfungsprotokoll Formale Methoden Lea 9.2.
+
+- wie definieren wir datentypen?
+-> sorten konstruktoren, generiertheitsklauseln
+- wie machen wirs bei freien datentypen?
+-> data specification
+- wie machen wirs bei nicht freien datentypen?
+-> standardvorgehen, extensionalitätsaxiom
+- array spezifizieren
+- was gibt es für beweisverpflichtungen? 
+-> reflexivität, symmetrie, transitivität, verträglichkeit
+- wofür müssen wir die beweisen? 
+-> für EQ(a,b) in a = b <-> EQ(a,b) also den rechten teil des extensionalitätsaxioms
+- was ist hierarchiepersistenz?
+-> für jedes modell der kleinen spezifikation mindestens eine erweiterung
+- was ist eindeutigkeit?
+-> für jedes modell der kleinen spezifikation höchstens eine erweiterung, mehrere erweiterungen also isomorph
+- was ist mit der spezifikation jetzt? ist die hierachierpersistent? ja. warum? 
+-> weil nur gute definitionsprinzipien
+was sind gute definitionsprinzipien?
+-> strukturelle rekursion, wohlfundierte rekursion, nichtrekursive definition, über existenz und eindeutigkeit
+- ist die array spezifikation eindeutig? 
+-> nein, weil manche sachen unspezifiziert (was genau und warum haben wir lange drüber geredet, hab ich nicht so ganz gecheckt)
+- semantik von diamond hinschreiben
+- was ist eine noethersche relation?
+-> keine unendlich langen absteigenden ketten
+- wo brauchen wir die? 
+-> noethersche induktion, while regel
+- induktionsregel für listen hinschreiben
+- semantik von strong diamond hinschreiben
+- in dem ausdruck für den strong diamond kommt rechts die relationale semantik vor, was würde da stehen, wenn wir natürliche Semantik verwenden? (<p, v> -> v) element my(Rns^)
+- was ist dieses my? 
+-> der kleinste fixpunkt
+- was ist ein fixpunkt?
+- wie bekommen wir den? 
+-> kleene oder knaster tarski
+- formel kleinster fixpunkt nach kleene hinschreiben gleich für den Rns^
+- was bedeutet da dieses n? 
+-> n maliges anwenden des huts wollten sie nicht hören, sie wollte irgendwie darauf hinaus dass das alle konklusionen von ableitungsbäumen sind, die n hoch sind oder so ähnlich
+- warum ist der Rns^ monoton? 
+-> nur positive prämissen
+- warum ist der Rns^ stetig?
+-> nur endlich viele prämissen
+- indeterminismus, was haben wir da in der syntax eingeführt?
+-> choose, or als spezialfall
+- regel natürliche semantik für or hinschreiben
+-> es gibt da zwei! sie wollten nur eine sehen
+- wie sieht es jetzt mit monotonie und stetigkeit aus? 
+-> immer noch beides gegeben, weil immer noch nur positive und endlich viele prämissen
+- was ist bei indeterminismus das problem bei der natürlichen semantik? welches standardbeispiel gibt es da?
+-> skip or abort ist nicht von skip zu unterscheiden
+- wie löst man das?
+-> neues regelsystem für garantierte terminierung
+- wie sieht es da mit monotonie und stetigkeit aus?
+-> keine stetigkeit mehr, weil z.B. regel für choose unendlich viele prämissen haben kann
+- woraus besteht ein abstrakter datentyp
+- startzustände, zustände, operationen
+- wofür brauchen wir den?
+- welche arten gibt es, kontrakte zu spezifizieren?
+-> vor- und nachbedingung, relational, operational mit choose
+- was ist ein ablauf?
+- was ist ein refinement?
+- wann ist ein refinement korrekt? was braucht man dazu? welche beweisverpflichtungen gibt es? was bedeuten die im detail?
+
+KIV: quicksort beweis, war genau der, der auch auf dem übungsblatt drankam
+
+vielleicht hab ich noch ein zwei sachen vergessen. bewertung fand ich mehr als fair

@@ -1,0 +1,59 @@
+Was ist Testen?
+
+Wie führt man einen Test aus?
+Testfall
+
+Was ist alles in einem Tesfall?
+Vorbedingungen, Eingaben, erwartetete Sollwerte, Prüfanweisung, erwartetete Nachbedingungen
+
+Was ist eine Prüfanweisung, wozu brauche ich die?
+Damit man die Soll-Werte auch prüfen kann, ob das dann so sein soll
+
+Wenn du die Spezifikation bekommst, was kannst du dann machen, wenn du testen willst?
+Black-Box Testen
+
+Beispiele:
+---- aufzählen
+Sämtliche Arten von Blackbox-Testing (ohne das Programm auch testen zu können! 
+hab da auch Fuzzing gesagt und er hat nachgebohrt, was das ist - geht nicht weil man ja kein Programm hat)
+
+
+Wollte dann noch irgendwie Testfall-Minimierung hören (weiß nicht mehr warum):
+So sachen wie single, m-Überdeckungen (+Anzahl der Testfälle dann sagen)
+Zusätzlich noch das Gegenteil, Testfälle ergänzen:
+Grenzwertbetrachtung
+
+Bedienungsanleitung der Kaffeemaschine bekommen, Abschnitt lesen und FSM malen (Erklären mit Eingaben und Ausgaben)
+Wozu braucht man die Ausgaben, was erkennt man an diesen?
+
+Wenn man jetzt eine FSM hat, was mache ich dann damit - ich will ja Testen:
+Überdeckungen... aufzählen 
+
+Ja die FSM sieht ja kompliziert aus mit 17 Zuständen nur für die Zeilen, wie kann man das vereinfahcen?
+EFSm
+Was ist der Unterschied?
+Variablenbelegung/Kontrollzustände, Actions/Guards
+
+Was machen die Actions/Guards - wo könnte man die in diesem Beispiel benutzen?
+
+Wie kann man in der EFSM sinnvoll die ganzen Werte halten und verarbeiten?
+Arrays/Tabellen
+
+Dann Zustandsüberdeckung bei EFSMs? nicht gleich wie bei FSM, wichtig! variablenbelegung beachten
+
+Er hat dann nach Transitionsüberdeckung bei EFSMs gefragt, wusste erst nicht und hab rumgeraten:
+Mein Vorschlag war dann die EFSM in eine FSM umzuwandeln, und dann die Euler Tour bestimmen
+Es ging dann noch ewig hin und her mit Euler-Touren und Chinese-Postman Touren (jeweils definieren) 
+wenn ich eine Euler Tour von einem perfekt balanciert bestimmten Graph bestimmte, ist das dann eine Chinese-Postman Tour? wohl ja (ich hab nein gesagt, weil ich die frage ned gecheckt hab, weil alles schon so durcheinander war^^) 
+dann wurde quasi noch herausgearbeitet, dass mit unserem Alg. besimmt man Euler Tour für den Balancierten Graph, nicht für die ursprüngliche FSM 
+
+MÖRSCHSEPP:
+
+Beispiel für kein Lattice (das aus VL was Lea gepostet hat) + Eigenschaften sagen
+Erklären warum das kein Lattice ist... (Zustände raussuchen, kein eindeutiges Supremum)
+
+Dann gleiches Beispiel wie bei Caro 
+Symbolic Exectution machen und am Ende feststellen, dass der Pfad nicht erreicht werden kann.
+
+Ende
+Kann auch sein, dass ihc noch was vergessen hab beim Alex - des weiß ich leider nicht mehr

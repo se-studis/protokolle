@@ -1,0 +1,13 @@
+Hier noch die "Highlights" aus meiner Prüfung:
+
+Ich musste ewig lang Graphen, edges und sets mit diversen Extensionalitätsaxiomen spezifizieren. Die Datentypdefinition war echt irgendwie total konfus. Ich musste auch im EQ markieren was denn jetzt da verträglich sein soll bei der Kongruenz.
+Man sollte sich vielleicht nochmal alle Feinheiten bei Hierarchiepersistenz und Eindeutigkeit anschauen - so Begriffe wie "alle" und "ein" und der Unterschied zwischen Spezifikation und Algebra waren denen sehr wichtig. Hier wurde wirklich ganz tief ins Detail gefragt.
+KIV war bei mir GGT mit term induction über m+n - so ein Spaßvogel, der Gerald... Dann wars aber mit 2 Mal apply induction gleich zu.
+
+Sonst noch wichtig: 
+Er will beim Fixpunkt hören dass keine neuen Sachen dazu kommen. 
+Die Präzision bei Begriffen ist ihnen extrem wichtig. Oft haben sie gemeint dass meine Lösung falsch ist, haben nachgefragt, ich konnte nichts neues sagen und dann haben sie es erklärt und ich dachte dann immer dass ich das ja eigentlich schon gesagt hatte...
+
+EDIT: 
+Sie wollten auch wissen was eine Anreicherung ist. Es hat nicht gereicht zu sagen dass man da Signaturen und Axiome zusammenschmeißt. Man musste irgendwie übers Redukt argumentieren.
+Bei den Nodes und Edges wollten sie dann noch wissen was diese Spezifikationen erfüllen sollten, ob sie monomorph, frei sind usw. ... hab ich nicht wirklich beantworten können - irgendwann hab ich dann gesagt dass die nodes generic specifications sein sollen und man dann actualize machen kann, das wurde dann irgendwie akzeptiert aber war extrem verwirrend (bearbeitet)

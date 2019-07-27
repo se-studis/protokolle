@@ -1,0 +1,196 @@
+---------- Tobi ----------
+Henning hat fast nix gefragt, Pretschner fast alles
+
+Was ist RE?
+Warum ist das so schwierig?
+
+Es gibts ja interne und externe Qualität, was ist denn bei Scrum mehr im Fokus?
+
+Relativ viel über Scrum geredet
+
+Stelle sie sich vor sie sind bei BMW für Autonomous Driving, erstellen Sie Anforderungen für Level 5 Autonomes Fahren, wie würden sie vorgehen?
+
+Gefühlt ziemlich viel Dialog, ohne viele wirkliche Fragen, wollte nicht auf SPES oder AMDIRE raus
+---------- Monika ----------
+Fragen waren 50/50 Henning/Pretschner. Henning mehr konkrete Beispiele, Pretschner eher so "Was würden sie tun?"
+
+Definition Stakeholder
+Unterschied Stakeholder bei Quality in Use und bei normaler Definition
+- Bei Quality in Use hat er erstmal nur Interesse an RE-Artefakt 
+Qualität von Anforderungen im Vergleich zu Prozesse
+- ISO
+- Quality in Use komplett (das Diagramm)
+Qualität von Systemen
+- Intern und Extern, mit Beispielen
+Wie kann man Abwägen bei Qualitätsfaktoren?
+- Stakeholder priorisieren, Abschätzen wie die Auswirkungen sind, und dann Auswählen
+Was sind Ergebungstechniken
+- Ein paar mit Beispielen, Vor- und Nachteilen
+Wie macht man das in der Freien Wirtschaft?
+- Kostenmodell
+Kann man das hier machen?
+- Nein
+Scrum, was sind da Vor- und Nachteile
+- Agilität
+- Wenn sich das Team wechselt, dann geht wissen verloren
+Wenn sie ein Autonomes Fahrzeug bauen müssten, wie schreiben sie die Anforderungen für das Wechseln der Spur?
+---------- Marcel ----------
+Bei mir hat Henning ungenauere Fragen gestellt, haben insgesamt mehrmals hin und her geweschselt
+Anfangs Mega viel Smalltalk
+Was sind die Probleme beim RE?
+- Alle relevanten Stakeholder finden - daraus vollständige Anforderungen finden
+- Man hat verschiedene Stakeholder, die auch konfliktieren (Zielkonflikte)
+- Kommunikation des Requirement-Engineers mit den Stakeholdern (ich hatte erst Kommunikation zwischen Stakeholdern gesagt, wo er mich dann unterbrochen hat und ich mich korrigiert)
+- Damit dann die Anforderungen machen
+  - Die müssen eindeutig, unmissverständlich, vollständig sein ich muss wissen wann ich aufhöre
+- Häufig wird im Lösungsraum und nicht im Problemraum gedacht
+- Hab die Änderungen vergessen, da hat er mich dann mehr oder weniger drauf hingewiesen
+Wie geht man mit einer Änderung um?
+- Change-Request Verfahren erklärt 
+Beispiel Berliner Flughafen (war wegen irgendwas was ich gesagt hatte, komme aber nicht mehr drauf): Was war das Problem?
+- Ich glaube er wollte auf Technische Gegebenheiten Raus
+- Vielleicht haben die zu sehr in Lösungssicht gedacht, und waren fokussiert auf Rauch aus der Decke abzuziehen
+Beispiel Webshop: Anforderungen herausfinden
+- Toolbox ausgepackt: Stakeholder (unterschiedliche, dann auch Datenschutz), Personas, Use Cases, Datenmodellierung mit CEG bei Komplexeren Problemen, dabei irgendwo auch kurz den AMDIRE erwähnt glaub
+Was ist Tracing?
+Wie macht mans üblicherweise?
+Nach meiner Erklärung: Ja das ist ja Wunschdenken, wie wird es denn überlicherweise gemacht?
+Er wollte auf Agilität heraus
+- Agilität machts nicht
+- V-Modell XT machts (hat er gesagt) 
+Was passiert mit User Storys im agilen Prozess nach dem Sprint?
+- (nachdem Henning angedeutet hat, dass Fangfrage) nichts, werden einfach nur weggeschmissen -> Problem für Tracing
+Zusammenhang User Story und Funktion
+- Mehrere User Storys können auf eine Funktion mappen
+Im Allgemeinen: Was ist das Problem bei Tests?
+- nicht alle durchführen, weil s zu lange dauert (hab erst gesagt ich kann die Tests nicht immer über Nacht laufen lassen - Pretschner meinte ja wieso denn nicht? - Ja weil das System immernoch größer werden kann und wenn die dann am nächsten Mrogen immernoch nicht fertig sind hab ich auch nichts davon)
+- hab als Beispiel noch GUI-Tests gesagt, aber ihm war wichtig dass acuh andere Tests zu lange dauern können.
+Was wäre ein möglicher Ansatz im Agilen bei einer neuen User Story Herauszufinden, welche Regressionstests ich machen muss?
+- Funktionshierarchie, mit Mapping von User Storys zu Funktion
+Wie finde ich heraus wie meine Performace sein muss / später ergänzt: Wie finde ich heraus wie viele darauf zugreifen?
+- Marketing, Marktforschung, Nutzer Fragen, Ist-System  betrachten, mehrere Nutzer anschauen
+Wie kann ich heraus fidnen was das übliche Nutzungsverhalten für Nutzer is (weil ichs erwähnt hab)?
+- Würde ich beobachten, jemanden mal was einkaufen lassen
+    Ja aber wenn ich nur einen hab dann ist das ja nicht repräsentativ?
+        - dann nehme ich halt mehrere (war dann zufrieden - jedenfalls hat er nicht mehr weiter gefragt)
+Wie mess ich das?
+- Tests bauen, mit dem bereits gemessenen Nutzerverhalten
+Wie schreib ich das in den Vertrag?
+- Unter Gewissen Voraussetzungen muss bestimmte Menge an Funktionen abgearbeitet werden in der Zeit
+Was gibts da noch für Probleme in der Echten Welt, wenns im Vertrag erfüllt ist aber das in der Wirklichkeit nicht taugt? (Femming hat das ganze am Beispiel des Dieselgate gemacht, aber so schwamming formuliert, dass Pretschner das selber nicht gecheckt hat) 
+- Wenn das Produkt nur auf die Tests optimiert wird, kann sein, dass zwar alles legal bzw. der Vertrag erfüllt wird, in der Realität die Anforderungen trotzdem so nicht gehalten werden.
+Das Protokoll hat leider nicht die perfekte Reihenfolge, aber insgesamt waren beide ziemlich nett.
+Der Henning nickt zudem immer schön, wenn man ihn anschaut und ihm was erklärt (hoffentlich nur wenns auch richtig ist :D)
+---------- Adnan ----------
+Beispiel Franzis Mail: Pretschner hat die Liste direkt übernommen. Was war das RE Problem?
+- Einzige Requirement: Alle Augsburger sollen in einen Block
+- Späterer Change Request wurde Abgelehnt, nach Impact-Analyse
+Fragen von Henning: Quality Assurance
+Im Bezug auf Franzis Beispiel: Was wäre eine Mögliche Methode aus constructive QA in diesem Beispiel, was wäre ein Prototype, was wäre ein Review?
+Was sind Review Variables?
+Wir bauen einen Rasenmäherroboter, wie gehst du vor?
+Was sind Challenges bei RE im Bezug auf Franzis Mail und den Roboter?
+---------- Franzi ----------
+Was war an meiner Email für die Prüfungstermine falsch?
+
+Keine gute Lösung, genauer Nachdenken, was vergessen, keine Vollständigkeit, nicht die beste Lösung, da nicht Problemorientiert.
+Was hätte Pretschner besser machen können? Hinterfragen, analysieren, auf Qualitätsfaktoren überprüfen. >Welche?
+
+Dann Qualitätssicherung: Manuell > Reviews bissi was gesagt , Automatisch > Smells, Arten davon
+
+Dann Rasenmähroboter: Vorgehen beschreiben: aufgezählt,
+Stakeholder, PERSONAS
+
+Warum nimmt man nicht SCRUM?
+Agilität schwierig für Verlässlichkeit, Nachweis, keine Tracability
+
+Tracability: Man könnte man Scrum Tracable machen aber warum is das nicht sinnvoll?
+Da hab ich lange rumgeraten, sowas wie wegen der agilität, aktuell beste Lösung: Weil man User Stories danach wegschmeißt und neue macht für Änderungen.
+---------- Martin ----------
+Aus was für Phasen besteht RE?
+- 4 Phasen und erklären
+Was ist Requrements Management
+- Tracen
+- Change Management
+Was ist Change Management
+- Wer hats Beauftragt
+- Was soll geändert werden?
+- Wer solls machen?
+- Warum solls gemacht werden
+Was macht man dann damit
+- Man macht eine Impact- Analyse, schaut sich an, was es für Auswirkungen hat, was das Risiko ist, wer das ganze zahlt
+Traktorenhersteller in Amerika: Wer hat da am meisten Interesse, dass getraced wird?
+- Erst mal Stakeholder aufgezählt
+- Hersteller
+- Gesetzgeber --> damit man am Ende nachweisen kann, dass der Prozess passt 
+Was für Schwierigkeiten sind da drin?
+- Alles erklärt, bezug wieder auf Change Management
+Was sind denn Unterschiede bei Anforderungen für nen Mini-Rasenmäher, im Bezug auf Stakeholder zwischen Deutschland und Amerika
+- In Deutschland denken wir an Igel, Amis scheißen drauf
+Ok, wieder Beispiel: Mitarbeiter hat Schraube in der Hand und meint die ist zu klein, nimmt deshalb einfach eine größere. Warum ist das jetzt blöd?
+- Weil die großen Schrauben irgendwann weg sind (wollte er nicht hören)
+- Vielleicht macht die Falsche schraube was kaputt
+- Ist dann auch nur bei einem Teil der Traktoren so, weil das nur ein Mitarbeiter ist
+- Wollte auf Change Management raus
+Wie hätte der Mitarbeiter denn vorgehen sollen?
+- Müsste das erstmal nach oben propagieren, bis irgendjemand dann einen Change request einleitet
+Was sind die Probleme, wenn ers so macht?
+- Er machst gar nicht, weils gar nicht seine Verantwortung ist
+- Wenn ers tut, dann dauerts ewig bis es umgesetzt wird
+Mini-Rasenmäher: Würde ich den agil machen?
+- Erstmal gemeint, dass sich Anforderungen nicht so oft ändern, deswegen nein?
+Doch sie ändern sich!
+- Wollte drauf raus, dass mit Agilen Methoden nicht gut getraced werden kann
+Warum kann man nicht gut tracen?
+- Weil man User storys wegschmeißt
+Was steht im Agilen Manifest drin, was mit Tracablilty drin steht?
+- Hab da die richtige Antwort nicht rausbekommen, hab argumentiert dass der Code die Dokumentation ist
+Dann Qualität: was ist Qualität in dem Kontext?
+- Hier in den Anforderungen: ISO runtergerattert
+Ist dann auf singular stehengeblieben: Warum ist das so?
+- Er wollte drauf raus, dass es schwer zu tracen ist
+Was traced man denn?
+- Man traced bei Anforderungen, welche Ziele dahintestecken
+- Man traced bei Zielen, welche Anforderungen die erfüllen.
+- Er wollte noch drauf raus, dass man Architektur und Code sowie Tests auch tracen kann
+Was wird denn davon in der Praxis gemacht?
+- Tests werden öfter getraced, vor allem in richtung Abnahmetests
+- Im Code eher nicht, weils zu viel Aufwand ist
+- Mit Zielen und Anforderungen kann ichs mir vorstellen, ist aber warhscheinlich nicht so verbreitet
+Der Webshop muss nach 10s antworten: ist das ne gute Anforderung?
+- Ne die Rahmenbedingunen fehlen
+Was wären die hier?
+- Wie viele User greifen gerade darauf zu
+- Von wo aus greifen sie drauf zu?
+Machen die alle das selbe?
+- Ne
+Ist das sinnvoll, wenn die alle das selbe machen?
+- Ne, weils nicht realistisch ist. Aufteilen 
+Dieselskandal: Was war das Problem?
+- Sie hatten ein paar Testfälle, und haben dahin dann optimiert.
+Wie macht manns dann jetzt richtig? Zu Abstrakt oder zu konkret ist beides kacke!
+- Man müsste mehr Anforderungen machen, und deutlich konkreter.
+
+---------- Caro ----------
+Wie RE für Variatenmanagement?
+Welche Aufgaben hat man da Bein RE überhaupt?
+Welcher Stakeholder will Traceability haben?
+Wie würden sie ein sicherheitskritisches System mit Scrum entwickeln?
+Was ist der kritische Konflikt zwischen Sicherheitskritischen Entwicklungen und Scrum?
+Performanz: wenn ich was mit nur 10 Min Reaktionszeit in den Vertrag schreibe, ist es dann gegessen?
+Qualität: was ist vollständigkeit, was ist Konsistenz?
+Keine Antworten weil ich nicht aus ihm rauslesen konnte was richtig ist
+---------- Malte ----------
+protokoll (eher für die potentielle nachwelt):
+
+50/50 beide, unterhaltung, ich habe bei unklarheit einfach 2 minuten erzählt, worüber ich reden möchte, hatte eher gesprächs- als abfragecharakter
+
+themen (ohne anspruch auf vollständigkeit): 
+- funktionale vs nichtfunktionale reqs
+- was ist der unterschied und wie beurteilst du abstraktion und präzision von reqs
+- was für stakeholder gibt es bei nem bremsenden zug
+- wann macht man formale modelle und für wen (stakeholder abwägen, ...)
+- mähroboter, wie geht man bei req spez vor (problem, stakeholder, ...)
+- was sind ziele, reqs, funktionen, wie in verbindung
+- wie managt man variationen, was sind schwierigkeiten, zB bei mehreren produktlinien
+- zuletzt wollten sie auf „variationspunkte“ hinaus

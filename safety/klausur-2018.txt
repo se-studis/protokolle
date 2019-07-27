@@ -1,0 +1,55 @@
+Protokoll 2018
+Aufgabe 1: Grundlagen (12P)
+a)	[P2] 2 Gesichtspunkte wann ein Risiko vertretbar ist. Oder: 2 Dinge mit Einfluss auf Risiko (Wahrscheinlichkeit + Severity)
+b)	[P2] Unterschied Sicherheitsanalyse und Sicherheitszertifizierung
+c)	[P1] Warum verwendet man Hazards und nicht z.B. Accidents für Sicherheitsanalyse?
+d)	[P1] Ein Nachteil für Experten “Erfahrung” nutzung bei Sicherheitsanalysen
+e)	[P1] Nachteil Testen
+f)	[P2] ?
+g)	[P3] Warum macht man FTA und FMEA trotz DCCA (3 Gründe)
+Aufgabe 2: Modellierung (11P)
+a)	[P4] Systemmodell für “nur” funktionale Korrektheit vs. Sysmodell für Sicherheitsanalyse: 4 Dinge die dazukommen bei den Modellen
+i)	Achtung: Sehr detailliert gefragt (TODO was genau war gefragt?)
+b)	[P3?] Programmgraph & initialbedingung wird weggelassen → Einfluss auf Verhalten / Formeln / Modelchecking x=5->Init->/x:=5...
+c)	[P4?] Transitionsrelation für synchrone Komposition gegeben, definiere eine analoge Transitionsrelation für interleaved / asynchrone Komposition
+Aufgabe 3: Temporallogik (15P)
+a)	[P7] Kripke-Struktur gegeben, dazu dann 7 Formeln: -> s1 (schwarz) -> s2 (schwarz) -> s3 (weiß) -> s4 (grau) -> s5 (weiß) -> s2 außerdem: s3 -> s3 und s3 Startzustand
+i)	EX weiß
+ii)	FG weiß
+iii)	schwarz U weiß
+iv)	AG (schwarz AU weiß)
+v)	EG (weiß -> EF -weiß)
+vi)	G (weiß -> X weiß oder XX weiß)
+vii)	AG EF EG weiß
+b)	[P4] Selbst in CTL und LTL modellieren: 
+i)	a U b, a AU b
+ii)	GF a → GF b, CTL nicht möglich weil Fairness 
+c)	[P4] Gegenbeispiel Kripke Struktur für (EG phi) und (EG psi)   vs.  EG (phi und psi)
+Aufgabe 4: DCCA (15P)
+a)	Kripke-Struktur mit faults gegeben, {f1, f2} waren als kritisch bekannt.
+Begründen, warum {f1, f2} kritisch ist (weil f1 den Hazard auslösen kann) und welches Prinzip der FTA dabei angewendet wurde (“no miracles”)
+
+→ A  →   B;f1
+  ↓       ↓
+C;f1;f2 ← H
+  ↺       ↺
+
+b)	Was heißen Korrektheit und Vollständigkeit und was ist schwieriger nachzuweisen?
+c)	Beweis über Semantik: eine Fehlermenge ist genau dann sicher, wenn sie nicht kritisch ist
+d)	Alternative Formel für sicheres System gegeben: 
+Sys+delta |= (G(only(Gamma))) → (G - H)
+Selbe Kripke-Struktur wie bei a), man sollte zeigen dass die nicht äquivalent ist indem die Fehlermengen leer, {f1}, {f2}, {f1, f2} ausgewertet werden. 
+Dann begründen, warum das jetzt so ist (Weil sobald ein Fehler auftritt, der nicht in der zu untersuchenden Fehlermenge ist, die Implikation zu true auswertet)
+
+
+→ A → B;f1
+  ↓    ↓
+C;f2 ← H
+  ↺
+
+Aufgabe 5: Probabilistisches Modelchecking
+a)	Wir haben 2 Annahmen für Wahrscheinlichkeit (Einzelwahrscheinlichkeiten sind sehr gering und Wahrscheinlichkeiten sind unabhängig voneinander), was passiert in Praxis wenn man diese nicht beachtet?
+b)	Warum reicht es Obergrenze für Wahrscheinlichkeit zu nehmen
+c)	Nachteile von Pareto-Optimierung (Algorithmisch schwierig / welches Optimum nehmen?)
+d)	Nachteile von Kostenfunktion (Gewichte bestimmen)
+e)	Markov-Kette gegeben, Wahrscheinlichkeit von Hazard ausrechnen (100%)

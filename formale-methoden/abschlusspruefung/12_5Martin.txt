@@ -1,0 +1,8 @@
+Ich schreib diese mal kein ausführliches Protokoll, da die Fragen sehr "ähnlich" waren wie bei Alex.
+Die einzigen Unterschiede:
+Ich musste map spezifizieren statt array
+Es kam die Frage, wie ganz allgemeine Rekursion aussieht -> f(x) = f(u)
+Und was muss jetzt gelten damit sie wohlfundiert ist -> x < u (wobei das "<" ein noethisch kleiner ist")
+*Update:* Nach dem hinschreiben von while in DL: könnte man das Gamma und Delta auch bei den 2 anderen Prämissen hinschreiben? -> Nein weil sie nur Aussagen über ~"Zustand" vor dem while machen
+
+Viel Erfolg allen weiteren! 

@@ -1,0 +1,53 @@
+wie kann man Datentypen definieren? (frei / nicht frei)
+was definiert man da? (Sorten, KONSTRUKTOREN, Funtionsysmbole, Prädikatsymbole)
+dann Multimengen definieren: Konstruktoren + Exensionalitätsaxiom (m1 = m2 gdw. …)
+Wie kann man da gut die Funktionen spezifizieren?
+→ und was davon ist genau das Extensionalitätsaxiom? Das … !
+Was muss man da beweisen? (Kongruenz etc.)
+Und ist das eine Kongruenz? (Scharf hinschauen und ja sagen)
+Gerald: und was bringt uns das mit der Kongruenz (oder so ähnlich) → alle Konstruktorterme durch EQ auf Konstruktorterme des vorher freien Datentypen gemappt → wieder so cool wie ein freier Datentyp dann fällt die Syntax mit der Semantik wieder zusammen! und wie nennen wir das wenn das zusammenfällt
+
+Bleiben wir bei Relationen: welche sind da toll? (noethersche)
+def noethersch
+was macht man dann mit denen: Abstiegsterme für Terminierungsbeweise + NOETHERSCHE INDUKTION
+(hier durfte ich aber nicht die DL-While Regel hinschreiben :sob:)
+noethersche Induktionsregel für natürliche Zahlen hinschreiben
+
+Soo jetzt kommen wir zu Programmen:
+Semantik für Diamond hinschreiben
+Aha da hast du ja die Relationale Semantik verwendet. Warum Relation, was könnte man da auch nehmen? Funktion
+und warum ist das doof? Indeterminismus + Nichtterminierung
+While für Diamond: (Auf Frage L oder R: Um Gottes Willen bitte nicht L!)
+hmm ja und wir wissen ja das ist in Relationaler Semantik nicht so geil also haben wir NS eingeführt
+NS für While hinschreiben
+was interessiert uns bei den Regelsystemen (Menge der ableitbaren Konklusionen)
+Def. monoton + stetig
+dann welche Sätze für FP können wir da jeweils anwenden?
+Kleene hinschreiben
+wie sehen wir das NS stetig ist?
+
+Indeterminismus: wasn das?
+wie macht man das in kiv (or + choose → was ist allgemeiner?)
+Or in NS. habs erklärt da musste Ichs dann nicht mehr hinschreiben
+und macht uns das was kaputt mit Stetigkeit und FP? (NEIN! zwar unendlich viele Möglichkeiten für die Regeln die man anwenden kann, aber JEDE Regel hat nur EINE PRÄMISSE (endlich viele positive :wink:)
+aber der Diamond passt ja nicht mehr, also was haben wir dann? → Strong Diamond
+Semantik vom Strong Diamond hinschreiben
+
+dann ja was brauchen wir dann mit dem indeterminismus? → Kontrakte
+Was hat man von denen? Sicherheit das Ergebnis passt wenn Vorbedingung eingehalten
+Wie kann man die definieren? Die drei möglichkeiten halt.
+
+Und was kriegt man dann mit den Kontrakten cooles? Abstrakte Datentypen :heart_eyes:
+was haben die? (States, Init, Op)
+Was kann man da beobacheten? Ablauf
+und was können wir mit denen cooles machen? Konkrete Dazu → weniger indeterminismus
+was muss da alles passen? Ablauf: in / outputverhalten (States wollte ich da schon sagen aber die sieht man ja nicht! :innocent:) Und wofür brauchen wir die States? Um korrekteheit zu beweisen. → Initialisierung, Anwendbarkeit, Korrektheit (praktisch Zeichen für Zeichen aufgesagt, musste es dann nicht hinschreiben)
+und was haben wir dann cooles? Gewissheit das wir das eine durch das andere ersetzen können.
+
+KIV: replace auf Listen. Hab alle Lemmas/Definitionen nochmal fein erklärt bekommen
+Warum machst du Induktion? WEIL DIE PROZEDUR REKURSIV DEFINIERT IST (und nicht die Listen :grin:)
+und natürlich execute call :wink:  
+
+Hat Spaß gemacht :v::skin-tone-3: 
+
+Außerdem: wer in unter 35 min schafft kriegt ein Abendessen von mit ausgegeben :smile:

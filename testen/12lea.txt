@@ -1,0 +1,38 @@
+Prüfungsprotokoll Testen 4.4.18. - Lea 
+
+Fragen von Alex:
+Was ist Testen?
+Was braucht man dazu?
+-> Testfälle
+Woraus besteht ein Testfall?
+Was ist eine Prüfanweisung?
+Wie geht man grundsätzlich vor beim Testen?
+Handbuch für eine Kaffeemaschine bekommen; ich sollte den Abschnitt über einen kleinen Teil der Menüführung lesen; wie würde man das testen?
+-> FSM, hab die dann auch aufgemalt
+Wie bekommt man jetzt Testfälle?
+-> Transitionstour
+Wie berechnet man einen Euler-Kreis?
+Irgendeine Frage, die ich mit Chinese-Postman-Tour beantworten sollte
+Ist ein Euler-Kreis immer eine Chinese-Postman-Tour?
+Wie könnte man die Zustandsmaschine verbessern?
+-> EFSM
+Was kommt bei EFSMs noch dazu?
+Wie würde man dann testen?
+-> Bedingungstesten
+Was ist modifiziertes Bedingungstesten?
+
+Fragen von Dirk:
+Was ist ein Lattice?
+Beispiel für eine partielle Ordnung hinmalen, die kein Lattice ist
+Code-Beispiel; Frage, ob ein bestimmte Codezeile erreicht werden kann
+-> nein
+Wenn man Constant Propagation drüber laufen lassen würde, würde die das erkennen?
+-> nein
+Warum?
+Wie sieht es bei Symbolic Execution aus?
+-> ja
+Warum?
+Wofür setzt man die Symbolic Values ein?
+Stehen die in den Constraints drin oder die Variablen selbst?
+
+Alles in allem gut schaffbar! Alex hat zum Teil ziemlich in die Tiefe gefragt und das hat mich manchmal verwirrt. Bewertung war fair. Alex lachte viel, Dirk eher weniger. Wünsch euch noch ganz viel Erfolg!!

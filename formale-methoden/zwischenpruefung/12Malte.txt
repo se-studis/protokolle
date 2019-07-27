@@ -1,0 +1,23 @@
+Prüfungsprotokoll Malte
+Prinz Gerhard hat *alle* Fragen gestellt.
+- AL übersprungen
+- PL Signatur, Algebra, Term, Formel
+- Termsemantik aufschreiben, Belegung + Variablen erklären
+- Papierbeweis Uncurrying, Kontext-KIV wissen (er löst trotz 2 Prämissen mit true/false-Kram) und erklären
+- Was passiert mit Gleichungen (refl, insert)
+- RAll aufschreiben und erläutern
+- KIV-Simplifier aufzählen
+- Rewrite genauer (auch aufschreiben, rumreiten auf Instanzen und warum denn Instanzen und wie viele Buchstaben sind in Instanzen und wer macht mir wir tanzen den Instanzentanz), asozialen Kommunisten genauer
+- Was machen denn Axiome so, wie verhalten die sich zur Spezifikation (Modell), wann ist was widersprüchlich
+- Was sollte eine Sp sein? (konsistent, monomorph as fuck)
+- Ausdrucksschwäche und Herr Skolem
+- Sexy Transition zu Generiertheitsklauseln
+- Induktionsprinzip für Liste aufmalen
+- Strukturell rekursive Definition (erklären wies funktioniert, wies mit Induktion zusammenhängt, 18 Liegestütze, 24 Situps)
+- remove auf Papier strukturell rekursiv aufschreiben
+- KIV-Beweis über remove + append (den kriege ich nicht mehr ganz zusammen)
+- Hier schön Simplifier Rules dazuadden (append base + rek nicht vergessen)
+- Dann induktion und einsetzen (warum macht der KIV das nicht automatisch? das phi vom rewrite fehlt ihm)
+- High 5 great success
+
+Also wie die anderen, fair, aber der Gerhard ist ein Verwirrungskünstler und man muss ein bisschen rauskriegen, wonach sie eigentlich fragen. Und sie mögen Stichwörter (e.g. bei rekursive Simplifieraufrufe)

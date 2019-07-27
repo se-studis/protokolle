@@ -1,0 +1,18 @@
+kam eig. nichts Überraschendes dran.
+Bei mir haben sie die AL gleich übersprungen. Was gibt es alles in der PL? Signatur, Terme, Formeln, Algebra, Belegung.
+Korrektheit, Vollständigkeit, Entscheidbarkeit (nicht wegen L-? und R-?), Invertierbarkeit (nicht wegen WEAK), was gilt in PL, was nicht und warum? 
+Papierbeweis mit Sequenzenkalkül. KIV-Simplifier würde es schaffen wegen kontextabhängiger Simplifikation. Die dann in eurem Beweis finden und erklären.
+(L-?)-Regel aufschreiben und erklären.
+Konsistenz: Mind. eine Datenstruktur (Algebra)
+Monomorph: Höchstens eine Datenstruktur
+Strukturelle Induktion für Listen aufschreiben und erklären.
+Satz von Skolem -> Ausdrucksschwäche der PL -> Generiertsheitsklauseln erklären können.
+Was sind freie Datentypen und passende Beispiele (Nat, List, Enum ..)
+Was macht der KIV Simplifier für uns alles? Rewrite-Regel aufschreiben und erklären.
+“pos” kam bei mir auch wieder dran. 
+Alle Axiome und das zu beweisende lemma sind beim KIV-Beweis schon eingetragen.
+Man muss dann nur alle passenden Simplifier-Regeln als “ls” hinzufügen: Elem, Append, pos. PL-Heuristik einschalten, Induktion -> Fertig.
+Was bedeutet append-assoc? -> Assoziativität
+Warum Induktion über x? -> Kommt bei allen Funktionen an rekursiver position vor.
+Bei mir hat sich dann KIV bei der structural induction aufgehängt Beim zweiten Mal hats dann geklappt
+War wirklich sehr entspannt, macht euch kein Stress! Viel Erfolg
