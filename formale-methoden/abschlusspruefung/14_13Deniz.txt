@@ -1,0 +1,12 @@
+Im allgemein war es ähnlich zu andere Prüfungen. Ich hab geschrieben woran ich mich erinnere.
+
+-Dynamische Logik: While Diamond Regel hinschreiben
+-Diamond semantik regel
+-Nicht freie Datentypen, Standarvorgehen
+-Map -> sorten key und value (generisch, parameter, nicht konkrete), put, in und axiomen dafür
+-While natürliche Semantik, die wollten unwind hören
+-Sehr viel Zeit mit Fixpunktmengen: ich glaube die wollten vor allem hören dass die Menge alle
+ Konklusionen enthält oder sowas in der Richtung
+-Abstrakte Datentyp Definiton, Was sind Traces, Refinement
+-KIV: Terminiert Merge? Heuristiken -> Induction über #x + #y -> call ->
+ apply induction (2 mal für beide Asten) (und diskussion über throw)

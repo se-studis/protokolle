@@ -1,0 +1,17 @@
+weitgehend wie bei Jorge und Henrik, daher nur ein paar zusätzliche Anmerkungen
+
+(Fragen weitgehend von Alex)
+
+* Spezifikation von Hypergraphen (wobei ich nur die egdes spezifizieren musste, den Graph selbst dann nicht mehr)
+
+* Wie kriegt man nur geschlossene Prämissen beim Regeloperator?
+  Sukzessive Regelanwendung angefangen bei der leeren Menge
+  
+* Was sind generic specifications für specifications? (oder so ähnlich; von Gerhard)
+  enrichment
+
+* Ungefähr: Wann sehen Beobachtungen von ADT nicht so (wie auf den Folien) aus? (Kriege die Frage nicht mehr ganz zusammen, war super konfus; von Gerhard)
+  gewünschte Antwort war: bei Nebenläufigkeit
+
+
+* KIV-Beweis war Terminierung von MergeSort, wobei sie mir das Hilfslemma nicht gleich gezeigt haben, sondern mich an der Stelle, wo der Beweis ohne nicht mehr weiterging, erstmal gefragt haben, was ich jetzt machen möchte und es mir dann erst gezeigt haben

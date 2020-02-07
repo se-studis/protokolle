@@ -1,0 +1,66 @@
+El Knappo hat die Fragen gestellt, der treue Assistent Geraldo hat sich im Wesentlichen sehr zurück gehalten
+
+1. surprise, wir sind bei Datentypen stehen geblieben, na dann erzähl mal (hier die üblichen Antworten)
+
+2. na dann spezifizier mal die schöne Map
+	Wie schon bei Hendrik sorts: key, value, map	Konstruktoren: leere map und insert	
+	Logischerweise nicht frei, da Einfügereihenfolge egal ist
+	Also Extensionalitätsaxiom: m1 = m2 <-> Vk. k in m1 <-> k in m2 /\ m1[k] = m2[k]
+	Dann in strukturell rekursiv definieren: - k in leerer Map		k in m[k0, v] <-> k = k0
+
+3. hast ja jetzt strukturell rekursiv definiert, was gibts denn da noch?	Wohlfundiert, nichtrekursiv, Existenz und Eindeutigkeit
+
+4. Cool was ist denn dieses Wohlfundiert und wie beweise ich damit?	(hier Ordnungsprädikat und Längen von Listen anbringen)
+
+5. Schreib mal die Induktionsregel auf, wenn man über Länge der Listen beweist
+
+6. Wofür können wir noethersch noch gebrauchen? 	Schleifen und Rekursion
+
+7. Dann überleitung zu den Modularoperatoren Box und Diamond und Definition von Diamond aufschreiben
+
+8. Definition von assign right aufschreiben
+
+9. Ist ja schön nur wann nicht so? Was müssen wir da machen?		Nicht schön bei While Schleifen und Rekursion weil Schleifenzähler und Rekursionstiefe mitgeschleppt werden müssen
+
+10. Was machen wir dann?		Natürliche Semantik
+
+11. Schreib mal Definition von while in natürlicher Semantik auf (den interessanten Fall)
+
+12. Super Überleitung zu Regeloperator. Was macht der und was verlangt der?	Nur positive Prämissen, weil negative blöd
+
+13. Was brauchen wir für den Regeloperator?		Kleinster Fixpunkt
+
+14. Sowohl Knaster-Tarski und Kleene erklären und den kleinsten Fixpunkt von denen aufschreiben. Erklären was Monotonie und Stetigkeit ist und ob das der Fall ist
+
+15. Überleitung zu Indeterminismus. Macht uns Choose irgendwas kaputt an der Stetigkeit? 	Nope
+
+16. Was gibt es noch?	Or	Welcher der zwei Operatoren ist überflüssig?	Auch or weil man den über choose ausdrücken kann
+
+17. Dann Überleitung zum garantierten Terminierungsbereich. Wie schreibt man den hin? [p] Pfeil nach unten A
+	Was ist das? 	Eine Menge von Zuständen die mit Ausführung von p terminieren
+
+18. Letzter Punk den wir gemacht haben waren Abstrakte Datentypen. Wie sehen die aus?
+	State, Init und Op_i.
+
+19. Wie werden diese Op_i definiert?		Über Kontrakte
+
+20. Wie kann man Kontrakte definieren?		Vor- und Nachbedingung, relational, operational
+
+21. Wie macht mans in KIV?			operational
+
+22. Bei den Traces, wovon abstrahiert man da?	Vom State, da es ja nur eine Listen von Funktionsaufrufen ist.
+
+23. Was muss gelten, damit eine Verfeinerung korrekt ist?	SEM(C) Teilmenge von SEM(A)
+
+24. Und wie zeigt man jetzt, dass die korrekt ist? 	Finde Vorwärtssimulation mit Initialisierung, Anwendbarkeit und Korrektheit
+
+25. Okay zum Schluss noch ne Runde KIV:
+	Beweise die Terminierung von merge (nicht merge sort, sondern die Funktion die zwei Listen wieder zusammen merged)
+	0. DL Heuristics mit Case Splitting anmachen
+	1. Induction (die Funktion hat zwei Fälle, in einem nimmt erste Liste ab, im anderen die zweite, also induction über # x + # y)
+	2. Call right
+	3. In beiden Teilbäumen apply induction und schon ists zu
+
+Gerhard fragt dann noch, dass man ja nur zwei von 4 Teilbäumen nach dem call right schließen musste und die anderen zwei automatisch zu gegangen sind und was denn in den anderen zwei Teilbäumen war?		Waren die Exceptions weil ein x.head in der Funktion vorkamm und die macht KIV automatisch zu.
+
+Viel Spaß und immer schön Freshhhhhhh bleiben

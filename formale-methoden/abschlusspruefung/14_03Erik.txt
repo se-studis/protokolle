@@ -1,0 +1,10 @@
+Die Prüfung lief bei mir beinahe exakt wie bei Alex ab, mit zwei Unterschieden:
+
+Der Datentyp, den ich zu Beginn spezifizieren sollte, waren "Hypergraphen", d.h. ungerichtete Graphen, deren Kanten Knotenmengen sind (i.e. Kanten verbinden n > 1 Knoten).
+Anschließend das Extensionalitätsaxiom aufstellen; Hier einfach zwei Operatoren \in_node und \in_edge verwenden, die müssen dann noch anschließend spezifiziert werden.
+Erklären, warum sowohl Kanten als auch Knoten dafür sorgen, dass der Datentyp nicht frei ist.
+
+Zum Abschluss sollte ich nicht die Korrektheit von Mergesort beweisen, sondern dass die Merge-Operation immer terminiert.
+Auf eine etwas unverständlich formulierte Frage wollten sie "totale Korrektheit" hören, und Gerhard wollte wissen, wie die Postcondition aussieht (true, weil völlig egal, wir wollen ja nur wissen, ob Merge terminiert).
+Zum Beweis Induktion über #x + #y; einmal Merge ausführen, zweimal apply induction, fertig.
+Zu zwei Prämissen, die KIV automatisch zugemacht hat, kam die Frage "Was könnte das denn sein?" - "KIV-Specials" war keine ausreichende Antwort, da will Gerhard auf's exception handling von .head und .tail auf Listen raus.

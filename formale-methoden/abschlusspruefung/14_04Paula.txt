@@ -1,0 +1,87 @@
+Protokoll Paula
+Bei mir hat auch Alex gefragt. 
+Inhaltlich wars bei mir sehr ähnlich wie bei Fabian und Erik. 
+
+Wie spezifizieren wir?
+- Sorten, Konstruktoren, frei/ nicht frei?
+
+Beispiel ungerichtete Graphen:
+Welche Sorten brauchen wir? 
+	-> Graph, Node, Edge
+Welche Konstruktoren? 
+	-> Leerer Graph, insertNode, insertEdge
+Ist das jetzt ein freier Datentyp? Warum? 
+	-> Nein, weil Einfügereihenfolge egal
+Und ist Edge ein freier Datentyp? 
+	-> Auch nicht, weil ungerichteter Graph
+Und jetzt? 
+	-> Extensionalitätsaxiom
+Schreib das mal für Edges hin 
+	-> (e1 = e2 <-> (∀ n . n ∈ e1 <-> n ∈ e2))
+Was muss jetzt noch definiert werden?
+	-> Was bedeutet ∈
+Welche Definitionsprinzipien kennst du dafür?
+	-> Strukturell rekursiv, wohlfundiert rekursiv, Existenz & Eindeutigkeit, Nicht-rekursiv
+Welches würdest du dafür verwenden?
+	-> Strukturell rekursiv: (n ∈ makeEdge(n1, n2) <-> n=n1 ∨ n=n2) 	
+	-> nicht nichtrekursiv! Das habe ich zuerst gesagt und musste dann ziemlich lang erklären wie eine nichtrekursive Definition im allgemeinen aussieht (p(x) <-> 𝜑) und warum das hier nicht geht
+Jetzt haben wir ein gutes Definitionsprinzip verwendet. Was bringt uns das?
+	-> Hierarchiepersistenz - Auch eindeutig?  -> Ja
+Was muss man jetzt noch zeigen?
+	-> Kongruenz
+
+Wohlfundierte Rekursion, was ist das eigentlich?
+	-> Argumente werden kleiner, noethersche Relation
+Was bedeutet noethersch?
+	-> keine unendlich absteigenden Ketten
+
+Noethersche Regel für Listen hinschreiben
+
+Sequenzenkalkül while hinschreiben (rechts, Diamond)
+Was bedeutet x ≺ t in der Regel? Was ist x? (-> Freshe Variable) Was ist t? (-> Term) 
+Was macht KIV um (x ≺ t) ist noethersch zu zeigen?
+	-> Irgendwas mit Ordnugsprädiktaten offensichtlich, hab ich nicht gewusst
+
+Semantik von Box, aufschreiben und erklären
+
+(obligatorische Überleitung: Du hast da jetzt relationale Semantik verwendet ...)
+
+Vor- und Nachteile der relationalen Semantik gegenüber natürlicher Semantik
+	-> Nachteil: while und Rekursion ist hässlich
+	-> Vorteil: Keine Fixpunktsätze nötig
+Kleene und Knaster Tarski erklären
+Was ist da die Voraussetzung das man Kleene anwenden kann?
+	-> Nur endlich viele positive Prämissen = stetig
+Ist Rns Hut auch stetig?
+	-> Ja, aber nicht mehr wenns um den garantierten Terminierungsbereich geht (choose)
+Semantik von strong Diamond
+
+While in der natürlichen Sematik hinschreiben ("Den interessanten Fall bitte" -> 􏰂[b􏰃]v = tt)
+
+(Überleitung zu Kontrakten und abstrakte Datentypen)
+
+Kontrakte also: Wie kann man die definieren?
+	-> operational mit choose, als Relation oder mit Vor & Nachbedingung
+
+Aus was besteht ein Abstrakter Datentyp?
+	-> Zustände, Initialzustände, Operationen
+Wie sind Operationen definiert?
+
+Unterschied Ablauf/ Beobachtung
+	-> Zustände sind nicht von außen sichtbar, Beobachtung ist also nur eine Liste von [(in0, k0, out0), (in1, k1, out1), ...]
+
+Was kann man mit abstrakten Datentypen so machen? 
+	-> Refinements
+Wie überprüft man da die Korrektheit?
+	-> Initialisierung, Anwendbarkeit, Korrektheit
+ 
+
+KIV
+Beweis über Mergesort, wie bei Erik. 
+DL Heuristics + Case Split
+Induction
+Man brauchte Terminduktion, da haben sie aber geholfen.
+(Was nimmt denn ab? - Die Länge von x - Und? - Von y auch - Aber nicht immer beides, aber mindestens eins von beiden oder? - Stimmt)
+Der abnehmende Term war dann also # x + # y. 
+Dann zweimal apply Induction -> zu.
+
