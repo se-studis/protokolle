@@ -13,9 +13,12 @@ Daten Typen und Induktion
 
 * Was brauchen wir jetzt noch?
     - Extensionalitätsaxiom (-> hinschreiben)
-    - $m_1 = m_2$ $\Leftrightarrow$ $\(\all k . k \in m_1 \Leftrightarrow k \in m_2  \) \wedge \( \all k . k \in m_1 \Rightarrow m_1[k] = m_2[k]\)$
-    - $\in$ sollte gutem Definitionsprinzip folgen
-    - $\in$ axiome hinschreiben
+    - ![$m_1 = m_2 \Leftrightarrow \(\forall k . k \in m_1 \Leftrightarrow k \in m_2) \wedge \( \forall k . k \in m_1 \Rightarrow m_1\[ k\] = m_2\[ k\] )$](https://render.githubusercontent.com/render/math?math=%24m_1%20%3D%20m_2%20%5CLeftrightarrow%20%5C(%5Cforall%20k%20.%20k%20%5Cin%20m_1%20%5CLeftrightarrow%20k%20%5Cin%20m_2)%20%5Cwedge%20%5C(%20%5Cforall%20k%20.%20k%20%5Cin%20m_1%20%5CRightarrow%20m_1%5B%20k%5D%20%3D%20m_2%5B%20k%5D%20)%24)
+
+    - ![$\in$](https://render.githubusercontent.com/render/math?math=%24%5Cin%24)
+ sollte gutem Definitionsprinzip folgen
+    - ![$\in$](https://render.githubusercontent.com/render/math?math=%24%5Cin%24)
+ axiome hinschreiben
 * Sind wir jetzt fertig?
     - Nein, zeigen, dass EQ Kongruenz ist
 * Was haben wir Spezifizert?
@@ -36,8 +39,8 @@ Programme
 * Wo brauchen wir noch noeth. rec. ?
     - Schleifen, Prozeduraufrufe
 * Worüber machen wir da die Induktion?
-    - Prozedur: Argumente und im worst case über das $n$
-    - Schleife: Abnehmendes $t$ in im worst case über die anzahl der durchläufe
+    - Prozedur: Argumente und im worst case über das n
+    - Schleife: Abnehmendes t in im worst case über die anzahl der durchläufe
 * Ok, für Programme haben wir ja die Dynamische Logik, was gibt es denn da für Konstrukte?
     - Box und Diamond
 * Semantik von Box hinschreiben
@@ -51,7 +54,7 @@ Programme
 * Also?
     - Natürliche Semantik
 * Ein wenig darüber erzählen:
-    - $\hat{R}_{ns}$ erklären
+    - ![$\hat{R}_{ns}$](https://render.githubusercontent.com/render/math?math=%24%5Chat%7BR%7D_%7Bns%7D%24) erklären
     - Regelbasiert
 * Was haben wir uns damit eingekauft?
     - Fixpunkte
@@ -78,19 +81,22 @@ Abstrakte Datentypen und Kontrakte
 ----------------------------------
 
 * Wie sehen Abstrake Datentypen aus?
-    - $\(Z, Init, Op_i\)$
-* Was sind die $Op_i$? 
+    - (Z, Init, Op_i)
+* Was sind die ![$Op_i$](https://render.githubusercontent.com/render/math?math=%24Op_i%24)
+? 
     - Kontrakte
 * Wie können die Aussehen?
     - Voredingung + Nachbedingung
     - Relational
     - Operational
 * Wie sieht eine ganz allgemeine Operationale regel mit Vorbedingung $\phi$ und Nachbedingung $\psi$ aus?
-    - $\phi \vdash \langle | p | \rangle \psi$
+    - ![$\phi \vdash \langle \mid p \mid \rangle \psi$](https://render.githubusercontent.com/render/math?math=%24%5Cphi%20%5Cvdash%20%5Clangle%20%5Cmid%20p%20%5Cmid%20%5Crangle%20%5Cpsi%24)
+
 * Was kann man dann sehen, wenn man die benutzt?
     - Trace
 * Was muss für Konkretisierungen gelten?
-    - SEM(CDT) $\subseteq$ SEM(ADT)
+    - SEM(CDT) ![$\subseteq$](https://render.githubusercontent.com/render/math?math=%24%5Csubseteq%24)
+ SEM(ADT)
     - Erklären was das bedeutet
 * Wie beweist man das?
     - Abs und Beweisverpflichtungen
