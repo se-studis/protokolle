@@ -1,0 +1,35 @@
+Eigentlich wie – bis jetzt – bei allem anderen auch. Bei mir hat Alex gefragt, mit ein paar kleinen Zwischenfragen von Gerhard.
+
+AL:
+- Beweise ⟹ 𝐴∨(𝐵∧𝐶)→(𝐴∨𝐵)∧(𝐴∨𝐶) auf Papier
+- Was hätte der Simplifier gemacht?
+- Ist AL vollständig?
+PL:
+- Ist PL vollständig?
+- Was ist PL im Vergleich zu AL nicht? (Stichwort Entscheidbarkeit)
+- Was gibt es in der Prädikatenlogik? (Signaturen, Algebren, Formeln, Terme, …)
+- Aufbau von Formeln erklären
+- (𝐿∀)-Regel hinschreiben und erklären
+- Was für Simplifier-Regeln gibt es? (Rewrite-Regel und Äquivalenzregel hinschreiben, Rewrite-Regel erklären)
+Spezifikationen
+- Was wollen wir von Spezifikationen? Konsistenz & Monomorphie
+- Was davon wollen wir unbedingt, was ist einfach nur nice to have? ;) Dann beides erklären
+- Was ist Generiertheit? Wozu brauchen wir das? (hier Nachfrage zur Beziehung zwischen Konstruktortermen und Elementen)
+- Was kommt bei freier Generiertheit dazu?
+- Welche freien Datentypen gibt es (Beispiele nennen, hier wollten sie auch explizit etwas über Aufzählungstypen und Tupel hören)
+- Wie nennen wir das bei KIV?
+- Wie können wir auf Spezifikationen beweisen? → Induktion
+- Induktionsregel für Listen
+- Was brauchen wir noch dafür? Strukturell-rekursive Definition
+Anreicherungen
+- Was wollen wir von Anreicherungen? Hierarchiepersistenz & Eindeutigkeit
+- Was ist der Unterschied zu Konsistenz & Monomorphie? (da wollten sie Details)
+- Nicht wie ich statt Anreicherung ständig Enrichment sagen - KIV- und Vorlesungsbegriffe trennen, da war Alex eher unflexibel ;)
+KIV
+- Strukturell-rekursive Definition einer Funktion zur Ermittlung der Position von Elementen in Listen pos(a,x) (hier wurde auch nach Konstistenz/Monomorphie gefragt)?
+- Dazu (möglichst automatisch) Lemma in KIV beweisen: 𝑎∈𝑥→𝑝𝑜𝑠(𝑎,𝑎𝑝𝑝𝑒𝑛𝑑(𝑥,𝑦))=𝑝𝑜𝑠(𝑎,𝑥)
+- Was ist rekursive Position?
+- LS-Regeln eintragen
+- PL Heuristics an
+- Structural Induction → Fertig :)
+Generell, wenn man nicht sofort wusste, worauf sie hinauswollten, haben sie versucht, auf die Antwort hinzuführen. Wenn sie dann auch kam, waren sie damit zufrieden ;)

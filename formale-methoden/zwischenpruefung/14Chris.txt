@@ -1,0 +1,35 @@
+(Fragen v.a. von Alex)
+Grundsätzlich sehr ähnlich zu Lena und Dominik
+
+Welches Kalkül verwenden wir?
+Formel zum Beweisen vorgelegt -> „was ist deine Erwartung, was beim Beweis rauskommt?“ Beweis von Hand (tut euch selber einen Gefallen und prüft ernsthaft – nicht nur kursorisch wie ich, ob die Formel überhaupt stimmt – bei mir ging plötzlich der Beweis nicht auf und es stellte sich raus, dass die Formel kompletter Blödsinn war) 
+
+„Was kommt bei der Prädikatenlogik hinzu, was bei der Aussagenlogik noch nicht dabei war?“ (Variablen, Quantoren, Gleichungen, Funktionen)
+
+Eigenschaften Aussagenlogik, Prädikatenlogik
+
+„Was macht das Sequenzenkalkül mit Gleichungen?“
+
+Links-∀ definieren und erklären
+
+„Was kann der Simplifier alles, am Beispiel von der Formel vom Anfang?“
+Rewrite-Regel aufschreiben, erklären
+Assoziativitäts- und Kommutativitätsregel erklären
+
+„Welcher Datentyp macht uns in der Prädikatenlogik hinsichtlich Monomorphie Schwierigkeiten?“ -> Überleitung zu Ausdrucksschwäche der Prädikatenlogik, kurz erklären
+
+„Wie lösen wir dieses Problem?“
+-> „Was sind Generiertheitsklauseln?“
+
+„Bringen uns Generiertheitsklauseln etwas für unsere Beweise?“
+-> Induktionsregel für Listen aufschreiben
+
+„Was gibt es noch für spezielle Generiertheit?“ (freie)
+Beispiele für freie Datentypen geben
+„Wie ist die Beziehung zwischen Konstruktortermen und Elementen der Trägermenge bei freien Datentypen?“ (eindeutig)
+
+Definition Hierarchiepersistenz, Eindeutigkeit, Erweiterungen
+„Wie ist das bei struktureller Rekursion?“ (= „wann hierarchiepersistent/eindeutig?“ freie Datentypen)
+
+Durchschnitt zweier Listen rekursiv definieren
+Beweis über diese Funktion, die schon in KIV eingetragen war (intersect(append(x,y),z) = append(intersect(x,z), intersect(y,z))); Simplifier-Regeln eintragen, Heuristik anschalten, Fallunterscheidung von Hand, fertig „Welche der Variablen eignet sich für Induktion, welche nicht, und warum?“
