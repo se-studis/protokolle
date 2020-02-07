@@ -1,0 +1,23 @@
+Alex hat Fragen gestellt, meine Prüfung war recht ähnlich zu Alex und Fabians Prüfung,
+es gab aber ein paar Unterschiede:
+
+1. Multigraphen definieren:
+    a) Sorten: Node, Multiedge (äquivalent zu Set aber mit mindestens 1 Element (für Schleifen)), und Graph
+    b) Konstruktoren: leerer Graph, Hinzufügen von Multiedge zu Graph, Hinzufügen von Knoten, Konstruktor mit einem Knoten als Argument für Multiedge und Hinzufügen von Knoten zu Multiedge
+    c) Kurz begründen ob frei oder nicht frei (Vertauschen von Einfüge-Operationen) -> nicht frei
+    d) Standardvorgehen mit Extensionalitätsaxiom: Axiom für Graph aufstellen, und definitionsprinzipien beschreiben
+
+2. Kleiner Abstecher zu Definition über Existenz und Eindeutigkeit:
+    a) kurz das exists und unique Axiom dafür beschreiben
+
+3. Wohlfundierte Rekursion:
+    a) Wofür brauchen wir das, wie kann das KIV automatisch, sie wollten auf die Teillisten bzw. Teilbäumen Beziehung hinaus und das man darüber auch Noethersche Induktion machen kann
+
+3. Kontrakte
+    a) welche drei Typen gibt es: Vor- & Nachbedingung, relational und operational
+    b) Was wollen wir für konkrete Datentypen haben: die Menge der Beobachtungen über dem konkreten Typ ist eine Teilmenge der Menge der Beobachtungen über dem abstrakten Datentyp
+    c) Wie setzt KIV Korrektheit und Andwendbarkeit um: nur eine Invariante für beide zu beweisen, werden zusammengelegt
+
+4. KIV-Beweis: Wie bei Alex und Fabian, man muss nur an der richtigen Stelle #x einsetzen und sein spezielles Lemma anwenden, dann geht der Beweis problemlos durch
+
+Die Bewertung war fair, lasst euch von den beiden nicht verwirren und Viel Glück

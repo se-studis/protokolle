@@ -1,0 +1,77 @@
+FM_Pruefungsprotokoll Fabian
+Gerhard hat gefragt.
+
+Erster Teil der VL war ja Datentypen. Wie geht man denn da beim Spezifizieren vor? -> Sorten, Konstruktoren, frei/nichtfrei => data spec / Generiertheitsklausel und Extensionalitätsaxiom
+
+Gut, dann spezifizieren wir mal einen Datentypen -> Graphen mit ungerichteten Kanten.
+Was für Sorten braucht man da? Node, Edge, Graph. Node als Parameter (=> d.h. die Spez. ist eine Anreicherung von Node! Wird später wegen Eindeutigkeit und Hierarchiepersistenz wichtig)
+Konstruktoren => mkedge, add-node, add-edge
+Woran erkenne ich jetzt, dass das nicht-frei ist? Sowohl für Edges als auch für Graph hat er mich gefragt, weil ich da rumgestammelt habe. Edges wusste ich nicht (es ist natürlich, weil die Reihenfolge der nodes egal sind) , Bei Graph ist es einfach, weil man ja zweimal dieselbe Edge einfügen kann und das immer noch derselbe Graph ist.
+Dann hat Gerhard nur noch die Edge interessiert => Extensionalitätsaxiom für edges: e1 = e2 <-> f.a. no . no in e1 <-> no in e2
+
+Sind wir jetzt schon fertig? Nein, das in für edges muss noch definiert werden.
+Was für Möglichkeiten haben wir für die Definition? strukt. rek., wohlfundiert rek., nicht rek., existenz und eindeutigkeit
+Wie machen wir das in für edges? Strukturell rekursiv, was bei edges bissl witzlos ist, weil man ja nur den einen Konstruktor hat.
+Hier war Alex dann pedantisch und wollte, dass ich die Definition von in für edges als "Formel" hinschreibe. Hab ewig nicht kapiert was er will, bis ich gecheckt habe, dass er das "=" bei no in e = ... durch ein "<->" ersetzt haben wollte. KIV erlaubt ein "=" zwischen zwei Formeln, aber streng genommen ist das ja falsch... (wtf-face meinerseits ^^)
+
+Dann kam ne fiese Frage: Welchem Datentyp sieht das EQ von edges sehr ähnlich? -> Mengen, aber halt nur mit zwei Elementen (bin ich nur nach einigen Tips drauf gekommen, sieht meiner Meinung nach null ähnlich aus :D)
+
+So jetzt haben wir was spezifiziert, ist das auch gut (oder so)? -> sie wollten halt Eindeutigkeit hören.
+
+Wir haben ja jetzt schon über strukturelle Induktion geredet, was gibt's noch für Induktion? Wohlfundiert.
+Was brauchen wir dafür? Noethersch abnehmende Argumente -> also eine noethersche Relation
+Was ist das? Eine Relation ohne unendlich absteigende Ketten
+Und wie verwenden wir das dann auf Datentypen? Sie wollten da auf Order Predicates und Size functions raus. Bei den Sizefunctions haben sie mich auch gefragt, was da genau gezählt wird -> es stellt sich heraus, dass die Konstruktoren in einem Konstruktorterm gezählt werden (nicht die Elemente, was mein erster Versuch einer Antwort war, die gnadenlos abgeschmettert wurde ;).
+Dann hat Gerhard es noch ganz genau wissen wollen und gefragt ob wirklich alle Konstruktoren gezählt werden? (WTF-face meinerseits, großes Lachen von Alex "Jetzt willst es aber ganz genau wissen, Gerhard"). Schließlich habe ich's gerafft und gesagt die Konstanten (z.B. [] oder ø) werden nicht gezählt (Beifall von beiden Seiten)
+
+Dann noethersche Regel für Listen hinschreiben (sh. Folien)
+
+Wo brauchen wir die noetherschen Relationen denn noch so? Bei Schleifen
+
+Genau, damit kommen wir zu Programmen.
+Irgendwie sind wir dann zu [:=]2 Regel gekommen, die ich hinschreiben sollte. Hier kamm dann die Frage wozu das y = t in den Prämissen gut ist (um sich zu merken, was x nach der ersten Zuweisung ist und das dann einsetzen zu können)
+Und dann noch ob KIV das genau so macht (also Umbenennung im Programm) -> Nein, KIV benennt im Programm nicht um, sondern alles außenrum
+
+Dann wollten sie die Semantik der Box sehen.
+
+Da hast Du ja jetzt R hergenommen, was ist das? Relationale Semantik
+Schreib doch hin wie die aussieht? -> (v, v') in R [[p]]A
+Was heißt das? Intuition für v' kommt nach p raus, wenn's auf v startet
+Ist das alles? -> hab ich nicht gecheckt -> sie wollten drauf raus, dass wegen Indeterminismus v' nicht der einzige Endzustand sein muss und dass bei abort halt die leere Menge rauskommt.
+
+Was ist jetz in der Rel. Sem. schön und was nicht? -> schön halt alles außer while und rekursive Prozeduren
+Was brauchen wir dann für die? Schleifenzähler und Rekursionstiefenzähler, die wir mitschleppen müssen.
+
+Wo war's schöner gelöst? -> Natürliche Semantik
+Schreib doch mal while (tt) für die Nat. Sem. hin.
+
+Was genau ist da jetzt die Intuition? -> Sie wollten drauf raus, dass wir halt die Semantik über geschlossene Beweisbäume definieren.
+Darüber sind sie irgendwie auf Fixpunkte gekommen -> Knaster-Tarsky und Kleene erklären, was deren Forderungen sind (monoton und stetig) und was das in der natürlichen Semantik heißt (positive Prämissen, etc.). Wollten davon aber nichts hingeschrieben haben.
+
+Welches ist schöner? -> Kleene, weil man da über die Baumhöhe beweisen kann.
+Und können wir das immer? -> In Rel. Sem. und Nat. Sem. schon aber es gibt Systeme, wo nicht.
+Welche kennen wir da? Omega-Kalkül und Garantierter Terminierungsbereich mit unbeschränktem Indeterminismus.
+
+Dann Überleitung zum garantierten Terminierungsbereich.
+Semantik von Strong-diamond hinschreiben. Hier war Alex wieder ein bisschen pedantisch und wollte, dass ichs wirklich als "Formel" hinschreibe -> sprich explizit "und" hinschreiben, weil ich das zuerst weggelassen hatte
+
+Erklären, warum choose die Stetigkeit kaputt macht, bzw. wann (unbeschr. indeterm.)
+Was war das andere indeterm. Konstrukt? Or -> ist beschränkt.
+
+Dann Überleitung zu abstrakten Datentypen.
+Kurz angesprochen, dass wir Vor- Nachbedingung, Relational und Operational machen können.
+Warum können wir operational machen? -> Weil wir ja mit choose einfach das "richtige" Ergebnis (das die Nachbedingungen erfüllt) nehmen können.
+
+Dann wollten sie noch Substitutionsprinzip erklärt bekommen, Unterschied zwischen Abläufen und Beobachtungen und was uns Abstraktionsrelation in Verbindung mit Beobachtungen bringt (wir können schrittweise Beweisen, müssen nicht die ganze Beobachtung auf einmal beweisen). Die konkreten Beweisverpflichtungen bei einer Verfeinerung wollten sie dann gar nicht mehr hören.
+
+Dann KIV Beweis. Wie bei Alex Merge-Sort.
+Vorgehen wie Alex beschrieben hat.
+Wichtig ist, dass Mergesort die Liste ja teilt d.h. #x nimmt immer um Faktor 2 ab
+=> das Hilfslemma, was Gerhard auch vorher zeigt hat damit zu tun, dass man zeigen muss, dass m * 2 + n <= ... oder so. Man hat dann zwei Prämissen. Eine der Form #x = m * 2 + n und eine #x <= ... Man muss sich also über "subst equation mit keep" das #x in die m * 2 ... Form bringen bevor man das Hilfslemma anwenden kann.
+Danach ist dann alles gut (sprich apply induction -> Heuristik macht execute call, das ganze zwei mal machen, weil da zwei rekursive Aufrufe von mergesort drin sind).
+Dann bleibt nur noch MERGE# übrig und das hat Gerhard schon bewiesen -> nur noch apply lemma für das merge anwenden und dann ist der Beweis durch.
+
+
+Benotung war super nett, insbesondere dafür dass ich v.a. am Anfang bei den Graphen ziemlich rumgestammelt habe und bei abstrakten Datentypen mir der Begriff "abstrakte Datentypen" partout nicht einfallen wollte bis ich abstract state machine gesagt habe und Alex dann gemeint hat, "ja und der Oberbegriff von einer ABSTRACT state machine ist dann (wink, wink)?"
+
+Viel Spaß! :)

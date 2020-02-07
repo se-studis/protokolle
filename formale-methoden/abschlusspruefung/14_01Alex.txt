@@ -1,0 +1,146 @@
+Protokoll:
+Alex hat gefragt, bzw Gerald hat geniale Verwirrung gestiftet.
+Wir haben bei Datentypen aufgehört...
+Wie spezifizieren wir so einen
+	1. Sorten
+	2. Konstruktorterme
+	3. Frei oder nicht frei
+
+Mach uns mal bag (Multiset)
+	leeres Multiset
+	. ++ .
+	ist es jetzt frei ? -> Wieso nicht?
+	EQ aufstellen -> b1 = b2 <-> Ve . count(e,b1) = count(e,b2)
+	Was müssen wir jetzt noch machen? -> Definiton von Funktionen in EQ
+Wie definieren wir diese -> strukturell Rekursiv
+count(e,leerer Bag) = 0
+count(e, e + b1) = count(e, b1) + 1
+neg e = a -> count(e, a + b1) = count(e, b1)
+Muss es strukturell rekursiv sein -> Nein, nur ein gutem definitionsprinzip folgen
+Welche gibt es da?
+	Strukturell, nicht rekursiv, wohlfundiert, definition über existenz und eindeutigkeit
+Sind wir jetzt schon fertig? -> Nein noch Kongruenz von EQ zeigen
+Wieso -> Konsistenz vom nicht freien Datentyp und damit Äquivalenz zum freien
+
+Wohlfundierte Rekursion, was genau ist das bzw. worauf basiert diese?
+	Noethersche Relation
+Was ist das?
+	nur endlich absteigende Ketten
+	-> Schreib mal eine hin
+		... a2 < a1 < a0
+Was bringt uns das bei der Rekursion?
+
+Was bringt uns das noch?
+	-> Induktion
+	Schreib mal die Induktion für natürliche Zahlen hin
+	Wo ist jetzt der Unterschied zur strukturellen Induktion
+	
+Was können wir mit noetherscher Relation noch machen?
+	diamond R while
+**Hier einfach mal fragen L oder R darauf gibt es gleich ein Lachen von Alex und ein Kommentar von Gerald: "Kiv macht das keine Sorge"**
+	-> Regel hinschreiben und erklären
+		Was ist das x? -> Anfangszustand
+		Was muss dafür gelten? **Hier einfach es muss FRESHHHHHH sein sagen**
+			Das Gamma und das Delta warum steht das nur in einer Prämisse?
+			Können wir es bei den anderen nicht einfach so dazu schreiben?
+Dieser Diamond wie ist der ganau definiert?
+	-> Semantik für Diamond hinschreiben und erklären
+
+ACHTUNG! 10/10 Überleitung
+Wie ich sehe hast du die relationale Semantik verwendet
+
+Wofür brauchen wir die?
+Warum haben wir nicht funktionen anstatt von relationen genommen?
+	-> Nichtterminierung und Indeterminismus (Hier wollte Alex explizit auf dieses "Bottom" raus)
+Was ist jetzt schlecht an der relationalen Semantik?
+	-> Schleifen und Rekursion
+	Wieso? bzw. Wie ist es in der relationalen Semantik gelöst?
+		-> Begrenzung rekursionstiefe und eben mit n als schleifenzähler
+Ist ja hässlich oder ? Was gibt es da besseres?
+	-> Natürliche Semantik
+Wo ist jetzt der Unterschied zur Relationalen Semantik beim while
+	-> while Regel hinschreiben für [b] = tt (Alex hat das vergessen zu sagen also einfach mal b = ff hinschreiben)
+	Erklär mal die Regel
+		-> Wir rollen die Schleife ab! und geben den neuen zustand v' dann wieder in die Schleife rein
+Wie kann ich denn jetzt überhaupt zeigen dass diese Prämisse gilt
+	-> Regelsystem mit Rns hut Operator
+	Wie funktioniert so ein Regelsystem
+		-> Abstraktion von Ableitungsbäumen
+		Was will ich denn jetzt von dem Operator haben?
+			-> Menge ableitbare Konklusion durch gegebene Menge von Prämissen mit einmaliger Regelanwendung
+	Was brauche ich für den Rns operator
+		-> kleinsten!!! Fixpunkt
+
+Fixpunkte: Wie bekomme ich die?
+	Knaster-Tarski
+		-> Erklären
+		Was braucht dieser?
+			-> Monotonie
+	Kleene
+		-> Erklären
+		Was braucht dieser?
+			-> Stetigkeit
+Ist der Rns operator monoton oder auch stetig?
+	-> auch stetig
+Wie sieht das ganze jetzt im Indeterminismus aus, mit choose und or?
+	-> Passt immer noch da ja nur diamond 
+Wo ist dann das problem?
+	-> Terminierungsproblem R[skip or abort]
+	Wie werten wir skip or abort aus
+		-> Vereinigung über die regelanwendung von skip und regelanwendung auf abort
+			-> also = R[skip]
+			Was ist das?
+				-> Angelische Semantik
+				Was gibt es noch?
+					-> Daemonische
+Was braucht man dafür wieso funktioniert das nicht bei uns?
+	-> Neues regelsystem : Grantierte Terminierung
+		Was gibt uns die Garantierte Terminierung, schreib mal die allgemeine Regel dafür hin
+			v € (element) [p] (Pfeil nach unten) A
+Wo ist jetzt das Problem, gilt hier Stetigkeit immer noch?
+	-> Choose kann unenedlich viele Prämissen haben
+		-> Beschränkter indeterminismus
+
+Wo für brauchen wir die garantierte Terminierung dann?
+	-> WP-Kalkül
+		Wo verwenden wir das wp-Kalkül
+			-> Hier einfach irgendein beispiel, ich habe bei Verfeinerungen gesagt und Alex hat dass dann als seine letzte perfekte Überleitung gesehen
+			und hat Kontrakte einfach erstmal übersprungen (kam dann danach nochmal)
+
+Kontrakte
+	Was ist ein Kontrakt
+	Wie spezifiziere ich einen Kontrakt?
+		-> Die drei Möglichkeiten eben
+
+Verfeinerungen
+	Was brauchen wir für Verfeinerungen?
+		-> Abstrakte Datentypen
+		Woraus besteht so ein abstrakter Datentyp
+	Was muss jetzt für Verfeinerung und Abstrakten Datentyp gelten?
+		-> Substitutionsprinzip & Erklärung
+	Wie beweise ich das ganze?
+		1. Intialisierung
+			Was muss hier für a gelten?
+				-> Muss auch ein Intialzustand sein
+		2. Andwendbarkeit
+		3. Korrektheit
+
+Zum Schluss noch ein KIV Beweis:
+	Mergesort mit hilfslemma und rewrite Lemma
+	1. Induction über # x
+	2. DL + case splitting
+	3. Apply Induction für firstn
+	4. Hier muss man dann das rewrite Lemma anwenden
+	5. Dafür muss man subst. und KEEP anwenden
+		** Gerald hat hier verplant das + keep sein muss und war dann selbst überrascht**
+	6. Apply Induction nochmal für restn
+	7. Merge hilfslemma andwenden
+-> Beweis fertig!
+
+
+
+
+
+
+
+

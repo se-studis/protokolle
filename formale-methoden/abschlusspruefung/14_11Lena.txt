@@ -1,0 +1,97 @@
+2. Person am 3. Prüfungstag
+Alex hat die Fragen gestellt und Gerhard hat sich ziemlich zurück gehalten
+
+Meine Prüfung war ehrlich gesagt etwas wirr :D Wir haben nicht so wirklich den roten Faden der Vorlesung eingehalten, was mich leicht verwirrt hat. Aber an sich wars echt ok :)
+
+1. Standard mit "Wir haben ja bei den Datentypen aufgehört und wie geht man dann beim spezifizieren eines Datentypens vor?"
+-> aufgesagt bis Data Specification und Extensionalitätsaxiom
+2.  Spezifizier doch mal Hyper-Graphen mit gelabelten Kanten (erst mal lange Erklärung, wie sie das meinen; war etwas wirr und ich hab erst gar nicht verstanden wie sie das meinen und hab mehrmals nachgefragt)
+Dann wollte ich direkt das Extensionalitätsaxiom für Kanten hinschreiben -> großer Aufschrei, dass ich ja erst mal Sorten und Konstruktoren spezifizieren (also laut Sorten laut aussprechen und Konstruktoren hinschreiben soll)
+Musste dann Konstruktoren für den Graphen und die edges aufschreiben; Graphen waren Standard mit leer/ Knoten hinzufügen/ Kante hinzufügen. Edges waren dann aber etwas komisch. Da hat mich der Alex hingeleitet, dass ich doch erst mal die einfachste Kante hinschreiben soll. Ich wollte einen Konstruktor für zwei Knoten hinschreiben, da meinte er ob ich wirklich zwei Knoten brauch. Im Endeffekt wollte er auf mkedge(no , l) mit no Knoten und l Label hinaus und die kann man dann direkt in den Graphen einfügen. Dann haben sie mich noch gefragt, ob ich dafür jetzt auch ein Extensionalitätsaxiom definieren muss (nein) und wie man so einen Datentypen nennt (ich hab irgendwas rumgestammelt von konstant/ Konstante und das hat dann gepasst)
+Dann Extensionalitätsaxiom für die Graphen hinschreiben: g1 = g2 <=> (f. a. no : no /in g1 <-> no /in g2) und (f. a. e : count(e,g1) = count(e,g2) )
+"Wars das jetzt schon?" -> Nein, ich muss count noch spezifizieren
+Ich hab angefangen zu spezifizieren (für den leeren Graphen) -> Zwischenfrage: wie spezifizierst du denn gerade? -> strukturell rekursiv
+.
+.
+.
+Dann kamen ein paar Fragen dazu, ob das jetzt hierarchiepersistent ist und dann wollten sie darauf hinaus ob das konsistent ist (ich war völlig verwirrt und mir ist das Wort "konsistent" partout nicht eingefallen)
+Dann wollten sie auch noch wissen warum wir Hierarchiepersistenz wollen 
+
+3. Frage "Welche guten Definitionsprinzipien gibt es denn noch? -> alle aufgesagt
+4. Jetzt hast du ja wohlfundierte Rekursion gebraucht, was brauchen wir um von der allgemeinen Rekursion dahin zu kommen -> ich fang an zu erklären, werde aber direkt abgewürgt und soll mal aufschreiben wir denn allgemeine Rekursion aussieht ( ich hab f(x) = ... f(t) hingeschrieben, weil ich nicht mehr genau wusste, wie die Definition dafür war; wurde dann gefragt, was jetzt mit dem t und x sein muss, bei ner wohlfundierten Rekursion -> t muss noethersch kleiner sein als das x ) 
+Aha! Was heißt denn dieses noethersch kleiner oder woher kommt das -> von der noetherschen Relation
+Und was ist eine noethersche Relation? -> Relation ohne unendlich absteigende Ketten
+
+5. Schreib uns doch mal die Regel der noetherschen Relation für die Länge der Liste hin
+
+6. Was haben wir dann mit der dynamischen Logik eingeführt?
+-> Box und Diamond
+Und weiter ...?
+Äh... (ich war verwirrt)
+Bei der garantierten Terminierung?
+-> Achso, strong Diamond
+Schreib uns doch mal die Semantik davon hin
+-> ich schreib die Semantik davon hin
+Du hast ja jetzt relationale Semantik verwendet, wie würde das jetzt mit natürlicher Semantik aussehen?
+-> ich war schon wieder verwirrt, hab dann aber einfach das (v,w) /in R[p]A durch (<p,v> -> w) /in "my" Rns_hut ersetzt und das hat gepasst
+
+Was ist denn der Terminierungsbereich?
+
+Dann haben wir Relationale Semantik doch nochmal abgeklappert und auch natürliche Semantik, aber ich musste keine einzige Regel hinschreiben; es waren ansonsten eigentlich so ziemlich die Standardfragen, ich bring nur den Ablauf nicht mehr zusammen, weil es nicht so ganz am "roten Faden" entlang war :D
+
+Fixpunkte: ich musste erst erklären, was es da so gibt; dann Fixpunkt nach Kleene hinschreiben; Dann erklären, wann die bei uns angewendet werden können
+
+Indeterminismus: Was haben wir denn da neues, um Indeterminismus zu spezifizieren?
+-> choose und or
+Und passt mit denen dann noch alles oder gibts da Probleme?
+-> Äh, also, wir bekommen dann bei der garantierten Terminierung Probleme
+Ah ja, und was?
+-> Wir können dann mit choose unendlich viele Prämissen bekommen und dann können wir Kleene nicht mehr anwenden
+Und mit or bekommen wir da irgendwelche Probleme?
+-> Hm, dass wir "skip or abort" nicht von "skip" unterscheiden können
+Ja, genau!
+
+Dann hatten wir jetzt ja noch ein letztes, großes Thema: die abstrakten Datentypen
+Was ist denn ein abstrakter Datentyp so im programmatischen Sinne
+-> eine Schnittstelle?
+Ja genau. Und aus was besteht der jetzt genau?
+-> aus Anfangszuständen, Zuständen und Operationen
+Was sind diese Operationen?
+Wie kann man so Kontrakte definieren? -> mit Vor- und Nachbedingung, operational, relational
+Wie definieren wir denn Vorbedingungen und Nachbedingungen in KIV?
+-> Äh....
+Ja, bei Hoare hatten wir doch sowas (Alex malt {phi} p {gamma} auf den Zettel). Wie würden wir das jetzt in KIV machen?
+-> Ähm, für abstrakte Datentypen?
+Generell! Für alles! (Alex wedelt dramatisch mit den Händen in der Luft herum)
+-> Er wollte auf "phi -> <p> gamma" heraus, ich wurde da aber schon sehr hingeführt :D
+
+Was wollen wir jetzt von so einem abstrakten Datentyp?
+-> eine korrekte Verfeinerung?
+Und was soll für den gelten?
+-> Ich hab den Satz mit "Wenn jemand annimmt, den abstrakten Datentypen zu verwenden, dann soll er nicht merken..." aufgesagt, das war aber noch nicht so ganz das, was sie hören wollten
+Ja gut, aber was muss jetzt für die Semantik der beiden gelten?
+-> Äh...?
+Alex hat angefangen einen kleinen Kreis in die Luft zu malen "Also das ist der konkrete Datentyp", malt drüber einen großen Kreis in die Luft "Und das ist der abstrakte"
+-> Ah, dass die Semantik vom konkreten Teilmenge der Semantik vom abstrakten sein soll?
+Jaaaa! (Er hat dann noch irgendwas weiter erklärt, wo er glaub ich eigentlich drauf hinaus wollte, aber ich habs mir nicht gemerkt/ nicht ganz umrissen was er gemeint hat, aber er war mit meiner Antwort zufrieden ^^)
+Und wie beweisen wir jetzt, dass etwas eine korrekte Verfeinerung ist?
+-> Wir versuchen eine Vorwärtssimulation zu finden
+Und was brauchen wir dafür?
+-> Die Abstraktionsrelation
+Und machen wie machen wir das? Schauen wir noch einmal ganz am Anfang hin und dann am Ende nochmal?
+-> Nein, wir machen das schrittweise
+
+
+
+
+KIV:
+Terminierung von Mergesort mit Nachbedingung ordered(x)
+Die veränderte Nachbedingung hat absolut nichts am Beweis geändert, da er auch das Lemma für MERGE# so angepasst hatte, dass ordered(x) nach MERGE#(x) bewiesen war.
+Immernoch zweimal rekursive Aufrufe von Mergesort und danach MERGE#
+Wie Fabian beschrieben hat musste man eine Gleichung für #x in eine andere Gleichung einsetzen 
+Apply induction (ich war mir erst nicht sicher, ob man das direkt anwenden kann, weil als Param. firstn(x,n) übergeben wurde; Schellhorn hat dann aber gemeint, dass der KIV das ja vll weiß, was die Länge von firstn(x,n) ist; Einwurf von Alex, dass ich schon recht hab, dass der Name ja beliebig ist und da sonst was implementiert sein könnte; dann hab ich apply induction ausgeführt und KIV wusste natürlich, dass #firstn(x,n) < #x)
+Dann hat Gerhard gefragt, was denn der KIV da jetzt schon für einen Teilbaum geschlossen hat und warum (KIV hatte exec direkt ausgeführt)
+Dann hat Alex noch gefragt, ob ich da jetzt auch nochmal exec anwenden könnte (links war noch der Teil von der Induktion vom ersten Mergesort-Aufruf
+-> Joa... aber das will man nicht unbedingt... (Alex fängt das Lachen an "Genau! Denn dann müsste man ja noch anfangen die Argumente miteinander zu verrechnen" (oder so ähnlich))
+Apply induction auf den zweiten Aufruf
+Lemma für MERGE# anwenden -> zu

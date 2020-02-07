@@ -1,0 +1,204 @@
+Schellhorn hat die Fragen gestellt.
+
+1. Wie spezifisiert man Datentypen?
+	sich Sorten überlegen, sich Konstruktoren überlegen, frei/nicht-frei entscheiden.
+
+Matrix (zwei dimesnionelle Arrays) spezifizieren
+
+2. Sorten und Konstruktoren hinschreiben
+	In Prinzip wie ganz normale Arrays, aber mit einer Indexierungstelle mehr. Konstruktoren blieben sonst fast gleich (d.h. zwei Konstruktoren, einmal mkMatrix : nat x nat -> matrix, einmal addElement : matrix x nat x nat x elem -> matrix).
+
+4. Fällt da nicht noch einen Konstruktor?
+	Nein =)
+
+5. Mit welchen Elementen werden dann die Matrizen initialisiert?
+	Irgendeinem.
+	(Man hätte auch einen Defaultwert definieren können. Auf den Folien sind Arrays auch bzgl. der Initialisierung unterspezifiziert.)
+
+6. Was muss man noch machen, nach den Konstruktoren?
+	Extensionalitätsaxiom definieren.
+
+7. Was sagt das Extensionalitätsaxiom (in Fall von Matrizen)?
+	Wann zwei Konstruktorterm für dieselbe Matrix stehen.
+
+8. Extensionalitätsaxiom für Matrizen schreiben.
+	Auch wieder wie normale Arrays aber mit zwei Indixes. Unterschiede:
+	Zwei "Größefunktionen" für jeweils die erste und zweite Dimension.
+	n1 != k1 \/ n2 != k1 -> addElem(mat, k1, k2)[n1, n2] = mat[n1, n2]
+	Also solange die zwei Indizes nicht gleich sind.
+
+
+(Die Definition für die Größenfunktionen musste ich nicht schreiben)
+
+9. Was ist mit dem mkMatrix-Konstruktor? Wieso gibt es denn keinen Fall dafür?
+	Bleibt unterspezifiziert.
+
+10. Was wollen wir von Spezifikationen so wie diese?
+	Korrektheit auf jedem Fall, Monomorphie wenn es geht.
+
+11. Ist diese Matrix-Spezifikation korrekt und monomorph?
+	Korrekt ja, monomorph nur bis auf den unterspezifizierten Fälle und module der Elementen.
+
+12. Woher wissen wir, dass die Spezifikation korrekt ist?
+	Weil wir nur gute Definitionsprinzipien verwendet haben und das Extensionalitätsaxiom eine Kongruenz ist.
+
+13. Wie würde man beweisen, dass das Extensionalitätsaxiom eine Kongruenz definiert?
+	Transitivität, Symmetrie, Reflexivität und Verträglichkeit zeigen.
+
+14. Welche Definitionsprinzipien hast du in der Spezifikation verwendet? Welche gibt es nocht?
+	Strukturell rekursiv, nicht-rekursiv, wohlfundiert rekursiv, über Existenz und Eindeutigkeit
+
+15. Was ist die Idee von Existenz und Eindeutigkeit?
+	Wenn FORALL x EXIST y, dass irgendeine Formel erfüllt, dann kann man daraus eine Funktion definieren, die dieses y zurückliefert. (Skolemisierung)
+
+16. Wohlfundierte Rekursion. Was ist das für ein Definitionsprinzip?
+	Wie allgemein rekursiv, aber es gibt eine noerthersche Relation, die für die rekursive Aufrufe gilt.
+	D.h. x < t soll gelten, wenn das Axiom sagt "f(x) = ...f(t)".
+	(Ich musste das nur informell schreiben)
+
+17. Was ist eine noerthersche Relation?
+	Eine, wo man keine unendlich absteigende Ketten konstruieren kann.
+
+18. Wohlfundierte Induktionsregel für Listen schreiben.
+	
+19. Das ist anders als strukturelle Rekursion, wo man eine Prämisse für die leere Liste bekommen hat. Wieso ist das nicht hier so? Wo beweist man die Aussage für die leere Liste?
+	Leere Liste ist kleinste Element für die noerthersche Relation. D.h. x < [] ist falsch und die Implikation ist automatisch wahr.
+
+20. Wo haben wir noerthersche Relationen gebraucht?
+	(Sie wollten hören) in der While-Kalkülregel.
+
+21. Was haben wir für Programme definiert, was stärker war als das Hoare-Logik?
+	Dynamische Logik.
+
+22. Was für eine Semantik haben wir dafür definiert?
+	Relationale Semantik.
+
+23. Wie sieht denn so die relationale Semantik aus?
+	Sie ist eine Menge von Paare von Zustände. (v,w) \in R[p] heisst, p kann v in w überführen.
+
+24. Warum als Relation und nicht als Funktion?
+	Wegen Indeterminismus und Nicht-Terminierung.
+
+25. Aus welchen Formeln besteht die dynamische Logik?
+	<p> _phi und [p] _phi.
+	(Sie wollten diese Antwort haben. Am Anfang habe ich nicht gecheckt, was sie wollten)
+
+26. Definition für [p] oder <p> schreiben. Ich dürfte mir aussuchen.
+
+27. assign-rule_2 schreiben.
+
+28. Was tut der y?
+	Der Anfangswert von x speichern.
+
+29. Was ist nicht so schon an der relationalen Sematik?
+	While-Definition und rekursive Prozedure.
+
+30. Warum?
+	Mann muss mitzählen wie oft die Schleife durchgelaufen ist oder die Rekursionstiefe.
+
+31. Was haben wir dann eingeführt?
+	Natürliche Semantik.
+
+32. Was ist die Idee dahinter?
+	Regelsysteme, mit denen sich geschlossene Ableitungsbäume konstruieren lassen (geschlossene war wichtig. Ich habe auch gesagt, sie sollten undendlich hoch und breit sein, aber es kann sein, dass das Quatsch ist.)
+
+33. Interessante While-Regel für natürliche Semantik schreiben.
+
+35. Ist unseres Regelsystem monoton? Warum?
+	Ja, weil nur Regeln mit positiven Prämissen.
+
+34. Wie kommt man dann von dem Regelsystem zu der Semantik definition?
+	Über den Rns Operator. Er repräsentiert einmalige Anwendung der Regeln.
+
+35. Reicht einfach einmal Rns anzuwenden?
+	Nein, wir suchen den kleinsten Fixpunkt.
+
+36. Welches Theorem nutzen wir, wo wir wissen, dass das Regelsystem monoton ist?
+	Knaster-Tarsky.
+
+38. Was hätten wir auch nutzen können, was schöner ist?
+	Kleene.
+
+(Zwei-minutige Diskussion zwischen Knapp und Schellhorn, wie Kleene richtig ausgesprochen wird. Anscheinend hat sich der Kleene ausgesucht, wie man seinem Namen ausspricht. ミ★ THE_MORE_YOU_KNOW ミ★)
+
+39. Was verlangt Kleene und wie sehen wir es in unserem Regelsystem?
+	STetigkeit. Dadurch, dass wir nur Prämissen mit endlich viele positive Prämissen haben.
+
+40. Kleene hinschreiben?
+
+41. Was repräsentiert das n in dem Theorem?
+	Wie oft wie eine Regel anwenden mussten um die Konklussion zu erreichen / höhe des Ableitungsbaums.
+
+42. Was haben wir eingeführt, um Indeterminismus zu modellieren?
+	choose und or
+
+43. Hätten wir auf einen verzichten können?
+	Ja, or kann man über choose ausdrücken.
+
+44. Gibt das was unserem Regelsystem ein Problem?
+	(Ich habe "nein" gesagt, weil das System stetig bleibt aber ich denke sie wollten hören "ja, weil man nicht zwischen skip und skip or abort").
+
+45. Was haben wir dafür eingeführt? Was heisst es?
+	Garantierter Terminierungsbereich.
+	Dass p auf jedem FAll terminiert, wenn es mit v gestartet wird.
+
+46. Syntaktisch Terminierungsbereich hinschreiben.
+
+47. Was haben wir dann in der Logik eingeführt?
+	Strong diamond.
+
+48. Wie heißt es Strong diamon wirklich? (Ist anscheinend "KIV-Dialekt")
+	wp/ weakest precondition.
+
+49. Abstrakte Datentypen. Was sind die?
+	Tripel aus Zustände, Initialzustände und Operationen.
+
+50. Was sind also programmatisch abstrakte Datentypen?
+	(Sie wollten hören) Schnittstellen.
+
+51. Was brauchen abstrakte Datentypen noch?
+	Kontrakte.
+
+52. Wie kann man Kontrakte spezifizieren?
+	Explizit durch Vor- und Nachbedingung, relational oder operational.
+
+53. Wie macht´s KIV?
+	Operational über triviale Implementierung mit choose.
+
+54. Man kann nur den Trace von abstrakten Datentypen beobachten... (keine Frage, nur eine Aussage).
+	...(awkward Pause)...K´?
+
+55. Was ist ein Trace?
+	Folge von Operationenaufruge, input und output. Internen Zustand kann man nicht beobachten.
+
+56. Was ist die Semantik von abstrakten Datentypen?
+	Die Menge aller möglichen Traces.
+
+57. Mit abstrakten Datentypen kann man nicht arbeiten. Was wollen wir dann daraus machen?
+	Eine korrekte Verfeinerung.
+
+58. Wie beweist man, dass es sich um eine korrekte Verfeinerung handelt?
+	(Ich wollte diese drei Beweisverpflichtungen hinschreiben, aber sie wollten das weniger formal haben, sprich...) Über eine Forwardsimulation wo man zeigt, dass man jeden Trace des konkreten Datentyps mit dem abstrakten hätte generieren können.
+
+59. Was braucht man dafür?
+	Eine Abstraktionsrelation.
+
+60. KIV-Aufgabe. Beweisen, dass MERGESORT terminiert. Schellhorn hat erklärt, wie der Algorithmus funktioniert und erwähnt, man bräuchte ein rewrite-Lemma, er würde aber sagen wo (hat er auch gesagt). Außerdem hat er gesagt, dass es schon ein Lemma für die Terminierung von MERGE (Hilfsprozedur in MERGESORT) gibt.
+	DL Heuristiken einschalten
+	Induktion über die Länge der Listen machen.
+	Call-right
+	If-right
+	<KIV Magik>
+	(Schellhorn hat etwas gesagt, was ich nicht verstanden habe. Hauptsache, wir waren an der Stelle gekommen wo man das Lemma gleich brauchen würde).
+	Vor rewrite-Lemma anwenden: #x mit irgendeinem Term substituieren.
+	Rewrite-Lemma anwenden.
+	Apply Induction mit den von KIV generierten Substitionen.
+	<KIV Magik>
+	(Man musste noch die Terminierung von MERGE als apply Lemma anwenden und dann zwei mal apply induction (einmal für jede Teilliste) mit den von KIV suggerierter Substition verwenden. Leider kann ich mich nicht mehr an die Reihenfolge erinnern (also, ob zuerst apply Lemma und dann zweimal apply induction, oder zuerst apply induction, dann lemma, dann noch mal apply induction))
+
+
+
+
+
+
+
